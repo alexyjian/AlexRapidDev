@@ -1,0 +1,75 @@
+﻿@using System.Globalization
+@model MvcEditorModel
+@{
+    var value = Model.Value as DateTime?;
+}
+<div class="input-group col-md-4" style="float: left">
+    <input type="date" class="form-control col-md-6" id="@(Model.Metadata.ClrName)_Date" value="@(value.HasValue ? value.Value.ToString("yyyy-MM-dd") : "")" @Html.Raw(Model.Metadata.IsRequired ? "" : "required=\"required\"")/>
+</div>
+<div class="input-group col-md-8" style="float: left" id="@Model.Metadata.ClrName">
+    <input type="number" id="@(Model.Metadata.ClrName)_Hour" min="0" class="form-control text-center" value="@(value.HasValue ? value.Value.TimeOfDay.Hours.ToString() : "")" @Html.Raw(Model.Metadata.IsRequired ? "" : "required=\"required\"")/>
+    <span class="input-group-addon">@CultureInfo.CurrentUICulture.DateTimeFormat.TimeSeparator</span>
+    <input type="number" id="@(Model.Metadata.ClrName)_Minute" min="0" max="59" class="form-control text-center" value="@(value.HasValue ? value.Value.TimeOfDay.Minutes.ToString() : "")" @Html.Raw(Model.Metadata.IsRequired ? "" : "required=\"required\"")/>
+    <span class="input-group-addon">@CultureInfo.CurrentUICulture.DateTimeFormat.TimeSeparator</span>
+    <input type="number" id="@(Model.Metadata.ClrName)_Seconds" min="0" max="59" class="form-control text-center" value="@(value.HasValue ? value.Value.TimeOfDay.Seconds.ToString() : "")" @Html.Raw(Model.Metadata.IsRequired ? "" : "required=\"required\"")/>
+</div>
+<input type="hidden" id="@(Model.Metadata.ClrName)_Value" name="@Model.Metadata.ClrName" value="@Model.Value"/>
+<script type="text/javascript">
+    $(function() {
+        var date = $('#@(Model.Metadata.ClrName)_Date');
+        var hour = $('#@(Model.Metadata.ClrName)_Hour');
+        var minute = $('#@(Model.Metadata.ClrName)_Minute');
+        var second = $('#@(Model.Metadata.ClrName)_Seconds');
+        var hidden = $('#@(Model.Metadata.ClrName)_Value');
+
+        function checkNumber() {
+            var number = new Number($(this).val());
+            if (isNaN(number)) {
+                number = 0;
+            }
+            number = Math.round(number);
+            if (number < 0)
+                number = 0;
+            if (number > 59)
+                number = 59;
+            $(this).val(number);
+        }
+
+        function checkHour() {
+            var number = new Number($(this).val());
+            if (isNaN(number)) {
+                number = 0;
+            }
+            number = Math.round(number);
+            if (number < 0)
+                number = 0;
+            $(this).val(number);
+        }
+
+        function change() {
+            hidden.val(date.val() + ' ' + hour.val() + ":" + minute.val() + ":" + second.val());
+        }
+
+        hour.change(checkHour);
+        minute.change(checkNumber);
+        second.change(checkNumber);
+        $('#@Model.Metadata.ClrName').children('input').change(change);
+        date.change(change);
+        date.datepicker(
+        {
+            //添加日期选择功能
+            numberOfMonths: 1, //显示几个月
+            showButtonPanel: true, //是否显示按钮面板
+            dateFormat: 'yy-mm-dd', //日期格式
+            clearText: "清除", //清除日期的按钮名称
+            closeText: "关闭", //关闭选择框的按钮名称
+            yearSuffix: '年', //年的后缀
+            showMonthAfterYear: false, //是否把月放在年的后面
+
+            monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+            dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+            dayNamesShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+            dayNamesMin: ['日', '一', '二', '三', '四', '五', '六']
+        });
+    })
+</script>

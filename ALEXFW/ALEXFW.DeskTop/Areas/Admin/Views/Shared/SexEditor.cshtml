@@ -1,0 +1,64 @@
+﻿@model MvcEditorModel
+@{
+    bool? value;
+    if (Model.Value is bool)
+    {
+        value = (bool) Model.Value;
+    }
+    else if (Model.Value is bool?)
+    {
+        value = (bool?) Model.Value;
+    }
+    else if (Model.Value == null)
+    {
+        value = null;
+    }
+    else
+    {
+        throw new NotSupportedException("Boolean editor do not support type \"" + Model.Value.GetType() + "\".");
+    }
+}
+<div id="@Model.Metadata.ClrName">
+    <div class="radio-inline">
+        <label>
+            @if (value.HasValue && value.Value)
+            {
+                <input type="radio" name="@Model.Metadata.ClrName" value="true" checked="checked")/>
+            }
+            else
+            {
+                <input type="radio" name="@Model.Metadata.ClrName" value="true")/>
+            }
+            男
+        </label>
+    </div>
+    <div class="radio-inline">
+        <label>
+            @if (value.HasValue && !value.Value)
+            {
+                <input type="radio" name="@Model.Metadata.ClrName" value="true" checked="checked")/>
+            }
+            else
+            {
+                <input type="radio" name="@Model.Metadata.ClrName" value="true")/>
+            }
+            女
+        </label>
+    </div>
+    @if (Model.Value is bool?)
+    {
+        <div class="radio-inline">
+            <label>
+                @if (!value.HasValue)
+                {
+                    <input type="radio" name="@Model.Metadata.ClrName" value="true" checked="checked")/>
+                }
+                else
+                {
+                    <input type="radio" name="@Model.Metadata.ClrName" value="true")/>
+                }
+                不公开
+            </label>
+        </div>
+    }
+</div>

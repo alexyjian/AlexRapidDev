@@ -1,0 +1,112 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALEXFW.Smart", "ALEXFW.Smart\ALEXFW.Smart.csproj", "{F858395F-6A8A-4596-BAC0-EAEA21D24F82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALEXFW.Smart.EntityFramework", "ALEXFW.Smart.EntityFramework\ALEXFW.Smart.EntityFramework.csproj", "{4F1400BE-CAFE-456B-A863-58698F32B53F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALEXFW.Smart.Mvc", "ALEXFW.Smart.Mvc\ALEXFW.Smart.Mvc.csproj", "{868F1779-0830-4550-A293-35B27B8BFB3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.基本框架", "0.基本框架", "{396D1FCD-B70C-444D-888D-9C3456551420}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.领域模型", "1.领域模型", "{0C237327-6CB7-4856-A687-BCFA884C2FA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.公共工具", "2.公共工具", "{07261C2D-3BD8-44C3-B66B-E29A08BD1AF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.桌面应用", "3.桌面应用", "{27C549E2-768B-4BFE-B8F4-4E5F2BA6C888}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALEXFW.CommonUtility", "ALEXFW.CommonUtility\ALEXFW.CommonUtility.csproj", "{64C8DAC9-C4AD-456C-B0E5-1AD391D6C120}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALEXFW.Entity", "ALEXFW.Entity\ALEXFW.Entity.csproj", "{18B7DC6E-6425-4F6C-AFFC-FA3C5C26B037}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALEXFW.DataAccess", "ALEXFW.DataAccess\ALEXFW.DataAccess.csproj", "{AFF694EA-B296-49C8-B418-A80D50E9DAAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALEXFW.DeskTop", "ALEXFW.DeskTop\ALEXFW.DeskTop.csproj", "{6A47A93E-CED5-416E-B2D6-A93D15F9A2FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F858395F-6A8A-4596-BAC0-EAEA21D24F82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F858395F-6A8A-4596-BAC0-EAEA21D24F82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F858395F-6A8A-4596-BAC0-EAEA21D24F82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F858395F-6A8A-4596-BAC0-EAEA21D24F82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F1400BE-CAFE-456B-A863-58698F32B53F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F1400BE-CAFE-456B-A863-58698F32B53F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F1400BE-CAFE-456B-A863-58698F32B53F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F1400BE-CAFE-456B-A863-58698F32B53F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{868F1779-0830-4550-A293-35B27B8BFB3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{868F1779-0830-4550-A293-35B27B8BFB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{868F1779-0830-4550-A293-35B27B8BFB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{868F1779-0830-4550-A293-35B27B8BFB3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64C8DAC9-C4AD-456C-B0E5-1AD391D6C120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64C8DAC9-C4AD-456C-B0E5-1AD391D6C120}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64C8DAC9-C4AD-456C-B0E5-1AD391D6C120}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64C8DAC9-C4AD-456C-B0E5-1AD391D6C120}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18B7DC6E-6425-4F6C-AFFC-FA3C5C26B037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18B7DC6E-6425-4F6C-AFFC-FA3C5C26B037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18B7DC6E-6425-4F6C-AFFC-FA3C5C26B037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18B7DC6E-6425-4F6C-AFFC-FA3C5C26B037}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFF694EA-B296-49C8-B418-A80D50E9DAAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF694EA-B296-49C8-B418-A80D50E9DAAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF694EA-B296-49C8-B418-A80D50E9DAAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF694EA-B296-49C8-B418-A80D50E9DAAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A47A93E-CED5-416E-B2D6-A93D15F9A2FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A47A93E-CED5-416E-B2D6-A93D15F9A2FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A47A93E-CED5-416E-B2D6-A93D15F9A2FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A47A93E-CED5-416E-B2D6-A93D15F9A2FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F858395F-6A8A-4596-BAC0-EAEA21D24F82} = {396D1FCD-B70C-444D-888D-9C3456551420}
+		{4F1400BE-CAFE-456B-A863-58698F32B53F} = {396D1FCD-B70C-444D-888D-9C3456551420}
+		{868F1779-0830-4550-A293-35B27B8BFB3D} = {396D1FCD-B70C-444D-888D-9C3456551420}
+		{64C8DAC9-C4AD-456C-B0E5-1AD391D6C120} = {07261C2D-3BD8-44C3-B66B-E29A08BD1AF0}
+		{18B7DC6E-6425-4F6C-AFFC-FA3C5C26B037} = {0C237327-6CB7-4856-A687-BCFA884C2FA4}
+		{AFF694EA-B296-49C8-B418-A80D50E9DAAF} = {0C237327-6CB7-4856-A687-BCFA884C2FA4}
+		{6A47A93E-CED5-416E-B2D6-A93D15F9A2FF} = {27C549E2-768B-4BFE-B8F4-4E5F2BA6C888}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A3CD8D8-0963-43C6-BB48-D18B1012EB03}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.88.91.105:8080/tfs/2017%E8%BD%AF%E4%BB%B62%E7%8F%AD%E5%AE%9E%E8%AE%AD
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ALEXFW.Smart\\ALEXFW.Smart.csproj
+		SccProjectTopLevelParentUniqueName1 = ALEXFW.sln
+		SccProjectName1 = ALEXFW.Smart
+		SccLocalPath1 = ALEXFW.Smart
+		SccProjectUniqueName2 = ALEXFW.Smart.EntityFramework\\ALEXFW.Smart.EntityFramework.csproj
+		SccProjectTopLevelParentUniqueName2 = ALEXFW.sln
+		SccProjectName2 = ALEXFW.Smart.EntityFramework
+		SccLocalPath2 = ALEXFW.Smart.EntityFramework
+		SccProjectUniqueName3 = ALEXFW.Smart.Mvc\\ALEXFW.Smart.Mvc.csproj
+		SccProjectTopLevelParentUniqueName3 = ALEXFW.sln
+		SccProjectName3 = ALEXFW.Smart.Mvc
+		SccLocalPath3 = ALEXFW.Smart.Mvc
+		SccProjectUniqueName4 = ALEXFW.CommonUtility\\ALEXFW.CommonUtility.csproj
+		SccProjectTopLevelParentUniqueName4 = ALEXFW.sln
+		SccProjectName4 = ALEXFW.CommonUtility
+		SccLocalPath4 = ALEXFW.CommonUtility
+		SccProjectUniqueName5 = ALEXFW.Entity\\ALEXFW.Entity.csproj
+		SccProjectTopLevelParentUniqueName5 = ALEXFW.sln
+		SccProjectName5 = ALEXFW.Entity
+		SccLocalPath5 = ALEXFW.Entity
+		SccProjectUniqueName6 = ALEXFW.DataAccess\\ALEXFW.DataAccess.csproj
+		SccProjectTopLevelParentUniqueName6 = ALEXFW.sln
+		SccProjectName6 = ALEXFW.DataAccess
+		SccLocalPath6 = ALEXFW.DataAccess
+		SccProjectUniqueName7 = ALEXFW.DeskTop\\ALEXFW.DeskTop.csproj
+		SccProjectTopLevelParentUniqueName7 = ALEXFW.sln
+		SccProjectName7 = ALEXFW.DeskTop
+		SccLocalPath7 = ALEXFW.DeskTop
+	EndGlobalSection
+EndGlobal

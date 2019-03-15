@@ -1,0 +1,6 @@
+d:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Smart\bin\Debug\ALEXFW.Smart.xml
+d:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Smart\bin\Debug\ALEXFW.Smart.dll
+d:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Smart\bin\Debug\ALEXFW.Smart.pdb
+d:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Smart\obj\Debug\ALEXFW.Smart.csproj.CoreCompileInputs.cache
+d:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Smart\obj\Debug\ALEXFW.Smart.dll
+d:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Smart\obj\Debug\ALEXFW.Smart.pdb

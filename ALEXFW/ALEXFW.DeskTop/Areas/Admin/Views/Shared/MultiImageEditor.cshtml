@@ -1,0 +1,97 @@
+﻿@using ALEXFW.CommonUtility
+@model MvcEditorModel
+@{
+    Layout = null;
+}
+<div id="@(Model.Metadata.ClrName)" class="row">
+    @{
+        if (Model.Value != null)
+        {
+            var imgArray = Model.Value.ToString().Split(',');
+            foreach (string item in imgArray)
+            {
+                if (!string.IsNullOrEmpty(item))
+                {
+                    <div class="col-xs-6 col-sm-2 product-create">
+                        <img src="@ImageHelper.ImageWebsite@item" alt="组图" class="img-thumbnail">
+                        <button class="product-create-close" type="button" name="removeBtn"> <i class="glyphicon glyphicon-remove"></i> </button>
+                        <button type="button" class="product-create-left"><i class="glyphicon glyphicon-arrow-left"></i></button>
+                        <button type="button" class="product-create-right"><i class="glyphicon glyphicon-arrow-right"></i></button>
+                        <input type="hidden" name="@(Model.Metadata.ClrName)_oldImg" value="@item" />
+                    </div>
+                }
+            }
+        }
+    }
+</div>
+<div id="@(Model.Metadata.ClrName)_NewImg">
+    <input type="file" name="@(Model.Metadata.ClrName)_newImg" accept="image/*"/>
+</div>
+<script type="text/javascript">
+    $(function () {
+        var container = $('#@(Model.Metadata.ClrName)');
+        container.find('.product-create-close').click(deleteImg);
+        container.find('.product-create-left').click(leftMove);
+        container.find('.product-create-right').click(rightMove);
+        var newImgContainer = $('#@(Model.Metadata.ClrName)_NewImg');
+        newImgContainer.find("input").change(selectComplete);
+
+        function selectComplete() {
+            var file = $(this);
+            var imgContainer = $('<div></div>');
+            var imageResult = file[0].files[0];
+            if (imageResult) {
+                var reader = new FileReader();
+                reader.onload = function (event) {
+                    var txt = event.target.result;
+                    var img = $('<img src="' + txt + '" alt="组图" class="img-thumbnail" style="width: 140px; height: 140px;" >');
+                    imgContainer.append(img);
+                };
+                reader.readAsDataURL(imageResult);
+            }
+            var group = $('<div class="col-xs-6 col-sm-2 product-create"></div>');
+            group.append(imgContainer);
+            var deleteBtn = $(' <button class="product-create-close" type="button" name="removeBtn"> <i class="glyphicon glyphicon-remove"></i> </button>');
+            deleteBtn.click(deleteImg);
+            var moveleft = $('<button type="button" class="product-create-left" ><i class="glyphicon glyphicon-arrow-left"></i></button>');
+            moveleft.click(leftMove);
+            var moveright = $('<button type="button" class="product-create-right"><i class="glyphicon glyphicon-arrow-right"></i></button>');
+            moveright.click(rightMove);
+            group.append(deleteBtn);
+            group.append(moveleft);
+            group.append(moveright);
+            file.detach();
+            file.hide();
+            group.append(file);
+            container.append(group);
+
+            var newFile = $('<input type="file" name="' + file.attr("name") + '" accept="imgae/*"/>');
+            newFile.change(selectComplete);
+            newImgContainer.append(newFile);
+        }
+        function rightMove() {
+            var mybox = $(this).parent();
+            var imgboxs = container.children();
+            var myIndex = imgboxs.index(mybox);
+
+            var allLength = container.children().length;
+            if (myIndex < allLength - 1) {
+                mybox.detach();
+                mybox.insertAfter(imgboxs.eq(myIndex + 1));
+            }
+        }
+        function leftMove() {
+            var mybox = $(this).parent();
+            var imgboxs = container.children();
+            var myIndex = imgboxs.index(mybox);
+
+            if (myIndex > 0) {
+                mybox.detach();
+                mybox.insertBefore(imgboxs.eq(myIndex - 1));
+            }
+        }
+        function deleteImg() {
+            $(this).parent().remove();
+        };
+    });
+</script>

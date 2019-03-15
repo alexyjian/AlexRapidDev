@@ -1,0 +1,112 @@
+﻿@model IEntityEditModel
+@{
+    ViewBag.Title = (Model.Item.Index == Guid.Empty ? "新增 " : "编辑 ") + Model.Metadata.Name;
+    var area = ViewContext.RouteData.DataTokens["Area"];
+    if (area == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Areas/" + area + "/Views/Shared/_adminLayout.cshtml";
+    }
+}
+
+
+@Scripts.Render("~/Scripts/jquery-ui-1.12.1.min.js")
+<script src="~/Scripts/tinymce/tinymce.min.js"></script>
+<script src="~/Scripts/tinymce/jquery.tinymce.min.js"></script>
+<link href="~/Content/jstree.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+<div class="modal fade" id="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="dialogTitle">保存结果</h4>
+            </div>
+            <div class="modal-body" id="dialogContent">
+            </div>
+            <div class="modal-footer">
+                <button id="dialogOK" type="button" class="btn btn-primary">确认</button>
+                <button id="dialogCancel" type="button" class="btn btn-default">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<ol class="breadcrumb" style ="background-color:white">
+    <li>
+        <a href="#">首页</a>
+    </li>
+    <li>
+        <a href="@Html.Raw(Url.Action("Index"))">@Model.Metadata.Name</a>
+    </li>
+    <li class="active">@(Model.Item.Index == Guid.Empty ? "新建" : "编辑")</li>
+</ol>
+<div class="panel panel-default margin-10">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+        <strong class="font-size20">@(Model.Item.Index == Guid.Empty ? "新建" : "编辑")</strong>
+    </div>
+    <div class="panel-body">
+        <form id="form" class="form-horizontal" role="form" action="@Url.Action("Update")" method="post">
+            @foreach (var property in Model.Properties)
+            {
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">@property.Name</label>
+                    <div class="col-sm-8">
+                        @Html.Editor(Model.Item, property, property.GetValue(Model.Item))
+                    </div>
+                </div>
+            }
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" class="btn btn-primary" value="保存"/>
+                    <a href="@Html.Raw(Url.Action("Index"))" class="btn btn-default">返回</a>
+                    <input name="id" type="hidden" value="@Model.Item.Index"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+<script src="~/Scripts/jstree.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.form.js"></script>
+<script type="text/javascript">
+    function dialog(title, content, ok) {
+        $('#dialogTitle').html(title);
+        $('#dialogContent').html(content);
+        $('#dialog').modal('show');
+        $('#dialogOK').unbind('click');
+        if (ok == undefined)
+            $('#dialogOK').click(function() {
+                $('#dialog').modal('hide');
+            });
+        else
+            $('#dialogOK').click(ok);
+    }
+
+    $('#dialogCancel').click(function() {
+        $('#dialog').modal('hide');
+    });
+    $('#dialog').modal({ show: false });
+
+    //手动更新CKEDITOR字段
+    function CKupdate() {
+        for (instance in CKEDITOR.instances)
+            CKEDITOR.instances[instance].updateElement();
+    }
+
+    $('#form').ajaxForm({
+        beforeSerialize: function() {
+            CKupdate();
+        },
+        error: function(result) {
+            dialog('结果显示', '<p>保存失败，原因：' + result.responseText + '。</p>', function() { $('#dialog').modal('hide'); });
+        },
+        success: function(result) {
+            dialog('结果显示', '<p>保存成功，是否返回列表视图？</p>', function() { window.location = '@Url.Action("Index")'; });
+        }
+    });
+</script>

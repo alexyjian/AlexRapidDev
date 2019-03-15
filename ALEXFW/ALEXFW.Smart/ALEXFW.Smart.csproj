@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F858395F-6A8A-4596-BAC0-EAEA21D24F82}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System</RootNamespace>
+    <AssemblyName>ALEXFW.Smart</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\ALEXFW.Smart.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\ALEXFW.Smart.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComponentModel\DataAnnotations\AuthenticationRequiredMode.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\CustomDataType.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\CustomDataTypeAttribute.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\DistinctAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComponentModel\DataAnnotations\EntityAuthenticationAttribute.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\ExpendEntityAttribute.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\HideAttribute.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\ParentAttribute.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\PasswordAttribute.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\PropertyAuthenticationAttribute.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\SearchableAttribute.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\ValueFilterAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComponentModel\EntityEditModel.cs" />
+    <Compile Include="ComponentModel\EntityParentModel.cs" />
+    <Compile Include="ComponentModel\EntitySearchItem.cs" />
+    <Compile Include="ComponentModel\EntitySearchModel.cs" />
+    <Compile Include="ComponentModel\IEntityViewButton.cs" />
+    <Compile Include="ComponentModel\EntityViewModel.cs" />
+    <Compile Include="ComponentModel\IEntityEditModel.cs" />
+    <Compile Include="ComponentModel\IEntityViewModel.cs" />
+    <Compile Include="ComponentModel\IPagination.cs" />
+    <Compile Include="ComponentModel\IViewButton.cs" />
+    <Compile Include="ComponentModel\NotifyBase.cs" />
+    <Compile Include="ComponentModel\Pagination.cs" />
+    <Compile Include="ComponentModel\IValueFilter.cs" />
+    <Compile Include="Data\Entity\EntityBase.cs" />
+    <Compile Include="Data\Entity\EntityDescriptorContext.cs" />
+    <Compile Include="Data\Entity\IEntity.cs" />
+    <Compile Include="Data\Entity\IEntityContext.cs" />
+    <Compile Include="Data\Entity\IEntityContextBuilder.cs" />
+    <Compile Include="Data\Entity\IEntityQueryable.cs" />
+    <Compile Include="Data\Entity\IRoleEntity.cs" />
+    <Compile Include="Data\Entity\Metadata\EntityAnalyzer.cs" />
+    <Compile Include="Data\Entity\Metadata\ClrEntityMetadata.cs" />
+    <Compile Include="Data\Entity\Metadata\EntityMetadataBase.cs" />
+    <Compile Include="Data\Entity\Metadata\IEntityAnalyzer.cs" />
+    <Compile Include="Data\Entity\Metadata\IEntityMetadata.cs" />
+    <Compile Include="Data\Entity\Metadata\IPropertyMetadata.cs" />
+    <Compile Include="Data\Entity\Metadata\PropertyExtension.cs" />
+    <Compile Include="Data\Entity\Metadata\ClrPropertyMetadata.cs" />
+    <Compile Include="Data\Entity\IPassword.cs" />
+    <Compile Include="Data\Entity\Metadata\PropertyMetadataBase.cs" />
+    <Compile Include="Data\Entity\MixedEntityContextBuilder.cs" />
+    <Compile Include="Data\Entity\NotifyEntityBase.cs" />
+    <Compile Include="Data\Entity\UserBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime\Serialization\ALEXFWSerializer.cs" />
+    <Compile Include="Runtime\Serialization\EntitySerializer.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist "$(SolutionDir)Bin" md "$(SolutionDir)Bin"
+copy "$(TargetPath)" "$(SolutionDir)Bin"
+copy "$(TargetDir)$(TargetName).pdb" "$(SolutionDir)Bin"
+copy "$(TargetDir)$(TargetName).xml" "$(SolutionDir)Bin"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

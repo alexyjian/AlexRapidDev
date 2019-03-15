@@ -1,0 +1,209 @@
+﻿@import url('../../../Content/bootstrap.min.css');
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Microsoft YaHei';
+}
+
+.input {
+    border-radius: 4px;
+    display: inline-block;
+    margin: 1em;
+    max-height: 50px;
+    max-width: 400px;
+    position: relative;
+    vertical-align: top;
+    width: calc(98%);
+    z-index: 1;
+}
+
+.input__field {
+    -webkit-appearance: none;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 0;
+    color: #aaa;
+    display: block;
+    float: right;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0.8em;
+    position: relative;
+    width: 60%;
+    /* for box shadows to show on iOS */
+}
+
+.input__field:focus { outline: none; }
+
+.input__label {
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    color: #6a7989;
+    display: inline-block;
+    float: right;
+    font-size: 70.25%;
+    font-weight: bold;
+    height: 50px;
+    padding: 0;
+    user-select: none;
+    width: 40%;
+}
+
+.input__label-content {
+    display: block;
+    padding: 1.6em 0;
+    position: relative;
+    width: 100%;
+}
+
+.graphic {
+    fill: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+a,
+a:focus { outline: none; }
+
+.form-sign {
+    background-color: rgba(106, 121, 137, 0.5);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #606060;
+    margin: 200px auto 0 auto;
+    padding: 10px;
+    position: relative;
+    width: 400px;
+}
+
+.form-sign .backhome {
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    -webkit-transition: all .2s;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 30px;
+    transition: all .2s;
+}
+
+.form-sign .backhome:hover {
+    color: #f2f2f2;
+    text-shadow: 2px 2px 2px #111;
+}
+
+.form-sign h1 {
+    background-color: #fff;
+    box-shadow: 2px 2px 5px #000;
+    color: #cccccc;
+    left: -20px;
+    padding: 10px 5px;
+    position: relative;
+    text-align: center;
+}
+
+.form-sign h1 .corner {
+    border-color: transparent #ccc #ccc transparent;
+    border-style: solid;
+    border-width: 5px;
+    display: block;
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: -10px;
+    width: 0;
+}
+
+.form-sign .sign-error { color: #fff200; }
+
+.form-sign .remember { color: #fff; }
+
+.form-sign button.btn-default {
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    -webkit-transition: all .2s;
+    background-color: #fff;
+    border-bottom: 3px solid #6a7989;
+    border-left: 0;
+    border-right: 3px solid #6a7989;
+    border-top: 0;
+    display: block;
+    font-size: 18px;
+    transition: all .2s;
+}
+
+.form-sign button.btn-default:hover { background-color: #f0f0f0; }
+
+.form-sign a { color: #fff; }
+
+.input--kaede {
+    background: #EFEEEE;
+    display: block;
+    margin: 1em auto 2em;
+    overflow: hidden;
+}
+
+.input__field--kaede {
+    -webkit-transition: -webkit-transform 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    background: #fff;
+    color: #9DABBA;
+    height: 100%;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    transition: transform 0.5s;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    width: 60%;
+}
+
+.input__label--kaede {
+    -webkit-transform-origin: 0% 50%;
+    -webkit-transition: -webkit-transform 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    cursor: text;
+    display: block;
+    height: 100%;
+    text-align: left;
+    transform-origin: 0% 50%;
+    transition: transform 0.5s;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    width: 100%;
+    z-index: 10;
+}
+
+.input__label-content--kaede {
+    font-size: 18px;
+    line-height: 50px;
+    padding: 0;
+    text-indent: 1em;
+}
+
+.input__field--kaede:focus,
+.input--filled .input__field--kaede {
+    -webkit-transform: translate3d(100%, 0, 0);
+    -webkit-transition-delay: 0.06s;
+    transform: translate3d(100%, 0, 0);
+    transition-delay: 0.06s;
+}
+
+.input__field--kaede:focus + .input__label--kaede,
+.input--filled .input__label--kaede {
+    -webkit-transform: translate3d(60%, 0, 0);
+    pointer-events: none;
+    transform: translate3d(60%, 0, 0);
+}
+
+@media screen and (max-width: 34em) {
+    .input__field--kaede:focus + .input__label--kaede,
+    .input--filled .input__label--kaede {
+        -webkit-transform: translate3d(65%, 0, 0) scale3d(0.65, 0.65, 1);
+        pointer-events: none;
+        transform: translate3d(65%, 0, 0) scale3d(0.65, 0.65, 1);
+    }
+}
+/*# sourceMappingURL=sign_Style.css.map */

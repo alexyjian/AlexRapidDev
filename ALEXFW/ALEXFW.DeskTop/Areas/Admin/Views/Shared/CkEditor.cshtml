@@ -1,0 +1,5 @@
+﻿@model MvcEditorModel
+<textarea id="@Model.Metadata.ClrName" name="@Model.Metadata.ClrName" @Html.Raw(Model.Metadata.IsRequired ? "" : "required=\"required\"")>@Model.Value</textarea>
+<script>
+    CKEDITOR.replace('@Model.Metadata.ClrName', { customConfig: 'configForMaintainService.js' });
+</script>

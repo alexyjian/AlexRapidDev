@@ -1,0 +1,101 @@
+﻿<br />
+<div class="panel-group admin-sideMenu" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-v">
+        <div class="panel-heading" role="tab" id="headingUser">
+            <h4 class="panel-title" style="color:#333">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseUser" aria-expanded="true" aria-controls="collapseUser">
+                    <i class="glyphicon glyphicon-user"></i>  测试菜单
+                </a>
+            </h4>
+        </div>
+        <div id="collapseUser" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingUser">
+            <div class="panel-body">
+                <a href="@Url.Action("Index","Category")" title="" target="layout">商品分类</a>
+                <a href="@Url.Action("Index","Product")" title="" target="layout">商品</a>
+                <a href="@Url.Action("Index","Member")" title="" target="layout">用户管理 </a>
+                <a href="@Url.Action("Index","department")" title="" target="layout">部门管理 </a>
+                <a href="@Url.Action("Index","admin")" title="" target="layout">管理员 </a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-v">
+        <div class="panel-heading" role="tab" id="headingUser">
+            <h4 class="panel-title" style="color:#333">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseUserGroup" aria-expanded="true" aria-controls="collapseUserGroup">
+                    <i class="glyphicon glyphicon-folder-open"></i>  会员组管理
+                </a>
+            </h4>
+        </div>
+        <div id="collapseUserGroup" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingUser">
+            <div class="panel-body">
+                <a href="@Url.Action("Index","MemberGroup")" title="" target="layout">会员组管理</a>
+                <a href="@Url.Action("Search", "MemberGroup")" title="" target="layout">会员组搜索</a>
+                <a href="@Url.Action("Create", "MemberGroup")" title="" target="layout">会员组创建</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-v">
+        <div class="panel-heading" role="tab" id="headingUser">
+            <h4 class="panel-title" style="color:#333">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseQrCode" aria-expanded="true" aria-controls="collapseQrCode">
+                    <i class="glyphicon glyphicon-qrcode"></i>  二维码管理
+                </a>
+            </h4>
+        </div>
+        <div id="collapseQrCode" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingUser">
+            <div class="panel-body" style="color:#333">
+                <a href="@Url.Action("Index","QrCode")" title="" target="layout">二维码管理</a>
+                <a href="@Url.Action("Search", "QrCode")" title="" target="layout">二维码搜索</a>
+                <a href="@Url.Action("Create", "QrCode")" title="" target="layout">二维码创建</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-v">
+        <div class="panel-heading" role="tab" id="headingRecharge">
+            <h4 class="panel-title" style="color:#333">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseRecharge" aria-expanded="false" aria-controls="collapseRecharge">
+                    <i class="glyphicon glyphicon-yen"></i>  充值管理
+                </a>
+            </h4>
+        </div>
+        <div id="collapseRecharge" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingRecharge">
+            <div class="panel-body">
+                <a href="@Url.Action("Index", "Payment")" title="" target="layout">充值记录</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-v">
+        <div class="panel-heading" role="tab" id="headingAdmin">
+            <h4 class="panel-title" style="color:#333">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAdmin" aria-expanded="false" aria-controls="collapseAdmin">
+                    <i class="glyphicon glyphicon-lock"></i>   管理员管理
+                </a>
+            </h4>
+        </div>
+        <div id="collapseAdmin" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAdmin">
+            <div class="panel-body" style="color:#333">
+                <a href="@Url.Action("Index","Admin")" title="" target="layout">管理员管理</a>
+                <a href="@Url.Action("Search", "Admin")" title="" target="layout">管理员搜索</a>
+                <a href="@Url.Action("Create", "Admin")" title="" target="layout">管理员创建</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-v">
+        <div class="panel-heading" role="tab" id="headingAdmin">
+            <h4 class="panel-title" style="color:#333">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSystem" aria-expanded="false" aria-controls="collapseSystem">
+                    <i class="glyphicon glyphicon-cog"></i>   系统设置
+                </a>
+            </h4>
+        </div>
+        <div id="collapseSystem" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAdmin">
+            <div class="panel-body">
+                <a href="@Url.Action("Index","WechatMenu")" title="" target="layout">微信自定义菜单</a>
+                <a href="@Url.Action("Create", "WechatMenu")" title="" target="layout">自定义菜单创建</a>
+                <a href="@Url.Action("Index", "WechatTextMsg")" target="layout">自动回复文本消息</a>
+                <a href="@Url.Action("Create", "WechatTextMsg")" target="layout">文本消息创建</a>
+            </div>
+        </div>
+    </div>
+</div>

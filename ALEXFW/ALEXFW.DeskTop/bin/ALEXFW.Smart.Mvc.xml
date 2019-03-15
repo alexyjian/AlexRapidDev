@@ -1,0 +1,1688 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ALEXFW.Smart.Mvc</name>
+    </assembly>
+    <members>
+        <member name="T:System.ComponentModel.MvcEntityViewButton">
+            <summary>
+            Mvc item button.
+            Use for mvc viewlist page.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcEntityViewButton.Name">
+            <summary>
+            Get or set the name of button.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcEntityViewButton.Icon">
+            <summary>
+            Get or set the icon url.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcEntityViewButton.Tooltip">
+            <summary>
+            Get or set the tooltip.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcEntityViewButton.Link">
+            <summary>
+            Get or set the button link.
+            If value is not null, the button will be disabled.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcEntityViewButton.GetLink">
+            <summary>
+            Get or set the link delegate.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.MvcEntityViewButton.SetTarget(System.IServiceProvider,System.Data.Entity.IEntity)">
+            <summary>
+            Set the target of button.
+            </summary>
+            <param name="provider">Service provider.</param>
+            <param name="entity">Dependency entity.</param>
+        </member>
+        <member name="P:System.ComponentModel.MvcEntityViewButton.Target">
+            <summary>
+            Get the target of the button.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.MvcEntityViewButtonLinkDelegate">
+            <summary>
+            Mvc entity button link delegate.
+            </summary>
+            <param name="url">Mvc url helper.</param>
+            <param name="entity">Dependency entity.</param>
+            <returns>Return url link.</returns>
+        </member>
+        <member name="T:System.ComponentModel.MvcRouteAttribute">
+            <summary>
+            Mvc route for entity attribute.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.MvcRouteAttribute.#ctor(System.String)">
+            <summary>
+            Initialize mvc route attribute.
+            </summary>
+            <param name="area">Area name of entity controller.</param>
+        </member>
+        <member name="M:System.ComponentModel.MvcRouteAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Initialize mvc route attribute.
+            </summary>
+            <param name="area">Area name of entity controller.</param>
+            <param name="controller">Controller name of entity controller.</param>
+        </member>
+        <member name="M:System.ComponentModel.MvcRouteAttribute.#ctor">
+            <summary>
+            Initialize mvc route attribute.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcRouteAttribute.Area">
+            <summary>
+            Get or set the area name of mvc.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcRouteAttribute.Controller">
+            <summary>
+            Get or set the controller name of mvc.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.MvcEditorModel">
+            <summary>
+            Mvc editor model.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcEditorModel.Value">
+            <summary>
+            Get or set the value.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcEditorModel.Entity">
+            <summary>
+            Get or set the entity.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcEditorModel.Metadata">
+            <summary>
+            Get or set the property metadata.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.MvcViewButton">
+            <summary>
+            Mvc view button.
+            Use for mvc viewlist page.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcViewButton.Name">
+            <summary>
+            Get or set the name of button.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcViewButton.Icon">
+            <summary>
+            Get or set the icon url.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcViewButton.Tooltip">
+            <summary>
+            Get or set the tooltip.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcViewButton.StaticLink">
+            <summary>
+            Get or set the static link.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.MvcViewButton.GetLink">
+            <summary>
+            Get or set the link delegate.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.MvcViewButton.SetTarget(System.IServiceProvider)">
+            <summary>
+            Set the target of button.
+            </summary>
+            <param name="provider">Service provider.</param>
+        </member>
+        <member name="P:System.ComponentModel.MvcViewButton.Target">
+            <summary>
+            Get the target of the button.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.MvcViewButtonLinkDelegate">
+            <summary>
+            Mvc view button link delegate.
+            </summary>
+            <param name="url">Mvc url helper.</param>
+            <returns>Return url link.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.Converter.CollectionConverter">
+            <summary>
+            Entity collection converter.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.CollectionConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert an object of the given type to the type of this converter, using the specified context.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="sourceType">A System.Type that represents the type you want to convert from.</param>
+            <returns>true if this converter can perform the conversion; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.CollectionConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert the object to the specified type, using the specified context.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="destinationType">A System.Type that represents the type you want to convert to.</param>
+            <returns>true if this converter can perform the conversion; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.CollectionConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts the given object to the type of this converter, using the specified context and culture information.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="culture">The System.Globalization.CultureInfo to use as the current culture.</param>
+            <param name="value">The System.Object to convert.</param>
+            <returns>An System.Object that represents the converted value.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.CollectionConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the given value object to the specified type, using the specified context and culture information.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="culture">A System.Globalization.CultureInfo. If null is passed, the current culture is assumed.</param>
+            <param name="value">The System.Object to convert.</param>
+            <param name="destinationType">The System.Type to convert the value parameter to.</param>
+            <returns>An System.Object that represents the converted value.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.Converter.DateTimeConverter">
+            <summary>
+            DateTime converter.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.DateTimeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert an object of the given type to the type of this converter, using the specified context.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="sourceType">A System.Type that represents the type you want to convert from.</param>
+            <returns>true if this converter can perform the conversion; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.DateTimeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert the object to the specified type, using the specified context.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="destinationType">A System.Type that represents the type you want to convert to.</param>
+            <returns>true if this converter can perform the conversion; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.DateTimeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts the given object to the type of this converter, using the specified context and culture information.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="culture">The System.Globalization.CultureInfo to use as the current culture.</param>
+            <param name="value">The System.Object to convert.</param>
+            <returns>An System.Object that represents the converted value.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.DateTimeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the given value object to the specified type, using the specified context and culture information.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="culture">A System.Globalization.CultureInfo. If null is passed, the current culture is assumed.</param>
+            <param name="value">The System.Object to convert.</param>
+            <param name="destinationType">The System.Type to convert the value parameter to.</param>
+            <returns>An System.Object that represents the converted value.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.Converter.EntityConverter">
+            <summary>
+            Entity converter.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.EntityConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert an object of the given type to the type of this converter, using the specified context.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="sourceType">A System.Type that represents the type you want to convert from.</param>
+            <returns>true if this converter can perform the conversion; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.EntityConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert the object to the specified type, using the specified context.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="destinationType">A System.Type that represents the type you want to convert to.</param>
+            <returns>true if this converter can perform the conversion; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.EntityConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts the given object to the type of this converter, using the specified context and culture information.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="culture">The System.Globalization.CultureInfo to use as the current culture.</param>
+            <param name="value">The System.Object to convert.</param>
+            <returns>An System.Object that represents the converted value.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.EntityConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the given value object to the specified type, using the specified context and culture information.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="culture">A System.Globalization.CultureInfo. If null is passed, the current culture is assumed.</param>
+            <param name="value">The System.Object to convert.</param>
+            <param name="destinationType">The System.Type to convert the value parameter to.</param>
+            <returns>An System.Object that represents the converted value.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.Converter.EnumConverter">
+            <summary>
+            Enum converter.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.EnumConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert an object of the given type to the type of this converter, using the specified context.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="sourceType">A System.Type that represents the type you want to convert from.</param>
+            <returns>true if this converter can perform the conversion; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.EnumConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert the object to the specified type, using the specified context.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="destinationType">A System.Type that represents the type you want to convert to.</param>
+            <returns>true if this converter can perform the conversion; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.EnumConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the given value object to the specified type, using the specified context and culture information.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="culture">A System.Globalization.CultureInfo. If null is passed, the current culture is assumed.</param>
+            <param name="value">The System.Object to convert.</param>
+            <param name="destinationType">The System.Type to convert the value parameter to.</param>
+            <returns>An System.Object that represents the converted value.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.EnumConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts the given object to the type of this converter, using the specified context and culture information.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="culture">The System.Globalization.CultureInfo to use as the current culture.</param>
+            <param name="value">The System.Object to convert.</param>
+            <returns>An System.Object that represents the converted value.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.Converter.SexConverter">
+            <summary>
+            Sex converter.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Converter.SexConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the given value object to the specified type, using the specified context and culture information.
+            </summary>
+            <param name="context">An System.ComponentModel.ITypeDescriptorContext that provides a format context.</param>
+            <param name="culture">A System.Globalization.CultureInfo. If null is passed, the current culture is assumed.</param>
+            <param name="value">The System.Object to convert.</param>
+            <param name="destinationType">The System.Type to convert the value parameter to.</param>
+            <returns>An System.Object that represents the converted value.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityAuthorizeAttribute">
+            <summary>
+            Entity authorize attribute base.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityAuthorizeAttribute.#ctor">
+            <summary>
+            Initialize entity authorize attribute.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityAuthorizeAttribute.#ctor(System.ComponentModel.DataAnnotations.AuthenticationRequiredMode,System.Object[])">
+            <summary>
+            Initialize entity authorize attribute.
+            </summary>
+            <param name="mode">Custom authorize mode.</param>
+            <param name="roles">Custom authorize roles.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityAuthorizeAttribute.#ctor(System.Web.Mvc.EntityAuthorizeAction)">
+            <summary>
+            Initialize entity authorize attribute.
+            </summary>
+            <param name="action">Action of entity authorize.</param>
+        </member>
+        <member name="P:System.Web.Mvc.EntityAuthorizeAttribute.CustomRolesRequiredMode">
+            <summary>
+            Get the custom authorize mode.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityAuthorizeAttribute.CustomRoles">
+            <summary>
+            Get the custom authorize roles.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityAuthorizeAttribute.Action">
+            <summary>
+            Get the action of entity authorize.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityAuthorizeAttribute.EntityBuilder">
+            <summary>
+            Get the context builder of entity.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityAuthorizeAttribute.RouteData">
+            <summary>
+            Get the route data.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityAuthorizeAttribute.Metadata">
+            <summary>
+            Get the entity metadata.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityAuthorizeAttribute.AuthorizeCore(System.Web.HttpContextBase)">
+            <summary>
+            When overridden, provides an entry point for custom authorization checks.
+            </summary>
+            <param name="httpContext">The HTTP context, which encapsulates all HTTP-specific information about an individual HTTP request.</param>
+            <returns>true if the user is authorized; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityAuthorizeAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)">
+            <summary>
+            Called when authorization is required.
+            </summary>
+            <param name="filterContext">The filter context.</param>
+        </member>
+        <member name="T:System.Web.Mvc.EntityAuthorizeAction">
+            <summary>
+            Entity authorize action
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.EntityAuthorizeAction.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.EntityAuthorizeAction.View">
+            <summary>
+            View.
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.EntityAuthorizeAction.Create">
+            <summary>
+            Create.
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.EntityAuthorizeAction.Edit">
+            <summary>
+            Edit.
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.EntityAuthorizeAction.Remove">
+            <summary>
+            Remove
+            </summary>
+        </member>
+        <member name="T:System.Web.Mvc.ControllerExtensions">
+            <summary>
+            Controller extensions.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.ControllerExtensions.GetUntitils``1(System.Web.Mvc.Controller)">
+            <summary>
+            Get untitils for controller.
+            </summary>
+            <typeparam name="T">Type of entity.</typeparam>
+            <param name="controller">Controller.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityControllerUnitils`1">
+            <summary>
+            Unitils of entity controller.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.#ctor(System.Web.Mvc.Controller,System.Data.Entity.IEntityContextBuilder)">
+            <summary>
+            Initialize unitils.
+            </summary>
+            <param name="controller">Controller.</param>
+            <param name="builder">Entity context builder.</param>
+        </member>
+        <member name="P:System.Web.Mvc.EntityControllerUnitils`1.Controller">
+            <summary>
+            Get the mvc controller.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityControllerUnitils`1.EntityBuilder">
+            <summary>
+            Get the entity context builder.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityControllerUnitils`1.EntityContext">
+            <summary>
+            Get the entity context.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityControllerUnitils`1.EntityQueryable">
+            <summary>
+            Get the context of entity.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityControllerUnitils`1.Metadata">
+            <summary>
+            Get the entity metadata.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityControllerUnitils`1.PageSize">
+            <summary>
+            Get or set the page size options.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetIndexAction(System.Web.Mvc.EntityControllerUnitils{`0}.GetIndexModelDelegate,System.Web.Mvc.EntityControllerUnitils{`0}.GetSearchItemDelegate,System.Web.Mvc.EntityControllerUnitils{`0}.GetParentModelDelegate,System.Int32,System.Int32,System.String,System.Nullable{System.Guid},System.Boolean)">
+            <summary>
+            Get the action result of index page.
+            </summary>
+            <param name="modelDelegate">Get index model delegate.</param>
+            <param name="searchDelegate">Get search item delegate.</param>
+            <param name="parentDelegate">Get parent model delegate.</param>
+            <param name="page">Number of current page.</param>
+            <param name="size">Number of entities per page.</param>
+            <param name="parentpath">Path of parent for entity.</param>
+            <param name="parentid">Parent id.</param>
+            <param name="search">Is a search result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetIndexModel(System.Linq.IQueryable{`0},System.Int32,System.Int32)">
+            <summary>
+            Get the index model.
+            </summary>
+            <param name="queryable">Queryable of TEntity.</param>
+            <param name="page">Number of current page.</param>
+            <param name="size">Number of entities per page.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityControllerUnitils`1.GetIndexModelDelegate">
+            <summary>
+            Get index model delegate.
+            </summary>
+            <param name="queryable">Entity queryable data.</param>
+            <param name="page">Number of current page.</param>
+            <param name="size">Number of entities per page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetSearchItem(System.Linq.IQueryable{`0}@)">
+            <summary>
+            Get search item in request.
+            </summary>
+            <param name="queryable">Queryable of TEntity.</param>
+            <returns>Search item of TEntity.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityControllerUnitils`1.GetSearchItemDelegate">
+            <summary>
+            Get search item delegate.
+            </summary>
+            <param name="queryable">Queryable of TEntity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetParentModel(System.Nullable{System.Guid})">
+            <summary>
+            Get parent model.
+            </summary>
+            <param name="selected">Selected parent id.</param>
+            <returns>Parent model.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityControllerUnitils`1.GetParentModelDelegate">
+            <summary>
+            Get parent model delegate.
+            </summary>
+            <param name="selected">Selected parent id.</param>
+            <returns>Parent model.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetCreateAction(System.Web.Mvc.EntityControllerUnitils{`0}.GetCreateModelDelegate,System.Nullable{System.Guid})">
+            <summary>
+            Create entity page.
+            </summary>
+            <param name="modelDelegate">Get create model delegate.</param>
+            <param name="parent">Parent id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetCreateModel(System.Nullable{System.Guid})">
+            <summary>
+            Get create action model.
+            </summary>
+            <param name="parent">Parent id.</param>
+            <returns>Edit model with new entity item of TEntity.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityControllerUnitils`1.GetCreateModelDelegate">
+            <summary>
+            Get create action model delegate.
+            </summary>
+            <param name="parent">Parent id.</param>
+            <returns>Edit model with new entity item of TEntity.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetDetailAction(System.Web.Mvc.EntityControllerUnitils{`0}.GetDetailModelDelegate,System.Guid)">
+            <summary>
+            Entity detail page.
+            </summary>
+            <param name="modelDelegate">Get detail model delegate.</param>
+            <param name="id">Entity id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetDetailModel(System.Guid)">
+            <summary>
+            Get detail action model.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Edit model with detail properties of TEntity.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityControllerUnitils`1.GetDetailModelDelegate">
+            <summary>
+            Get detail action model delegate.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Edit model with detail properties of TEntity.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetEditAction(System.Web.Mvc.EntityControllerUnitils{`0}.GetEditModelDelegate,System.Guid)">
+            <summary>
+            Edit entity page.
+            </summary>
+            <param name="modelDelegate">Get edit model delegate.</param>
+            <param name="id">Entity id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetEditModel(System.Guid)">
+            <summary>
+            Get edit action model.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Edit model of TEntity.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityControllerUnitils`1.GetEditModelDelegate">
+            <summary>
+            Get edit action model delegate.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Edit model of TEntity.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetRemoveAction(System.Web.Mvc.EntityControllerUnitils{`0}.RemoveCoreDelegate,System.Guid)">
+            <summary>
+            Remove entity.
+            </summary>
+            <param name="coreDelegate">Get remove core delegate.</param>
+            <param name="id">Entity id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.RemoveCore(System.Guid)">
+            <summary>
+            Remoce action core method.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>True if success, otherwise is false.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityControllerUnitils`1.RemoveCoreDelegate">
+            <summary>
+            Remoce action core delegate.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>True if success, otherwise is false.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetUpdateAction(System.Web.Mvc.EntityControllerUnitils{`0}.UpdateCoreDelegate,System.Web.Mvc.EntityControllerUnitils{`0}.UpdatePropertyDelegate,System.Guid)">
+            <summary>
+            Get update action result.
+            </summary>
+            <param name="coreDelegate">Get update core delegate.</param>
+            <param name="propertyDelegate">Get property delegate.</param>
+            <param name="id">Entity id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.UpdateCore(System.Web.Mvc.EntityControllerUnitils{`0}.UpdatePropertyDelegate,`0)">
+            <summary>
+            Update action core method.
+            </summary>
+            <param name="propertyDelegate">Get property delegate.</param>
+            <param name="entity">Entity to edit or create.</param>
+            <returns>True if success, otherwise is false.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.UpdateProperty(`0,System.Data.Entity.Metadata.IPropertyMetadata)">
+            <summary>
+            Update property for entity.
+            </summary>
+            <param name="entity">Entity to update.</param>
+            <param name="propertyMetadata">Property metadata.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityControllerUnitils`1.UpdateCoreDelegate">
+            <summary>
+            Update action core delegate.
+            </summary>
+            <param name="propertyDelegate">Get property delegate.</param>
+            <param name="entity">Entity to edit or create.</param>
+            <returns>True if success, otherwise is false.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityControllerUnitils`1.UpdatePropertyDelegate">
+            <summary>
+            Update property for entity delegate.
+            </summary>
+            <param name="entity">Entity to update.</param>
+            <param name="propertyMetadata">Property metadata.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetSelectorAction(System.Web.Mvc.EntityControllerUnitils{`0}.GetIndexModelDelegate,System.Web.Mvc.EntityControllerUnitils{`0}.GetSearchItemDelegate,System.Web.Mvc.EntityControllerUnitils{`0}.GetParentModelDelegate,System.Int32,System.Int32,System.String,System.Nullable{System.Guid},System.Boolean)">
+            <summary>
+            Selector page.
+            </summary>
+            <param name="modelDelegate">Get index model delegate.</param>
+            <param name="searchDelegate">Get search item delegate.</param>
+            <param name="parentDelegate">Get parent model delegate.</param>
+            <param name="page">Number of current page.</param>
+            <param name="size">Number of entities per page.</param>
+            <param name="parentpath">Path of parent for entity.</param>
+            <param name="parentid">Parent id.</param>
+            <param name="search">Is a search result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetMultipleSelectorAction(System.Web.Mvc.EntityControllerUnitils{`0}.GetIndexModelDelegate,System.Web.Mvc.EntityControllerUnitils{`0}.GetSearchItemDelegate,System.Web.Mvc.EntityControllerUnitils{`0}.GetParentModelDelegate,System.Int32,System.Int32,System.String,System.Nullable{System.Guid},System.Boolean)">
+            <summary>
+            Multiple selector page.
+            </summary>
+            <param name="modelDelegate">Get index model delegate.</param>
+            <param name="searchDelegate">Get search item delegate.</param>
+            <param name="parentDelegate">Get parent model delegate.</param>
+            <param name="page">Number of current page.</param>
+            <param name="size">Number of entities per page.</param>
+            <param name="parentpath">Path of parent for entity.</param>
+            <param name="parentid">Parent id.</param>
+            <param name="search">Is a search result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerUnitils`1.GetSearchAction(System.String)">
+            <summary>
+            Search page.
+            </summary>
+            <param name="actionName">Action name that jump to after search.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityController`1">
+            <summary>
+            Entity controller with actions.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityController`1.Metadata">
+            <summary>
+            Metadata of entity.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityController`1.PageSize">
+            <summary>
+            Get or set default page size for this controller.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityController`1.EntityContext">
+            <summary>
+            Get the context of entity.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityController`1.EntityQueryable">
+            <summary>
+            Get the context of entity.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityController`1.Untils">
+            <summary>
+            Get the untils of entity controller.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.#ctor(System.Data.Entity.IEntityContextBuilder)">
+            <summary>
+            Initialize entity controller.
+            </summary>
+            <param name="builder">Context builder of entity.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.Index(System.Int32,System.Int32,System.String,System.Nullable{System.Guid},System.Boolean)">
+            <summary>
+            Entity list page.
+            </summary>
+            <param name="page">Number of current page.</param>
+            <param name="size">Number of entities per page.</param>
+            <param name="parentpath">Path of parent for entity.</param>
+            <param name="parentid">Parent id.</param>
+            <param name="search">Is a search result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.GetSearchItem(System.Linq.IQueryable{`0}@)">
+            <summary>
+            Get search item in request.
+            </summary>
+            <param name="queryable">Queryable of TEntity.</param>
+            <returns>Search item of TEntity.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.GetIndexModel(System.Linq.IQueryable{`0},System.Int32,System.Int32)">
+            <summary>
+            Get index action model.
+            </summary>
+            <param name="queryable">Queryable object of TEntity.</param>
+            <param name="page">Current page.</param>
+            <param name="size">Current page size.</param>
+            <returns>View model of TEntity.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.GetParentModel(System.Nullable{System.Guid})">
+            <summary>
+            Get parent model.
+            </summary>
+            <param name="selected">Selected parent id.</param>
+            <returns>Parent model.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.Create(System.Nullable{System.Guid})">
+            <summary>
+            Create entity page.
+            </summary>
+            <param name="parent">Parent id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.GetCreateModel(System.Nullable{System.Guid})">
+            <summary>
+            Get create action model.
+            </summary>
+            <param name="parent">Parent id.</param>
+            <returns>Edit model with new entity item of TEntity.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.Detail(System.Guid)">
+            <summary>
+            Entity detail page.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.GetDetailModel(System.Guid)">
+            <summary>
+            Get detail action model.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Edit model with detail properties of TEntity.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.Edit(System.Guid)">
+            <summary>
+            Edit entity page.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.GetEditModel(System.Guid)">
+            <summary>
+            Get edit action model.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Edit model of TEntity.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.Remove(System.Guid)">
+            <summary>
+            Remove entity.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.RemoveCore(System.Guid)">
+            <summary>
+            Remoce action core method.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>True if success, otherwise is false.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.Update(System.Guid)">
+            <summary>
+            Update entity.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.UpdateCore(`0)">
+            <summary>
+            Update action core method.
+            </summary>
+            <param name="entity">Entity to edit or create.</param>
+            <returns>True if success, otherwise is false.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.UpdateProperty(`0,System.Data.Entity.Metadata.IPropertyMetadata)">
+            <summary>
+            Update property for entity.
+            </summary>
+            <param name="entity">Entity to update.</param>
+            <param name="propertyMetadata">Property metadata.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.Selector(System.Int32,System.Int32,System.String,System.Nullable{System.Guid},System.Boolean)">
+            <summary>
+            Selector page.
+            </summary>
+            <param name="page">Number of current page.</param>
+            <param name="size">Number of entities per page.</param>
+            <param name="parentpath">Path of parent for entity.</param>
+            <param name="parentid">Parent id.</param>
+            <param name="search">Is a search result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.MultipleSelector(System.Int32,System.Int32,System.String,System.Nullable{System.Guid},System.Boolean)">
+            <summary>
+            Multiple selector page.
+            </summary>
+            <param name="page">Number of current page.</param>
+            <param name="size">Number of entities per page.</param>
+            <param name="parentpath">Path of parent for entity.</param>
+            <param name="parentid">Parent id.</param>
+            <param name="search">Is a search result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.Search(System.String)">
+            <summary>
+            Search page.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController`1.ValueFilter(System.String,System.String,System.String)">
+            <summary>
+            ValueFilterPage.
+            </summary>
+            <param name="property">Dependency property.</param>
+            <param name="value">Value of dependency property.</param>
+            <param name="selected">Value of selected.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityRouteCollectionExtensions">
+            <summary>
+            Entity route collection extension.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityRouteCollectionExtensions.MapRoute``1(System.Web.Routing.RouteCollection,System.String,System.String)">
+            <summary>
+            Maps the specified URL route. 
+            </summary>
+            <typeparam name="TUser">Type of user entity.</typeparam>
+            <param name="routes">A collection of routes for the application.</param>
+            <param name="name">The name of the route to map.</param>
+            <param name="url">The URL pattern for the route.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityRouteCollectionExtensions.MapRoute``1(System.Web.Routing.RouteCollection,System.String,System.String,System.Object)">
+            <summary>
+            Maps the specified URL route and sets default route values. 
+            </summary>
+            <typeparam name="TUser">Type of user entity.</typeparam>
+            <param name="routes">A collection of routes for the application.</param>
+            <param name="name">The name of the route to map.</param>
+            <param name="url">The URL pattern for the route.</param>
+            <param name="defaults">An object that contains default route values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityRouteCollectionExtensions.MapRoute``1(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.Object)">
+            <summary>
+            Maps the specified URL route and sets default route values and constraints. 
+            </summary>
+            <typeparam name="TUser">Type of user entity.</typeparam>
+            <param name="routes">A collection of routes for the application.</param>
+            <param name="name">The name of the route to map.</param>
+            <param name="url">The URL pattern for the route.</param>
+            <param name="defaults">An object that contains default route values.</param>
+            <param name="constraints">A set of expressions that specify values for the url parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityRouteCollectionExtensions.MapRoute``1(System.Web.Routing.RouteCollection,System.String,System.String,System.String[])">
+            <summary>
+            Maps the specified URL route and sets the namespaces. 
+            </summary>
+            <typeparam name="TUser">Type of user entity.</typeparam>
+            <param name="routes">A collection of routes for the application.</param>
+            <param name="name">The name of the route to map.</param>
+            <param name="url">The URL pattern for the route.</param>
+            <param name="namespaces">A set of namespaces for the application.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityRouteCollectionExtensions.MapRoute``1(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.String[])">
+            <summary>
+            Maps the specified URL route and sets default route values and namespaces. 
+            </summary>
+            <typeparam name="TUser">Type of user entity.</typeparam>
+            <param name="routes">A collection of routes for the application.</param>
+            <param name="name">The name of the route to map.</param>
+            <param name="url">The URL pattern for the route.</param>
+            <param name="defaults">An object that contains default route values.</param>
+            <param name="namespaces">A set of namespaces for the application.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityRouteCollectionExtensions.MapRoute``1(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.Object,System.String[])">
+            <summary>
+             Maps the specified URL route and sets default route values, constraints, and namespaces.  
+            </summary>
+            <typeparam name="TUser">Type of user entity.</typeparam>
+            <param name="routes">A collection of routes for the application.</param>
+            <param name="name">The name of the route to map.</param>
+            <param name="url">The URL pattern for the route.</param>
+            <param name="defaults">An object that contains default route values.</param>
+            <param name="constraints">A set of expressions that specify values for the url parameter.</param>
+            <param name="namespaces">A set of namespaces for the application.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityController">
+            <summary>
+            Entity controller.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityController.EntityBuilder">
+            <summary>
+            Get the context builder of entity.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController.#ctor(System.Data.Entity.IEntityContextBuilder)">
+            <summary>
+            Initialize entity controller.
+            </summary>
+            <param name="builder">Context builder of entity.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController.GetUnitils``1">
+            <summary>
+            Initialize entity controller.
+            </summary>
+            <typeparam name="T">Type of entity.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityController.OnAuthorization(System.Web.Mvc.AuthorizationContext)">
+            <summary>
+            Called when authorization occurs.
+            </summary>
+            <param name="filterContext">Information about the current request and action.</param>
+        </member>
+        <member name="T:System.Web.Mvc.EntityControllerFactory">
+            <summary>
+            Entity controller factory.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerFactory.#ctor">
+            <summary>
+            Initialize entity controller factory.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerFactory.RegisterController``1">
+            <summary>
+            Register entity controller.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerFactory.RegisterController``1(System.String,System.String)">
+            <summary>
+            Register entity controller.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+            <param name="controller">Controller name for entity.</param>
+            <param name="area">Area name for entity.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerFactory.RegisterController(System.Type)">
+            <summary>
+            Register entity controller.
+            </summary>
+            <param name="type">Type of entity.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerFactory.RegisterController(System.Type,System.String,System.String)">
+            <summary>
+            Register entity controller.
+            </summary>
+            <param name="type">Type of entity.</param>
+            <param name="controller">Controller name for entity.</param>
+            <param name="area">Area name for entity.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerFactory.UnregisterController``1">
+            <summary>
+            Unregister entity controller.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerFactory.UnregisterController(System.Type)">
+            <summary>
+            Unregister entity controller.
+            </summary>
+            <param name="type">Type of entity.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerFactory.GetControllerType(System.Web.Routing.RequestContext,System.String)">
+            <summary>
+            Retrieves the controller type for the specified name and request context.
+            </summary>
+            <param name="requestContext">The context of the HTTP request, which includes the HTTP context and route data.</param>
+            <param name="controllerName">The name of the controller.</param>
+            <returns>The controller type.</returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityControllerFactory.GetEntityControllerType(System.Type)">
+            <summary>
+            Get entity controller.
+            </summary>
+            <param name="entityType">Entity type.</param>
+            <returns>Entity Controller Type.</returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityValueConverterContext">
+            <summary>
+            Entity value converter type descriptor context.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityValueConverterContext.#ctor(System.Data.Entity.EntityDescriptorContext,System.Data.Entity.Metadata.IPropertyMetadata)">
+            <summary>
+            Initialize.
+            </summary>
+            <param name="context">Entity descriptor context.</param>
+            <param name="property">Property metadata.</param>
+        </member>
+        <member name="P:System.Web.Mvc.EntityValueConverterContext.Property">
+            <summary>
+            Get the property convert to.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityValueConverterContext.Container">
+            <summary>
+            Get the container.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityValueConverterContext.Instance">
+            <summary>
+            Get the entity context builder.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityValueConverterContext.OnComponentChanged">
+            <summary>
+            Raises the System.ComponentModel.Design.IComponentChangeService.ComponentChanged event.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityValueConverterContext.OnComponentChanging">
+            <summary>
+            Raises the System.ComponentModel.Design.IComponentChangeService.ComponentChanging event.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:System.Web.Mvc.EntityValueConverterContext.PropertyDescriptor">
+            <summary>
+            Gets the System.ComponentModel.PropertyDescriptor that is associated with the given context item.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityValueConverterContext.GetService(System.Type)">
+            <summary>
+            Get the entity context.
+            </summary>
+            <param name="serviceType">Type of entity.</param>
+            <returns>IEntityQueryable&lt;&gt;</returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityExtension">
+            <summary>
+            Entity extension class.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.ClearQueryPath(System.Web.Mvc.UrlHelper,System.String)">
+            <summary>
+            Clear a query for a path.
+            </summary>
+            <param name="helper">A urlhelper.</param>
+            <param name="name">Name of query.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.ClearQueryPath(System.Web.Mvc.UrlHelper,System.String,System.String)">
+            <summary>
+            Clear a query for a path.
+            </summary>
+            <param name="helper">A urlhelper.</param>
+            <param name="query">Query string.</param>
+            <param name="name">Name of query.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.SetQueryPath(System.Web.Mvc.UrlHelper,System.String,System.String)">
+            <summary>
+            Set a query for a path.
+            </summary>
+            <param name="helper">A urlhelper.</param>
+            <param name="query">Query string.</param>
+            <param name="name">Name of query.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.SetQueryPath(System.Web.Mvc.UrlHelper,System.String)">
+            <summary>
+            Set a query for a path.
+            </summary>
+            <param name="helper">A urlhelper.</param>
+            <param name="name">Name of query.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.Pagination(System.Web.Mvc.HtmlHelper,System.ComponentModel.IPagination)">
+            <summary>
+            Get a html string of pagination.
+            </summary>
+            <param name="helper">A html helper.</param>
+            <param name="pagination">Entity view model.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.PaginationButton(System.Web.Mvc.HtmlHelper,System.ComponentModel.IPagination)">
+            <summary>
+            Get a html string of pagination size button.
+            </summary>
+            <param name="helper">A html helper.</param>
+            <param name="pagination">Entity view model.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.Editor``1(System.Web.Mvc.HtmlHelper,System.ComponentModel.IEntityEditModel{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Render a property editor.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+            <param name="helper">A html helper.</param>
+            <param name="model">Entity model.</param>
+            <param name="expression">Expression for property to entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.Editor(System.Web.Mvc.HtmlHelper,System.Data.Entity.IEntity,System.Data.Entity.Metadata.IPropertyMetadata)">
+            <summary>
+            Render a property editor.
+            </summary>
+            <param name="helper">A html helper.</param>
+            <param name="entity">Entity object.</param>
+            <param name="property">Property metadata.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.Editor(System.Web.Mvc.HtmlHelper,System.Data.Entity.IEntity,System.Data.Entity.Metadata.IPropertyMetadata,System.Object)">
+            <summary>
+            Render a property editor.
+            </summary>
+            <param name="helper">A html helper.</param>
+            <param name="entity">Entity object.</param>
+            <param name="property">Property metadata.</param>
+            <param name="value">Property value.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.Viewer``1(System.Web.Mvc.HtmlHelper,System.ComponentModel.IEntityEditModel{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Render a property viewer.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+            <param name="helper">A html helper.</param>
+            <param name="model">Entity model.</param>
+            <param name="expression">Expression for property to entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.Viewer(System.Web.Mvc.HtmlHelper,System.Data.Entity.IEntity,System.Data.Entity.Metadata.IPropertyMetadata)">
+            <summary>
+            Render a property viewer.
+            </summary>
+            <param name="helper">A html helper.</param>
+            <param name="entity">Entity object.</param>
+            <param name="property">Property metadata.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.Viewer(System.Web.Mvc.HtmlHelper,System.Data.Entity.IEntity,System.Data.Entity.Metadata.IPropertyMetadata,System.Object)">
+            <summary>
+            Render a property viewer.
+            </summary>
+            <param name="helper">A html helper.</param>
+            <param name="entity">Entity object.</param>
+            <param name="property">Property metadata.</param>
+            <param name="value">Property value.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.RouteUrl(System.Web.Mvc.UrlHelper,System.Type,System.String)">
+            <summary>
+            Generates a fully qualified URL for the entity.
+            </summary>
+            <param name="helper">A urlhelper.</param>
+            <param name="type">Type of entity.</param>
+            <param name="action">Page name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.EnumAnalyze(System.Web.Mvc.HtmlHelper,System.Type)">
+            <summary>
+            Analyze a enum type.
+            </summary>
+            <param name="helper">A html helper.</param>
+            <param name="type">Type of enum.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.GetServiceProvider(System.Web.Mvc.WebViewPage)">
+            <summary>
+            Get service provider from web view page.
+            </summary>
+            <param name="viewPage">Current view page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.GetServiceProvider(System.Web.Mvc.Controller)">
+            <summary>
+            Get service provider from service provider.
+            </summary>
+            <param name="controller">Current controller.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityExtension.DependencyServiceProvider">
+            <summary>
+            IServiceProvider wrapper of IDependencyResolver.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.DependencyServiceProvider.#ctor(System.Web.Mvc.Controller)">
+            <summary>
+            Initialize dependency service provider.
+            </summary>
+            <param name="controller"></param>
+        </member>
+        <member name="P:System.Web.Mvc.EntityExtension.DependencyServiceProvider.Resolver">
+            <summary>
+            Get the dependency resolver.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityExtension.DependencyServiceProvider.GetService(System.Type)">
+            <summary>
+            Get the service from dependency resolver.
+            </summary>
+            <param name="serviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.EntityExtension.EnumItem">
+            <summary>
+            A data for enum item.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityExtension.EnumItem.Name">
+            <summary>
+            Get or set the item name.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.EntityExtension.EnumItem.Value">
+            <summary>
+            Get or set the item value.
+            </summary>
+        </member>
+        <member name="T:System.Web.Mvc.EntityValueConverter">
+            <summary>
+            Entity value converter.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.EntityValueConverter.AddConverter(System.ComponentModel.DataAnnotations.CustomDataType,System.ComponentModel.TypeConverter)">
+            <summary>
+            Add a converter for a type.
+            </summary>
+            <param name="type">Type.</param>
+            <param name="converter">Converter.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityValueConverter.AddConverter(System.String,System.ComponentModel.TypeConverter)">
+            <summary>
+            Add a converter for a type.
+            </summary>
+            <param name="type">Type.</param>
+            <param name="converter">Converter.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityValueConverter.RemoveConverter(System.ComponentModel.DataAnnotations.CustomDataType)">
+            <summary>
+            Remove converter for a type.
+            </summary>
+            <param name="type">Defined type.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityValueConverter.RemoveConverter(System.String)">
+            <summary>
+            Remove converter for a type.
+            </summary>
+            <param name="type">Custom type.</param>
+        </member>
+        <member name="M:System.Web.Mvc.EntityValueConverter.GetConverter(System.Data.Entity.Metadata.IPropertyMetadata)">
+            <summary>
+            Get converter for a type.
+            </summary>
+            <param name="metadata">Property metadata.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityValueConverter.GetConverter(System.ComponentModel.DataAnnotations.CustomDataType)">
+            <summary>
+            Get converter for a type.
+            </summary>
+            <param name="type">Defined type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.EntityValueConverter.GetConverter(System.String)">
+            <summary>
+            Get converter for a type.
+            </summary>
+            <param name="type">Custom type.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.IHaveEntityMetadata">
+            <summary>
+            Entity metadata interface.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.IHaveEntityMetadata.Metadata">
+            <summary>
+            Get the metadata of entity.
+            </summary>
+        </member>
+        <member name="T:System.Web.Mvc.IFileController`1">
+            <summary>
+            File supported controller.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+        </member>
+        <member name="M:System.Web.Mvc.IFileController`1.SaveFileToProperty(`0,System.Data.Entity.Metadata.IPropertyMetadata,System.Web.HttpPostedFileBase)">
+            <summary>
+            Save file.
+            </summary>
+            <param name="entity">Entity object.</param>
+            <param name="metadata">Property metadata.</param>
+            <param name="file">File base.</param>
+        </member>
+        <member name="T:System.Web.Mvc.IImageController`1">
+            <summary>
+            Image supported controller.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+        </member>
+        <member name="M:System.Web.Mvc.IImageController`1.ImageToProperty(System.Guid,System.String)">
+            <summary>
+            Get a image from property.
+            </summary>
+            <param name="id">Entity id.</param>
+            <param name="property">Property name.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Routing.EntityRoute">
+            <summary>
+            User entity route.
+            </summary>
+        </member>
+        <member name="M:System.Web.Routing.EntityRoute.#ctor(System.String,System.Web.Routing.IRouteHandler)">
+            <summary>
+            Initialize entity route.
+            </summary>
+            <param name="url">Route url.</param>
+            <param name="routeHandler">Route handler.</param>
+        </member>
+        <member name="P:System.Web.Routing.EntityRoute.UserType">
+            <summary>
+            Get or set user entity type.
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.ALEXFWAuthentication">
+            <summary>
+            ALEXFW authentication.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWAuthentication.LoginUrl">
+            <summary>
+            Get the login url.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWAuthentication.CookieDomain">
+            <summary>
+            Get the cookie domain.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWAuthentication.CookieName">
+            <summary>
+            Get the cookie name.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWAuthentication.CookiePath">
+            <summary>
+            Get the cookie path.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWAuthentication.IsEnabled">
+            <summary>
+            Get the ALEXFW authentication enabled.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWAuthentication.Timeout">
+            <summary>
+            Get the cookie enable timespan.
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWAuthentication.RefreshSecurityKey">
+            <summary>
+            Refresh authentication security key. 
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWAuthentication.CreateCookies(System.String,System.String)">
+            <summary>
+            Create cookies.
+            </summary>
+            <param name="username">Username.</param>
+            <param name="authArea">Authenticate area.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWAuthentication.CreateCookies(System.String,System.String,System.TimeSpan)">
+            <summary>
+            Create cookies.
+            </summary>
+            <param name="username">Username.</param>
+            <param name="authArea">Authenticate area.</param>
+            <param name="timeout">Enable timespan.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWAuthentication.GetTokenSignature(System.Byte[],System.Byte[])">
+            <summary>
+            Get token signature data.
+            </summary>
+            <param name="data">Token data.</param>
+            <param name="salt">Salt data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWAuthentication.WriteTokenSignature(System.Web.Security.ALEXFWToken)">
+            <summary>
+            Write token signature data.
+            </summary>
+            <param name="token">Token.</param>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWAuthentication.VerifyToken(System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            Verify a token.
+            </summary>
+            <param name="data">Token data.</param>
+            <param name="salt">Salt data.</param>
+            <param name="signature">Token signature.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWAuthentication.VerifyToken(System.Web.Security.ALEXFWToken)">
+            <summary>
+            Verify a token.
+            </summary>
+            <param name="token">Token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWAuthentication.VerifyCookie(System.String,System.String,System.String@,System.DateTime@)">
+            <summary>
+            Verify cookie.
+            </summary>
+            <param name="cookieValue">Cookie value.</param>
+            <param name="authArea">Authenticate area.</param>
+            <param name="username">Username.</param>
+            <param name="expiredDate">Expired date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWAuthentication.SignIn(System.String,System.Boolean)">
+            <summary>
+            Sign in.
+            </summary>
+            <param name="username">Username.</param>
+            <param name="forever">Sign in forever that will not timeout.</param>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWAuthentication.SignIn(System.String,System.TimeSpan)">
+            <summary>
+            Sign in.
+            </summary>
+            <param name="username">Username.</param>
+            <param name="timeout">Timeout.</param>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWAuthentication.SignOut">
+            <summary>
+            Sign out.
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.ALEXFWAuthenticationModule">
+            <summary>
+            ALEXFW authentication http module.
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWAuthenticationModule.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWAuthenticationModule.Init(System.Web.HttpApplication)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:System.Web.Security.ALEXFWCookiesToken">
+            <summary>
+            ALEXFW cookies token.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWCookiesToken.Username">
+            <summary>
+            Get or set the username.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWCookiesToken.ExpiredDate">
+            <summary>
+            Get or set the expired date.
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWCookiesToken.GetTokenData">
+            <summary>
+            Get token byte data without signature.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Security.ALEXFWIdentity">
+            <summary>
+            ALEXFW identity.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWIdentity.AuthenticationType">
+            <summary>
+            Gets the type of authentication used.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWIdentity.IsAuthenticated">
+            <summary>
+            Gets a value that indicates whether the user has been authenticated.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWIdentity.Name">
+            <summary>
+            Gets the name of the current user.
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.ALEXFWPrincipal">
+            <summary>
+            ALEXFW principal wrapper.
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWPrincipal.#ctor(System.Security.Principal.IPrincipal)">
+            <summary>
+            Initialize ALEXFW principal.
+            </summary>
+            <param name="user">Principal to wrapper.</param>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWPrincipal.OriginPrincipal">
+            <summary>
+            Get the origin principal.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWPrincipal.Identity">
+            <summary>
+            Get the identity.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWPrincipal.Resolver">
+            <summary>
+            Get or set the role entity resolve delegate.
+            Must set this manual or ALEXFW authentication will be failure.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWPrincipal.CurrentRoute">
+            <summary>
+            Get the current route data.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWPrincipal.RoleEntity">
+            <summary>
+            Get the current user role entity.
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWPrincipal.IsInRole(System.String)">
+            <summary>
+            Determines whether the current principal belongs to the specified role.
+            </summary>
+            <param name="role">Role.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWPrincipal.IsInRole(System.Object)">
+            <summary>
+            Determines whether the current principal belongs to the specified role.
+            </summary>
+            <param name="role">Role.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Security.RoleEntityResolveDelegate">
+            <summary>
+            Delegate for getting IRoleEntity.
+            </summary>
+            <param name="entityType">Entity type.</param>
+            <param name="username">Username.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Security.ALEXFWPrincipalExtensions">
+            <summary>
+            Extensions of ALEXFWPrincipal.
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWPrincipalExtensions.GetUser``1(System.Security.Principal.IPrincipal)">
+            <summary>
+            Get role entity from principal.
+            </summary>
+            <typeparam name="TUser">Type of user.</typeparam>
+            <param name="principal">Principal.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWPrincipalExtensions.GetUser``1(System.Web.Security.ALEXFWPrincipal)">
+            <summary>
+            Get role entity from principal.
+            </summary>
+            <typeparam name="TUser">Type of user.</typeparam>
+            <param name="principal">Principal.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWPrincipalExtensions.IsInRole(System.Security.Principal.IPrincipal,System.Object)">
+            <summary>
+            Determines whether the current principal belongs to the specified role.
+            </summary>
+            <param name="principal">ALEXFW principal.</param>
+            <param name="role">Role.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Security.ALEXFWToken">
+            <summary>
+            ALEXFW token object.
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWToken.GetTokenData">
+            <summary>
+            Get token byte data without signature.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWToken.Salt">
+            <summary>
+            Get or set the salt data.
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.ALEXFWToken.Signature">
+            <summary>
+            Get or set the signature data.
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.ALEXFWToken.NewSalt">
+            <summary>
+            New a salt data.
+            </summary>
+        </member>
+    </members>
+</doc>

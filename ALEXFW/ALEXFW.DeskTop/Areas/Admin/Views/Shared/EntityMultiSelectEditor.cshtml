@@ -1,0 +1,87 @@
+﻿@using System.Reflection
+@using System.Text
+@using CarsDataContext
+@model MvcEditorModel
+@{
+    var entityTypes = ((EntityMultiSelectAttribute)Model.Metadata.TryGetPropertyInfo().GetCustomAttribute(typeof(EntityMultiSelectAttribute), false)).Types;
+
+    var gid = Guid.Parse(Model.Value.ToString());
+    var dataContext = new DataContext();
+    var disnplayName = "";
+    var wash = dataContext.WashCarServices.Find(gid);
+    if (wash != null)
+    {
+        disnplayName = wash.Organization.CompanyName + " " + wash.EnumWashType;
+    }
+    var main = dataContext.MaintainServices.Find(gid);
+    if (main != null)
+    {
+        disnplayName = main.Organization.CompanyName + " " + main.MaintainServiceName;
+    }
+    var card = dataContext.CarsCards.Find(gid);
+    if (card != null)
+    {
+        disnplayName = card.Organization.CompanyName + " " + card.Name;
+    }
+    var product = dataContext.Products.Find(gid);
+    if (product != null)
+    {
+        disnplayName = product.Organization.CompanyName + " " + product.Name;
+    }
+
+}
+<div class="input-group">
+    <input type="text" id="@(Model.Metadata.ClrName)_Name" readonly="readonly" class="form-control" value="@disnplayName">
+    <input type="hidden" id="@(Model.Metadata.ClrName)_Value" name="@Model.Metadata.ClrName" value="@(Model.Value ?? "")" />
+    <span class="input-group-btn">
+        @foreach (Type type in entityTypes)
+        {
+            var display = type.GetCustomAttribute(typeof(DisplayNameAttribute), false) as DisplayNameAttribute;
+            <button id="@(type.Name)_Select" class="btn btn-default" type="button">选择@(display?.DisplayName)</button>
+        }
+        <button id="@(Model.Metadata.ClrName)_Clear" class="btn btn-default" type="button">清除</button>
+    </span>
+</div>
+<script type="text/javascript">
+    $(function() {
+        var name = $('#@(Model.Metadata.ClrName)_Name');
+        var value = $('#@(Model.Metadata.ClrName)_Value');
+        @{
+            var sb = new StringBuilder();
+            foreach (var type in entityTypes)
+            {
+                var typeName = type.Name;
+                sb.Append("$('#" + typeName + "_Select').click(function() {");
+                sb.Append("if (window.showModalDialog != undefined)");
+                sb.Append("{");
+                sb.Append("var result = window.showModalDialog('/Employee/"+ typeName + "/Selector',");
+                sb.Append("null,");
+                sb.Append("'dialogHeight:720px;dialogWidth:1024px');");
+                sb.Append("if (result == undefined)");
+                sb.Append("result = window.returnValue;");
+                sb.Append("if (result == null)");
+                sb.Append("return;");
+                sb.Append("name.val(result.name);");
+                sb.Append("value.val(result.value);");
+                sb.Append("}");
+                sb.Append("else");
+                sb.Append("{");
+                sb.Append("window.open('/Employee/" + typeName + "/Selector',");
+                sb.Append("null,");
+                sb.Append("'dialog=1,modal=1,location=0,menubar=0,resizable=0,scrollbars=0,status=0,toolbar=0,height=720,width=1024');");
+                sb.Append("}");
+                sb.Append("window.selectCompleted = function(result) {");
+                sb.Append("name.val(result.name);");
+                sb.Append("value.val(result.value);");
+                sb.Append("};");
+                sb.Append("});");
+            }
+            @Html.Raw(sb.ToString());
+        }
+
+        $('#@(Model.Metadata.ClrName)_Clear').click(function() {
+            name.val('');
+            value.val('');
+        });
+    });
+</script>

@@ -1,0 +1,17 @@
+d:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\obj\Debug\ALEXFW.DataAccess.csproj.CoreCompileInputs.cache
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\obj\Debug\ALEXFW.DataAccess.csprojAssemblyReference.cache
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\bin\Debug\ALEXFW.DataAccess.dll.config
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\bin\Debug\ALEXFW.DataAccess.dll
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\bin\Debug\ALEXFW.DataAccess.pdb
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\bin\Debug\ALEXFW.Entity.dll
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\bin\Debug\ALEXFW.Smart.dll
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\bin\Debug\EntityFramework.dll
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\bin\Debug\ALEXFW.Entity.pdb
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\bin\Debug\ALEXFW.Smart.pdb
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\bin\Debug\ALEXFW.Smart.xml
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\bin\Debug\EntityFramework.xml
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\obj\Debug\ALEXFW.DataAccess.csproj.CopyComplete
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\obj\Debug\ALEXFW.DataAccess.dll
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DataAccess\obj\Debug\ALEXFW.DataAccess.pdb

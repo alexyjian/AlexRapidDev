@@ -1,0 +1,16 @@
+d:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\obj\Debug\ALEXFW.Entity.csprojAssemblyReference.cache
+d:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\obj\Debug\ALEXFW.Entity.csproj.CoreCompileInputs.cache
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\bin\Debug\ALEXFW.Entity.dll
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\bin\Debug\ALEXFW.Entity.pdb
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\bin\Debug\ALEXFW.Smart.dll
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\bin\Debug\ALEXFW.Smart.EntityFramework.dll
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\bin\Debug\EntityFramework.dll
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\bin\Debug\ALEXFW.Smart.EntityFramework.pdb
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\bin\Debug\ALEXFW.Smart.EntityFramework.xml
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\bin\Debug\ALEXFW.Smart.EntityFramework.dll.config
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\bin\Debug\ALEXFW.Smart.pdb
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\bin\Debug\ALEXFW.Smart.xml
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\bin\Debug\EntityFramework.xml
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\obj\Debug\ALEXFW.Entity.csproj.CopyComplete
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\obj\Debug\ALEXFW.Entity.dll
+D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.Entity\obj\Debug\ALEXFW.Entity.pdb

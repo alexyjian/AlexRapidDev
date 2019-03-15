@@ -1,0 +1,2354 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ALEXFW.Smart</name>
+    </assembly>
+    <members>
+        <member name="T:System.ComponentModel.DataAnnotations.AuthenticationRequiredMode">
+            <summary>
+            Authentication required mode.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.AuthenticationRequiredMode.All">
+            <summary>
+            Any role denied will be fail.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.AuthenticationRequiredMode.Any">
+            <summary>
+            Any role access will be succeed.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.DataAnnotations.CustomDataType">
+            <summary>
+            Custom data type.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Default">
+            <summary>
+            Default.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.DateTime">
+            <summary>
+            Date and time.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Date">
+            <summary>
+            Date only.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Time">
+            <summary>
+            Time only(Timespan).
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Sex">
+            <summary>
+            Sex.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.PhoneNumber">
+            <summary>
+            Phone number.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Currency">
+            <summary>
+            Currency.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Text">
+            <summary>
+            Single-line text.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Html">
+            <summary>
+            Html content.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.MultilineText">
+            <summary>
+            Multiline text.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.EmailAddress">
+            <summary>
+            Email address.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Password">
+            <summary>
+            Password.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Url">
+            <summary>
+            Url address.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.ImageUrl">
+            <summary>
+            Image url address.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Boolean">
+            <summary>
+            Boolean.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Integer">
+            <summary>
+            Integer.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Number">
+            <summary>
+            Number.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Image">
+            <summary>
+            Image data.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.File">
+            <summary>
+            File data.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.DataAnnotations.CustomDataType.Other">
+            <summary>
+            Define in Custom property.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.DataAnnotations.CustomDataTypeAttribute">
+            <summary>
+            Property custom data type attribute.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.CustomDataTypeAttribute.#ctor(System.ComponentModel.DataAnnotations.CustomDataType)">
+            <summary>
+            Initialize attribute.
+            </summary>
+            <param name="type">Type of property.</param>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.CustomDataTypeAttribute.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initialize attribute.
+            </summary>
+            <param name="custom">Custom type of property.</param>
+            <param name="isFileUpload">Is property base on upload file.</param>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.CustomDataTypeAttribute.Type">
+            <summary>
+            Get the type of property.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.CustomDataTypeAttribute.Custom">
+            <summary>
+            Get the custom type of property.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.CustomDataTypeAttribute.IsFileUpload">
+            <summary>
+            Get the property is base on upload file.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.DataAnnotations.DistinctAttribute">
+            <summary>
+            Property distinct attribute.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.DistinctAttribute.IsCaseSensitive">
+            <summary>
+            Get or set is case sensitive for string property.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.DistinctAttribute.RequiresValidationContext">
+            <summary>
+            Gets a value that indicates whether the attribute requires validation context.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.DistinctAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Validates the specified value with respect to the current validation attribute.
+            </summary>
+            <param name="value"></param>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.ComponentModel.DataAnnotations.EntityAuthenticationAttribute">
+            <summary>
+            Entity authentication attribute.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.EntityAuthenticationAttribute.#ctor">
+            <summary>
+            Initialize attribute.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.EntityAuthenticationAttribute.Mode">
+            <summary>
+            Get or set the authentication required mode.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.EntityAuthenticationAttribute.AllowAnonymous">
+            <summary>
+            Get or set is entity allow anonymous operate.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.EntityAuthenticationAttribute.ViewRolesRequired">
+            <summary>
+            Get or set the roles to view entity.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.EntityAuthenticationAttribute.AddRolesRequired">
+            <summary>
+            Get or set the roles to add entity.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.EntityAuthenticationAttribute.EditRolesRequired">
+            <summary>
+            Get or set the roles to edit entity.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.EntityAuthenticationAttribute.RemoveRolesRequired">
+            <summary>
+            Get or set the roles to remove entity.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.DataAnnotations.ExpendEntityAttribute">
+            <summary>
+            Expend a entity will display all property values not only a Index.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.DataAnnotations.HideAttribute">
+            <summary>
+            Property hiding attribute.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.HideAttribute.#ctor">
+            <summary>
+            Initialize attribute.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.HideAttribute.IsHiddenOnView">
+            <summary>
+            Get or set is property hidden in viewlist.
+            Default is true.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.HideAttribute.IsHiddenOnEdit">
+            <summary>
+            Get or set is property hidden while editing.
+            Default is true.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.HideAttribute.IsHiddenOnCreate">
+            <summary>
+            Get or set is property hidden while creating.
+            Default is true.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.HideAttribute.IsHiddenOnDetail">
+            <summary>
+            Get or set is property hidden while editing.
+            Default is IsHiddenOnView &amp;&amp; IsHiddenOnEdit.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.DataAnnotations.ParentAttribute">
+            <summary>
+            Entity parent attribute.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.ParentAttribute.#ctor(System.Type,System.String)">
+            <summary>
+            Initialize attribute.
+            </summary>
+            <param name="parent">Type of parent.</param>
+            <param name="propertyName">Property of parent.</param>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.ParentAttribute.Parent">
+            <summary>
+            Get the type of parent.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.ParentAttribute.PropertyName">
+            <summary>
+            Get the property of parent.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.DataAnnotations.PasswordAttribute">
+            <summary>
+            Password attribute.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.PasswordAttribute.#ctor(System.String)">
+            <summary>
+            Initialize attribute.
+            </summary>
+            <param name="method">Method which setting password to property.</param>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.PasswordAttribute.SetPasswordMethod">
+            <summary>
+            Get the setting password method.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.DataAnnotations.PropertyAuthenticationAttribute">
+            <summary>
+            Property authentication attribute.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.PropertyAuthenticationAttribute.#ctor">
+            <summary>
+            Initialize attribute.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.PropertyAuthenticationAttribute.Mode">
+            <summary>
+            Get or set the authentication required mode.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.PropertyAuthenticationAttribute.AllowAnonymous">
+            <summary>
+            Get or set the property allow anonymous view.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.PropertyAuthenticationAttribute.EditRolesRequired">
+            <summary>
+            Get or set the roles to edit.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.PropertyAuthenticationAttribute.ViewRolesRequired">
+            <summary>
+            Get or set the roles to view.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.DataAnnotations.SearchableAttribute">
+            <summary>
+            Property searchable attribute.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.DataAnnotations.ValueFilterAttribute">
+            <summary>
+            Property using value filter attribute.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.ValueFilterAttribute.#ctor(System.Type,System.String)">
+            <summary>
+            Initialize attribute.
+            </summary>
+            <param name="valueFilter">Type of value filter.</param>
+            <param name="dependencyProperty">The dependency property name.</param>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.ValueFilterAttribute.#ctor(System.Type)">
+            <summary>
+            Initialize attribute.
+            </summary>
+            <param name="valueFilter">Type of value filter.</param>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.ValueFilterAttribute.DependencyProperty">
+            <summary>
+            Get the dependency property name.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.ValueFilterAttribute.ValueFilter">
+            <summary>
+            Get the type of value filter for property.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.EntityEditModel`1">
+            <summary>
+            Entity edit model.
+            </summary>
+            <typeparam name="TEntity">Type of Entity.</typeparam>
+        </member>
+        <member name="M:System.ComponentModel.EntityEditModel`1.#ctor(`0)">
+            <summary>
+            Initialize entity edit model.
+            </summary>
+            <param name="entity">Entity to edit.</param>
+        </member>
+        <member name="P:System.ComponentModel.EntityEditModel`1.Properties">
+            <summary>
+            Get or set the properties to edit.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityEditModel`1.Metadata">
+            <summary>
+            Get or set the metadata of entity.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityEditModel`1.Item">
+            <summary>
+            Get or set the properties to edit.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityEditModel`1.System#ComponentModel#IEntityEditModel#Item">
+            <summary>
+            Get or set the item to edit.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.EntityParentModel">
+            <summary>
+            Entity parent model.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityParentModel.Name">
+            <summary>
+            Get or set the name of parent.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityParentModel.Index">
+            <summary>
+            Get or set the id of parent.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityParentModel.Path">
+            <summary>
+            Get or set the path of parent to entity.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityParentModel.IsSelected">
+            <summary>
+            Get or set the parent selected.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityParentModel.IsOpened">
+            <summary>
+            Get or set the parent tree opened.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityParentModel.Items">
+            <summary>
+            Get or set the subtree of parent models.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.EntitySearchItem">
+            <summary>
+            Entity search item.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntitySearchItem.Name">
+            <summary>
+            Get or set the property to search.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntitySearchItem.Morethan">
+            <summary>
+            Get or set the morethan value.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntitySearchItem.Lessthan">
+            <summary>
+            Get or set the lessthan value.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntitySearchItem.Contains">
+            <summary>
+            Get or set the contains value.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntitySearchItem.MorethanDate">
+            <summary>
+            Get or set the morethan date value.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntitySearchItem.LessthanDate">
+            <summary>
+            Get or set the lessthan date value.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntitySearchItem.Equal">
+            <summary>
+            Get or set the equal value.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntitySearchItem.Enum">
+            <summary>
+            Get or set the enum value.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.EntitySearchModel">
+            <summary>
+            Entity search model.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntitySearchModel.Properties">
+            <summary>
+            Get or set the properties able to search.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntitySearchModel.Metadata">
+            <summary>
+            Get or set the metadata of entity.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.EntitySearchModel`1">
+            <summary>
+            Entity search model.
+            </summary>
+            <typeparam name="TEntity">Type of Entity.</typeparam>
+        </member>
+        <member name="M:System.ComponentModel.EntitySearchModel`1.#ctor">
+            <summary>
+            Initialize entity search model.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.IEntityViewButton">
+            <summary>
+            Entity viewlist button.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.IEntityViewButton.SetTarget(System.IServiceProvider,System.Data.Entity.IEntity)">
+            <summary>
+            Set the target of button.
+            </summary>
+            <param name="provider">Service provider.</param>
+            <param name="entity">Dependency entity.</param>
+        </member>
+        <member name="T:System.ComponentModel.EntityViewModel`1">
+            <summary>
+            Entity view model.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+        </member>
+        <member name="P:System.ComponentModel.EntityViewModel`1.Queryable">
+            <summary>
+            Get the queryable of entity.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.EntityViewModel`1.#ctor(System.Linq.IQueryable{`0})">
+            <summary>
+            Initialize entity view model.
+            </summary>
+            <param name="queryable">Queryable of entity.</param>
+        </member>
+        <member name="M:System.ComponentModel.EntityViewModel`1.#ctor(System.Linq.IQueryable{`0},System.Int32,System.Int32)">
+            <summary>
+            Initialize entity view model.
+            </summary>
+            <param name="queryable">Queryable of entity.</param>
+            <param name="page">Current page.</param>
+            <param name="size">Current page size.</param>
+        </member>
+        <member name="P:System.ComponentModel.EntityViewModel`1.PageSizeOption">
+            <summary>
+            Get or set the items per page options.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityViewModel`1.TotalPage">
+            <summary>
+            Get or set the total page.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityViewModel`1.CurrentSize">
+            <summary>
+            Get or set the items per page.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityViewModel`1.CurrentPage">
+            <summary>
+            Get or set the current page.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityViewModel`1.Metadata">
+            <summary>
+            Get or set the metadata of entity.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityViewModel`1.Headers">
+            <summary>
+            Get or set the viewlist headers.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityViewModel`1.ViewButtons">
+            <summary>
+            Get or set the view buttons.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityViewModel`1.ItemButtons">
+            <summary>
+            Get or set the item buttons.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityViewModel`1.Parent">
+            <summary>
+            Get or set the parent models.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityViewModel`1.SearchItem">
+            <summary>
+            Get or set the search items.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.EntityViewModel`1.Items">
+            <summary>
+            Get or set the items of current page.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.EntityViewModel`1.SetPage(System.Int32)">
+            <summary>
+            Set the current page.
+            </summary>
+            <param name="page">Page to navigate.</param>
+        </member>
+        <member name="M:System.ComponentModel.EntityViewModel`1.SetSize(System.Int32)">
+            <summary>
+            Set the items per page.
+            </summary>
+            <param name="size">A number that how many items show on page.</param>
+        </member>
+        <member name="M:System.ComponentModel.EntityViewModel`1.UpdateTotalPage">
+            <summary>
+            Update total page.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.EntityViewModel`1.UpdateItems">
+            <summary>
+            Update items of current page.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.IEntityEditModel">
+            <summary>
+            Entity edit model interface.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IEntityEditModel.Item">
+            <summary>
+            Get or set the item to edit.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IEntityEditModel.Properties">
+            <summary>
+            Get or set the properties to edit.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IEntityEditModel.Metadata">
+            <summary>
+            Get or set the metadata of entity.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.IEntityEditModel`1">
+            <summary>
+            Entity edit model interface.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+        </member>
+        <member name="P:System.ComponentModel.IEntityEditModel`1.Item">
+            <summary>
+            Get or set the properties to edit.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.IEntityViewModel">
+            <summary>
+            Entity view model interface.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IEntityViewModel.Items">
+            <summary>
+            Get the items of current page.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IEntityViewModel.Metadata">
+            <summary>
+            Get the metadata of entity.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IEntityViewModel.Headers">
+            <summary>
+            Get the viewlist headers.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IEntityViewModel.ViewButtons">
+            <summary>
+            Get the view buttons.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IEntityViewModel.ItemButtons">
+            <summary>
+            Get the item buttons.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IEntityViewModel.Parent">
+            <summary>
+            Get the parent models.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IEntityViewModel.SearchItem">
+            <summary>
+            Get the search items.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.IEntityViewModel.SetPage(System.Int32)">
+            <summary>
+            Set the current page.
+            </summary>
+            <param name="page">Page to navigate.</param>
+        </member>
+        <member name="M:System.ComponentModel.IEntityViewModel.SetSize(System.Int32)">
+            <summary>
+            Set the items per page.
+            </summary>
+            <param name="size">A number that how many items show on page.</param>
+        </member>
+        <member name="M:System.ComponentModel.IEntityViewModel.UpdateTotalPage">
+            <summary>
+            Update total page.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.IEntityViewModel.UpdateItems">
+            <summary>
+            Update items of current page.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.IEntityViewModel`1">
+            <summary>
+            Entity view model interface.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+        </member>
+        <member name="P:System.ComponentModel.IEntityViewModel`1.Queryable">
+            <summary>
+            Get the queryable object of entity.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IEntityViewModel`1.Items">
+            <summary>
+            Get the items of current page.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.IPagination">
+            <summary>
+            Pagination interface.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IPagination.PageSizeOption">
+            <summary>
+            Get the items per page options.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IPagination.TotalPage">
+            <summary>
+            Get the total page.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IPagination.CurrentPage">
+            <summary>
+            Get the current page.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IPagination.CurrentSize">
+            <summary>
+            Get the items per page.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.IViewButton">
+            <summary>
+            View button interface.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IViewButton.Name">
+            <summary>
+            Get the name of the button.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IViewButton.Tooltip">
+            <summary>
+            Get the tooltip of the button.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IViewButton.Icon">
+            <summary>
+            Get the icon of the button.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.IViewButton.Target">
+            <summary>
+            Get the target of the button.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.IViewButton.SetTarget(System.IServiceProvider)">
+            <summary>
+            Set the target of button.
+            </summary>
+            <param name="provider">Service provider.</param>
+        </member>
+        <member name="T:System.ComponentModel.NotifyBase">
+            <summary>
+            Notify object.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.NotifyBase.#ctor">
+            <summary>
+            Initialize notify object.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.NotifyBase.GetValue(System.String)">
+            <summary>
+            Get the value of property.
+            </summary>
+            <param name="propertyName">Name of property.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.ComponentModel.NotifyBase.CanSetValue(System.String)">
+            <summary>
+            Get a property is setting value enabled.
+            </summary>
+            <param name="propertyName">Name of property.</param>
+            <returns>true if property can be set.</returns>
+        </member>
+        <member name="M:System.ComponentModel.NotifyBase.SetValue(System.Object,System.String)">
+            <summary>
+            Set the value of property.
+            </summary>
+            <param name="propertyName">Name of property.</param>
+            <param name="value">Value.</param>
+        </member>
+        <member name="M:System.ComponentModel.NotifyBase.SetValueWithoutNotify(System.Object,System.String)">
+            <summary>
+            Set the value of property without notify.
+            </summary>
+            <param name="propertyName">Name of property.</param>
+            <param name="value">Value.</param>
+        </member>
+        <member name="M:System.ComponentModel.NotifyBase.OnPropertyChanged(System.String)">
+            <summary>
+            Trigger event when property changed.
+            </summary>
+            <param name="propertyName">Name of property.</param>
+        </member>
+        <member name="M:System.ComponentModel.NotifyBase.OnPropertyChanging(System.String)">
+            <summary>
+            Trigger event when property changing.
+            </summary>
+            <param name="propertyName">Name of property.</param>
+        </member>
+        <member name="E:System.ComponentModel.NotifyBase.PropertyChanged">
+            <summary>
+            Property changed event.
+            </summary>
+        </member>
+        <member name="E:System.ComponentModel.NotifyBase.PropertyChanging">
+            <summary>
+            Property changing event.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.Pagination">
+            <summary>
+            Pagination.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.Pagination.DefaultPageSizeOption">
+            <summary>
+            Default number of items per page options.
+            </summary>
+        </member>
+        <member name="F:System.ComponentModel.Pagination.DefaultPageSize">
+            <summary>
+            Default number of items per page.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.Pagination.#ctor">
+            <summary>
+            Initialize pagination.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.Pagination.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initialize pagination.
+            </summary>
+            <param name="page">Page.</param>
+            <param name="count">Number of total items.</param>
+            <param name="size">Number of items per page.</param>
+        </member>
+        <member name="M:System.ComponentModel.Pagination.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initialize pagination.
+            </summary>
+            <param name="page">Page.</param>
+            <param name="count">Number of total items.</param>
+        </member>
+        <member name="P:System.ComponentModel.Pagination.PageSizeOption">
+            <summary>
+            Get or set the page size options.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.Pagination.TotalPage">
+            <summary>
+            Get or set the total page.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.Pagination.CurrentPage">
+            <summary>
+            Get or set the current page.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.Pagination.CurrentSize">
+            <summary>
+            Get or set the current number of items per page.
+            </summary>
+        </member>
+        <member name="T:System.ComponentModel.IValueFilter">
+            <summary>
+            Value filter interface.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.IValueFilter.GetValues(System.String,System.String)">
+            <summary>
+            Get values.
+            </summary>
+            <param name="dependencyProperty">Dependency property name.</param>
+            <param name="dependencyValue">Dependency property value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.Entity.EntityBase">
+            <summary>
+            Entity base object.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.EntityBase.Index">
+            <summary>
+            Get or set the id of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.EntityBase.CreateDate">
+            <summary>
+            Get or set the create date of entity.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.EntityBase.OnCreateCompleted">
+            <summary>
+            Call when entity created.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.EntityBase.OnEditCompleted">
+            <summary>
+            Call when entity edited.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.EntityBase.IsRemoveAllowed">
+            <summary>
+            Get is the entity can remove.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:System.Data.Entity.EntityBase.IsEditAllowed">
+            <summary>
+            Get is the entity can edit.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityBase.ToString">
+            <summary>
+            Return a string that entity display.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityBase.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Ensure that entity is valid.
+            </summary>
+            <param name="validationContext">Validation context.</param>
+            <returns>Collection that include error messages.</returns>
+        </member>
+        <member name="T:System.Data.Entity.EntityDescriptorContext">
+            <summary>
+            Entity descriptor context.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.EntityDescriptorContext.#ctor(System.Data.Entity.IEntityContextBuilder)">
+            <summary>
+            Initialize entity descriptor context.
+            </summary>
+            <param name="builder">Entity context builder.</param>
+        </member>
+        <member name="P:System.Data.Entity.EntityDescriptorContext.Container">
+            <summary>
+            Get the container.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.EntityDescriptorContext.Instance">
+            <summary>
+            Get the entity context builder.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.EntityDescriptorContext.OnComponentChanged">
+            <summary>
+            Call when context changed.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.EntityDescriptorContext.OnComponentChanging">
+            <summary>
+            Call when context changing.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:System.Data.Entity.EntityDescriptorContext.PropertyDescriptor">
+            <summary>
+            Get the property descriptor.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.EntityDescriptorContext.GetService(System.Type)">
+            <summary>
+            Get entity context.
+            </summary>
+            <param name="serviceType">Type of entity.</param>
+            <returns>Return IEntityQueryable of entity.</returns>
+        </member>
+        <member name="T:System.Data.Entity.IEntity">
+            <summary>
+            Interface of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.IEntity.Index">
+            <summary>
+            Get or set the id of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.IEntity.CreateDate">
+            <summary>
+            Get or set the create date of entity.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.IEntity.OnCreateCompleted">
+            <summary>
+            Call when entity created.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.IEntity.OnEditCompleted">
+            <summary>
+            Call when entity edited.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.IEntity.IsRemoveAllowed">
+            <summary>
+            Get is the entity can remove.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:System.Data.Entity.IEntity.IsEditAllowed">
+            <summary>
+            Get is the entity can edit.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.Entity.IEntityContext`1">
+            <summary>
+            Entity context.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.Add(`0)">
+            <summary>
+            Add an entity to database.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns>Return false if detect any error.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.AddAsync(`0)">
+            <summary>
+            Add an entity to database.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns>Return false if detect any error.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Add a lot of entity to database.
+            </summary>
+            <param name="entities">IEnumerable of entity.</param>
+            <returns>Return true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.AddRangeAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Add a lot of entity to database.
+            </summary>
+            <param name="entities">IEnumerable of entity.</param>
+            <returns>Return true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.Create">
+            <summary>
+            Create an entity. Not added to database.
+            </summary>
+            <returns>Return created entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.Remove(System.Guid)">
+            <summary>
+            Remove an entity from database.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Return true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.RemoveAsync(System.Guid)">
+            <summary>
+            Remove an entity from database.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Return true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.RemoveRange(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Remove a lot of entities from database.
+            </summary>
+            <param name="ids">IEnumerable of Guid of entities.</param>
+            <returns>true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.RemoveRangeAsync(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Remove a lot of entities from database.
+            </summary>
+            <param name="ids">IEnumerable of Guid of entities.</param>
+            <returns>true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.Edit(`0)">
+            <summary>
+            Edit an entity.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns>Return true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.EditAsync(`0)">
+            <summary>
+            Edit an entity.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns>Return true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.GetEntity(System.Guid)">
+            <summary>
+            Get an entity by id.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Return entity. Return null if entity doesn't exists.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.GetEntityAsync(System.Guid)">
+            <summary>
+            Get an entity by id.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Return entity. Return null if entity doesn't exists.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.Query">
+            <summary>
+            Get entity queryable interface.
+            </summary>
+            <returns>Return queryable interface of entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.Query(System.String,System.Object[])">
+            <summary>
+            Get entities by sql query string.
+            </summary>
+            <param name="sql">Sql query string.</param>
+            <param name="parameters">Query parameters.</param>
+            <returns>Return IEnumerable of entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.InParent(System.Linq.IQueryable{`0},System.Guid[])">
+            <summary>
+            Get entitiy queryable in some parents.
+            </summary>
+            <param name="queryable">Queryable of entity.</param>
+            <param name="parents">Parents id.</param>
+            <returns>Return queryalble interface of entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.InParent(System.Linq.IQueryable{`0},System.String,System.Guid)">
+            <summary>
+            Get entitiy queryable in a parent.
+            </summary>
+            <param name="queryable">Queryable of entity.</param>
+            <param name="path">Path that parent to entity. (Like User.Group, User is property of this entity. Group is property of type that User property.)</param>
+            <param name="id">Parent id.</param>
+            <returns>Return queryalble interface of entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.Editable">
+            <summary>
+            Get is the entity edit able.
+            </summary>
+            <returns>Return true if enabled.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.Addable">
+            <summary>
+            Get is the entity add able.
+            </summary>
+            <returns>Return true if enabled.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.Removeable">
+            <summary>
+            Get is the entity remove able.
+            </summary>
+            <returns>Return true if enabled.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.Count">
+            <summary>
+            Get total entity count from database.
+            </summary>
+            <returns>Return total entity count number.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.CountAsync">
+            <summary>
+            Get total entity count from database.
+            </summary>
+            <returns>Return total entity count number.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.Contains(`0)">
+            <summary>
+            Get an entity is added to database.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns>Return true if database contains this entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.ContainsAsync(`0)">
+            <summary>
+            Get an entity is added to database.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns>Return true if database contains this entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.Contains(System.Guid)">
+            <summary>
+            Get an entity is added to database.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Return true if database contains this entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.ContainsAsync(System.Guid)">
+            <summary>
+            Get an entity is added to database.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Return true if database contains this entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.OrderBy(System.Linq.IQueryable{`0})">
+            <summary>
+            Sort entity queryable.
+            </summary>
+            <param name="queryable">Entity queryable interface.</param>
+            <returns>Return entity queryable interface.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.OrderBy">
+            <summary>
+            Sort entity queryable.
+            </summary>
+            <returns>Return entity queryable interface.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.ToArrayAsync(System.Linq.IQueryable{`0})">
+            <summary>
+            Get array from a queryable.
+            </summary>
+            <param name="queryable">Entity queryable interface.</param>
+            <returns>Return array of entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContext`1.ToListAsync(System.Linq.IQueryable{`0})">
+            <summary>
+            Get list from a queryable.
+            </summary>
+            <param name="queryable">Entity queryable interface.</param>
+            <returns>Return list of entity.</returns>
+        </member>
+        <member name="T:System.Data.Entity.IEntityContextBuilder">
+            <summary>
+            Entity context builder.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContextBuilder.GetContext``1">
+            <summary>
+            Get entity context.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+            <returns>Return entity context.</returns>
+            <exception cref="T:System.ArgumentException">Type of entity doesn't support.</exception>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContextBuilder.GetContext(System.Type)">
+            <summary>
+            Get entity context.
+            </summary>
+            <param name="entityType">Type of entity.</param>
+            <returns>Return entity context.</returns>
+            <exception cref="T:System.ArgumentException">Type of entity doesn't support.</exception>
+        </member>
+        <member name="P:System.Data.Entity.IEntityContextBuilder.DescriptorContext">
+            <summary>
+            Get the descriptor context of builder.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.IEntityContextBuilder.Query``1(System.String,System.Object[])">
+            <summary>
+            Get data by sql query.
+            </summary>
+            <typeparam name="T">Type of result.</typeparam>
+            <param name="sql">Sql query.</param>
+            <param name="parameters">Query parameters.</param>
+            <returns>Return enumerable data.</returns>
+        </member>
+        <member name="P:System.Data.Entity.IEntityContextBuilder.EntityTypes">
+            <summary>
+            Get support entity types array.
+            </summary>
+        </member>
+        <member name="T:System.Data.Entity.IEntityQueryable`1">
+            <summary>
+            Entity queryable context.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+        </member>
+        <member name="T:System.Data.Entity.IRoleEntity">
+            <summary>
+            Entity with role support.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.IRoleEntity.IsInRole(System.Object)">
+            <summary>
+            Ensure this user is belong to a role.
+            </summary>
+            <param name="role">Role name.</param>
+            <returns>true if user is member of this role.</returns>
+        </member>
+        <member name="T:System.Data.Entity.Metadata.EntityAnalyzer">
+            <summary>
+            Entity analyzer.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.EntityAnalyzer.OverrideAnalyzer(System.Data.Entity.Metadata.IEntityAnalyzer)">
+            <summary>
+            Override a global entity analyzer.
+            </summary>
+            <param name="analyzer"></param>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.EntityAnalyzer.GetMetadata(System.Type)">
+            <summary>
+            Get the metadata of entity.
+            </summary>
+            <param name="type">Type of entity.</param>
+            <returns>Return entity metadata. If find any error when analyze will return null.</returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.EntityAnalyzer.GetMetadata``1">
+            <summary>
+            Get the metadata of entity.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+            <returns>Return entity metadata. If find any error when analyze will return null.</returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.EntityAnalyzer.#ctor">
+            <summary>
+            Initialize entity analyzer.
+            </summary>
+        </member>
+        <member name="T:System.Data.Entity.Metadata.ClrEntityMetadata">
+            <summary>
+            Entity metadata.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.ClrEntityMetadata.#ctor(System.Type)">
+            <summary>
+            Initialize entity metadata.
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="T:System.Data.Entity.Metadata.EntityMetadataBase">
+            <summary>
+            Entity metadata base class.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.EntityMetadataBase.#ctor(System.Type)">
+            <summary>
+            Initialize entity metadata.
+            </summary>
+            <param name="entityType"></param>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.Type">
+            <summary>
+            Get the system type of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.KeyType">
+            <summary>
+            Get the system type of key of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.Name">
+            <summary>
+            Get the display name of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.DisplayProperty">
+            <summary>
+            Get the display property of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.SortProperty">
+            <summary>
+            Get the sort property of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.ParentProperty">
+            <summary>
+            Get the parent property of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.SortDescending">
+            <summary>
+            Get the sort mode of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.Properties">
+            <summary>
+            Get the properties of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.ViewProperties">
+            <summary>
+            Get the properties of entity in viewlist.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.CreateProperties">
+            <summary>
+            Get the properties of entity while create.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.EditProperties">
+            <summary>
+            Get the properties of entity while edit.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.SearchProperties">
+            <summary>
+            Get the properties of entity while search.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.DetailProperties">
+            <summary>
+            Get the properties of entity in detail.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.AllowAnonymous">
+            <summary>
+            Get is entity allow anonymous operate.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.ViewRoles">
+            <summary>
+            Get roles to view entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.AddRoles">
+            <summary>
+            Get roles to add entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.EditRoles">
+            <summary>
+            Get roles to edit entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.RemoveRoles">
+            <summary>
+            Get roles to remove entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.AuthenticationRequiredMode">
+            <summary>
+            Get the authentication required mode.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.EntityMetadataBase.PropertyCache">
+            <summary>
+            Get the cache of properties.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.EntityMetadataBase.GetProperty(System.String)">
+            <summary>
+            Get the property of entity.
+            </summary>
+            <param name="name">Name of property.</param>
+            <returns>Return property metadata. Return null if property doesn't exists.</returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.EntityMetadataBase.SetDisplay(System.ComponentModel.DisplayNameAttribute)">
+            <summary>
+            Set the metadata of display.
+            </summary>
+            <param name="display">Display name attribute.</param>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.EntityMetadataBase.SetDisplayColumn(System.ComponentModel.DataAnnotations.DisplayColumnAttribute)">
+            <summary>
+            Set the metadata of display property.
+            </summary>
+            <param name="display">Display attribute.</param>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.EntityMetadataBase.SetParent(System.ComponentModel.DataAnnotations.ParentAttribute)">
+            <summary>
+            Set the metadata of parent.
+            </summary>
+            <param name="parent">Parent attribute.</param>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.EntityMetadataBase.SetProperties(System.Collections.Generic.IEnumerable{System.Data.Entity.Metadata.IPropertyMetadata})">
+            <summary>
+            Set the metadata of properties.
+            </summary>
+            <param name="propertyMetadatas">Property metadatas.</param>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.EntityMetadataBase.SetAuthentication(System.ComponentModel.DataAnnotations.EntityAuthenticationAttribute)">
+            <summary>
+            Set the metadata of authentication.
+            </summary>
+            <param name="authentication"></param>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.EntityMetadataBase.SetMetadata">
+            <summary>
+            Set the metadata automatic.
+            </summary>
+        </member>
+        <member name="T:System.Data.Entity.Metadata.IEntityAnalyzer">
+            <summary>
+            Entity analyzer interface.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.IEntityAnalyzer.GetMetadata(System.Type)">
+            <summary>
+            Get the metadata of entity.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.Entity.Metadata.IEntityMetadata">
+            <summary>
+            Entity metadata interface.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.Type">
+            <summary>
+            Get the system type of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.KeyType">
+            <summary>
+            Get the system type of key of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.Name">
+            <summary>
+            Get the display name of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.DisplayProperty">
+            <summary>
+            Get the display property of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.SortProperty">
+            <summary>
+            Get the sort property of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.ParentProperty">
+            <summary>
+            Get the parent property of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.SortDescending">
+            <summary>
+            Get the sort mode of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.Properties">
+            <summary>
+            Get the properties of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.ViewProperties">
+            <summary>
+            Get the properties of entity in viewlist.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.CreateProperties">
+            <summary>
+            Get the properties of entity while create.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.EditProperties">
+            <summary>
+            Get the properties of entity while edit.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.SearchProperties">
+            <summary>
+            Get the properties of entity while search.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.DetailProperties">
+            <summary>
+            Get the properties of entity in detail.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.AllowAnonymous">
+            <summary>
+            Get is entity allow anonymous operate.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.ViewRoles">
+            <summary>
+            Get the roles to view entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.AddRoles">
+            <summary>
+            Get the roles to add entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.EditRoles">
+            <summary>
+            Get the roles to edit entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.RemoveRoles">
+            <summary>
+            Get the roles to remove entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IEntityMetadata.AuthenticationRequiredMode">
+            <summary>
+            Get the authentication required mode.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.IEntityMetadata.GetProperty(System.String)">
+            <summary>
+            Get the property of entity.
+            </summary>
+            <param name="name">Name of property.</param>
+            <returns>Return property metadata. Return null if property doesn't exists.</returns>
+        </member>
+        <member name="T:System.Data.Entity.Metadata.IPropertyMetadata">
+            <summary>
+            Property metadata interface.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.Name">
+            <summary>
+            Get the property name.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.ClrName">
+            <summary>
+            Get the property runtime name.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.ShortName">
+            <summary>
+            Get the short name of property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.Description">
+            <summary>
+            Get the description of property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.IsDistinct">
+            <summary>
+            Get the property is distinct.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.IsExpended">
+            <summary>
+            Get the property is expended.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.ClrType">
+            <summary>
+            Get the runtime type of property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.Type">
+            <summary>
+            Get the type of property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.CustomType">
+            <summary>
+            Get the custom data type of property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.IsFileUpload">
+            <summary>
+            Get the property is base on upload file.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.IsRequired">
+            <summary>
+            Get is the property must has data.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.IsHiddenOnCreate">
+            <summary>
+            Get is the property hidden while creating.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.IsHiddenOnEdit">
+            <summary>
+            Get is the property hidden while edit.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.IsHiddenOnView">
+            <summary>
+            Get is the property hidden in viewlist.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.IsHiddenOnDetail">
+            <summary>
+            Get is the property hidden in detail.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.Order">
+            <summary>
+            Get the order of property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.Searchable">
+            <summary>
+            Get is the property search able.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.AllowAnonymous">
+            <summary>
+            Get is property allow anonymous operate.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.ViewRoles">
+            <summary>
+            Get the roles to view property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.EditRoles">
+            <summary>
+            Get the roles to edit property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.AuthenticationRequiredMode">
+            <summary>
+            Get the authentication required mode.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.CanGet">
+            <summary>
+            Get is the property can get value.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.IPropertyMetadata.CanSet">
+            <summary>
+            Get is the property can set value.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.IPropertyMetadata.GetAttribute``1">
+            <summary>
+            Get attribute from metadata.
+            </summary>
+            <typeparam name="T">Attribute type.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.IPropertyMetadata.GetAttributes``1">
+            <summary>
+            Get attributes from metadata.
+            </summary>
+            <typeparam name="T">Attribute type.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.IPropertyMetadata.GetValue(System.Object)">
+            <summary>
+            Get property value from an entity.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.IPropertyMetadata.SetValue(System.Object,System.Object)">
+            <summary>
+            Set property value to an entity.
+            </summary>
+            <param name="entity">Entity.</param>
+            <param name="value">Value.</param>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.IPropertyMetadata.TryGetPropertyInfo">
+            <summary>
+            Try get PropertyInfo from metadata.
+            </summary>
+            <returns>Return value if there can be a PropertyInfo.</returns>
+        </member>
+        <member name="T:System.Data.Entity.Metadata.PropertyExtension">
+            <summary>
+            Extensions for property objects.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyExtension.GetCustomDataType(System.Reflection.PropertyInfo,System.String@,System.Boolean@)">
+            <summary>
+            Get the custom type from property info.
+            </summary>
+            <param name="propertyInfo">Property info.</param>
+            <param name="customType">Custom type if exists.</param>
+            <param name="isFileUpload">Is property used to upload.</param>
+            <returns>Custom data type.</returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyExtension.GetGetMethodDelegate(System.Reflection.PropertyInfo)">
+            <summary>
+            Get the get delegate from property info.
+            </summary>
+            <param name="propertyInfo">Property info.</param>
+            <returns>The get delegate made of labmda expression.</returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyExtension.GetSetMethodDelegate(System.Reflection.PropertyInfo)">
+            <summary>
+            Get the set delegate from property info.
+            </summary>
+            <param name="propertyInfo">Property info.</param>
+            <returns>The set delegate made of labmda expression.</returns>
+        </member>
+        <member name="T:System.Data.Entity.Metadata.ClrPropertyMetadata">
+            <summary>
+            Clr Property metadata.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.ClrPropertyMetadata.#ctor(System.Reflection.PropertyInfo)">
+            <summary>
+            Initialize property metadata.
+            </summary>
+            <param name="propertyInfo">Property info.</param>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.ClrPropertyMetadata.Property">
+            <summary>
+            Get the property info.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.ClrPropertyMetadata.ToString">
+            <summary>
+            Get property display name.
+            </summary>
+            <returns>Default return name of display + "-" + name of property.</returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.ClrPropertyMetadata.GetAttribute``1">
+            <summary>
+            Get attribute from metadata.
+            </summary>
+            <typeparam name="T">Attribute type.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.ClrPropertyMetadata.GetAttributes``1">
+            <summary>
+            Get attributes from metadata.
+            </summary>
+            <typeparam name="T">Attribute type.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.ClrPropertyMetadata.GetValue(System.Object)">
+            <summary>
+            Get property value from an entity.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.ClrPropertyMetadata.SetValue(System.Object,System.Object)">
+            <summary>
+            Set property value to an entity.
+            </summary>
+            <param name="entity">Entity.</param>
+            <param name="value">Value.</param>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.ClrPropertyMetadata.TryGetPropertyInfo">
+            <summary>
+            Try get PropertyInfo from metadata.
+            </summary>
+            <returns>Return value if there can be a PropertyInfo.</returns>
+        </member>
+        <member name="T:System.Data.Entity.Metadata.PropertyMetadataBase">
+            <summary>
+            Property metadata base class.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyMetadataBase.#ctor(System.String,System.Type)">
+            <summary>
+            Initialize property metadata.
+            </summary>
+            <param name="clrName">Clr name of property.</param>
+            <param name="clrType">Clr type of property.</param>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.Name">
+            <summary>
+            Get the property display name.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.ClrName">
+            <summary>
+            Get the property runtime name.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.ShortName">
+            <summary>
+            Get the short name of property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.Description">
+            <summary>
+            Get the description of property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.IsDistinct">
+            <summary>
+            Get the property is distinct.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.IsExpended">
+            <summary>
+            Get the property is expended.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.ClrType">
+            <summary>
+            Get the runtime type of property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.Type">
+            <summary>
+            Get the type of property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.CustomType">
+            <summary>
+            Get the custom data type of property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.IsFileUpload">
+            <summary>
+            Get the property is base on upload file.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.IsRequired">
+            <summary>
+            Get is the property must has data.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.IsHiddenOnCreate">
+            <summary>
+            Get is the property hidden while creating.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.IsHiddenOnEdit">
+            <summary>
+            Get is the property hidden while edit.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.IsHiddenOnView">
+            <summary>
+            Get is the property hidden in viewlist.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.IsHiddenOnDetail">
+            <summary>
+            Get is the property hidden in detail.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.Order">
+            <summary>
+            Get the order of property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.Searchable">
+            <summary>
+            Get is the property search able.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.AllowAnonymous">
+            <summary>
+            Get is property allow anonymous operate.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.ViewRoles">
+            <summary>
+            Get the roles to view property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.EditRoles">
+            <summary>
+            Get the roles to edit property.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.AuthenticationRequiredMode">
+            <summary>
+            Get the authentication required mode.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.CanGet">
+            <summary>
+            Get is the property can get value.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.Metadata.PropertyMetadataBase.CanSet">
+            <summary>
+            Get is the property can set value.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyMetadataBase.GetAttribute``1">
+            <summary>
+            Get attribute from metadata.
+            </summary>
+            <typeparam name="T">Attribute type.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyMetadataBase.GetAttributes``1">
+            <summary>
+            Get attributes from metadata.
+            </summary>
+            <typeparam name="T">Attribute type.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyMetadataBase.GetValue(System.Object)">
+            <summary>
+            Get property value from an entity.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyMetadataBase.SetValue(System.Object,System.Object)">
+            <summary>
+            Set property value to an entity.
+            </summary>
+            <param name="entity">Entity.</param>
+            <param name="value">Value.</param>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyMetadataBase.TryGetPropertyInfo">
+            <summary>
+            Try get PropertyInfo from metadata.
+            </summary>
+            <returns>Return value if there can be a PropertyInfo.</returns>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyMetadataBase.SetDisplay(System.ComponentModel.DataAnnotations.DisplayAttribute)">
+            <summary>
+            Set the metadata of display.
+            </summary>
+            <param name="display">Display attribute.</param>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyMetadataBase.SetHide(System.ComponentModel.DataAnnotations.HideAttribute)">
+            <summary>
+            Set the metadata of hide.
+            </summary>
+            <param name="hide"></param>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyMetadataBase.SetAuthentication(System.ComponentModel.DataAnnotations.PropertyAuthenticationAttribute)">
+            <summary>
+            Set the metadata of authentication.
+            </summary>
+            <param name="authentication"></param>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyMetadataBase.SetDataType(System.ComponentModel.DataAnnotations.CustomDataTypeAttribute)">
+            <summary>
+            Set the metadata of data type.
+            </summary>
+            <param name="dataType"></param>
+        </member>
+        <member name="M:System.Data.Entity.Metadata.PropertyMetadataBase.SetMetadata">
+            <summary>
+            Set the metadata automatic.
+            </summary>
+        </member>
+        <member name="T:System.Data.Entity.IPassword">
+            <summary>
+            Password entity object interface.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.IPassword.SetPassword(System.String)">
+            <summary>
+            Set a new password.
+            </summary>
+            <param name="password">New password.</param>
+        </member>
+        <member name="M:System.Data.Entity.IPassword.VerifyPassword(System.String)">
+            <summary>
+            Verify a password is equal to this entity.
+            </summary>
+            <param name="password">Password to verify.</param>
+            <returns>Return true if equal.</returns>
+        </member>
+        <member name="T:System.Data.Entity.MixedEntityContextBuilder">
+            <summary>
+            Mixed entity context builder.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.MixedEntityContextBuilder.#ctor(System.Data.Entity.IEntityContextBuilder)">
+            <summary>
+            Initialize with main builder.
+            </summary>
+            <param name="mainBuilder"></param>
+        </member>
+        <member name="M:System.Data.Entity.MixedEntityContextBuilder.#ctor">
+            <summary>
+            Initialize empty builder.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.MixedEntityContextBuilder.MainBuilder">
+            <summary>
+            Get the main entity context builder.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.MixedEntityContextBuilder.MapContext(System.Data.Entity.IEntityContextBuilder)">
+            <summary>
+            Map entities with a context builder.
+            </summary>
+            <param name="builder">Entity context builder.</param>
+        </member>
+        <member name="M:System.Data.Entity.MixedEntityContextBuilder.MapContext``1(System.Data.Entity.IEntityContext{``0})">
+            <summary>
+            Map a entity with a context.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+            <param name="context">Entity context.</param>
+        </member>
+        <member name="M:System.Data.Entity.MixedEntityContextBuilder.MapContext``1(System.Data.Entity.IEntityContextBuilder)">
+            <summary>
+            Map a entity with a context builder.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+            <param name="builder">Entity context builder.</param>
+        </member>
+        <member name="M:System.Data.Entity.MixedEntityContextBuilder.GetContext``1">
+            <summary>
+            Get entity context.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+            <returns>Return entity context.</returns>
+            <exception cref="T:System.ArgumentException">Type of entity doesn't support.</exception>
+        </member>
+        <member name="M:System.Data.Entity.MixedEntityContextBuilder.GetContext(System.Type)">
+            <summary>
+            Get entity context.
+            </summary>
+            <param name="entityType">Type of entity.</param>
+            <returns>Return entity context.</returns>
+            <exception cref="T:System.ArgumentException">Type of entity doesn't support.</exception>
+        </member>
+        <member name="P:System.Data.Entity.MixedEntityContextBuilder.DescriptorContext">
+            <summary>
+            Get the descriptor context of builder.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.MixedEntityContextBuilder.Query``1(System.String,System.Object[])">
+            <summary>
+            Get data by sql query string.
+            Only support while there is a main builder.
+            </summary>
+            <typeparam name="T">Type of result.</typeparam>
+            <param name="sql">Sql query string.</param>
+            <param name="parameters">Query parameters.</param>
+            <returns>A System.Data.Entity.Infrastructure.DbRawSqlQuery object that will execute the query when it is enumerated.</returns>
+        </member>
+        <member name="M:System.Data.Entity.MixedEntityContextBuilder.Dispose">
+            <summary>
+            Dispose entity context builder.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.MixedEntityContextBuilder.EntityTypes">
+            <summary>
+            Get support entity types array.
+            </summary>
+        </member>
+        <member name="T:System.Data.Entity.NotifyEntityBase">
+            <summary>
+            Entity base with notification object.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.NotifyEntityBase.Index">
+            <summary>
+            Get or set the id of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.NotifyEntityBase.CreateDate">
+            <summary>
+            Get or set the create date of entity.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.NotifyEntityBase.OnCreateCompleted">
+            <summary>
+            Call when entity created.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.NotifyEntityBase.OnEditCompleted">
+            <summary>
+            Call when entity edited.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.NotifyEntityBase.IsRemoveAllowed">
+            <summary>
+            Get is the entity can remove.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:System.Data.Entity.NotifyEntityBase.IsEditAllowed">
+            <summary>
+            Get is the entity can edit.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Entity.NotifyEntityBase.ToString">
+            <summary>
+            Return a string that entity display.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Entity.NotifyEntityBase.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Ensure that entity is valid.
+            </summary>
+            <param name="validationContext">Validation context.</param>
+            <returns>Collection that include error messages.</returns>
+        </member>
+        <member name="T:System.Data.Entity.UserBase">
+            <summary>
+            Entity base object for user.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.UserBase.Password">
+            <summary>
+            Get or set the sha1 hashed password.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.UserBase.Salt">
+            <summary>
+            Get or set the salt data for password.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.UserBase.SetPassword(System.String)">
+            <summary>
+            Set a new password.
+            </summary>
+            <param name="password">New password.</param>
+        </member>
+        <member name="M:System.Data.Entity.UserBase.VerifyPassword(System.String)">
+            <summary>
+            Verify a password is equal to this entity.
+            </summary>
+            <param name="password">Password to verify.</param>
+            <returns>Return true if equal.</returns>
+        </member>
+        <member name="M:System.Data.Entity.UserBase.IsInRole(System.Object)">
+            <summary>
+            Ensure this user is belong to a role.
+            </summary>
+            <param name="role">Role name.</param>
+            <returns>true if user is member of this role.</returns>
+        </member>
+        <member name="T:System.Runtime.Serialization.ALEXFWSerializer">
+            <summary>
+            ALEXFW serializer.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.Serialization.ALEXFWSerializer.#ctor">
+            <summary>
+            Initialize ALEXFW serialzer.
+            </summary>
+        </member>
+        <member name="P:System.Runtime.Serialization.ALEXFWSerializer.IsTypeExtensionEnabled">
+            <summary>
+            Get or set the type extension enabled.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.Serialization.ALEXFWSerializer.Serialize``1(System.IO.Stream,``0)">
+            <summary>
+            Serialize an object.
+            </summary>
+            <typeparam name="T">Type of object.</typeparam>
+            <param name="stream">Data stream.</param>
+            <param name="obj">Object to serialize.</param>
+        </member>
+        <member name="M:System.Runtime.Serialization.ALEXFWSerializer.Deserialize``1(System.IO.Stream)">
+            <summary>
+            Deserialize an object.
+            </summary>
+            <typeparam name="T">Type of object.</typeparam>
+            <param name="stream">Data stream.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Runtime.Serialization.ALEXFWSerializer.SerializeObject(System.IO.Stream,System.Type,System.Object)">
+            <summary>
+            Serialize object.
+            </summary>
+            <param name="stream">Data stream.</param>
+            <param name="type">Type of object.</param>
+            <param name="obj">Object to serialize.</param>
+        </member>
+        <member name="M:System.Runtime.Serialization.ALEXFWSerializer.DeserializeObject(System.IO.Stream,System.Type)">
+            <summary>
+            Deserialize object.
+            </summary>
+            <param name="stream">Data stream.</param>
+            <param name="type">Type of object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Runtime.Serialization.ALEXFWSerializer.SerializeValue(System.IO.Stream,System.Type,System.Object)">
+            <summary>
+            Serialize value.
+            </summary>
+            <param name="stream">Data stream.</param>
+            <param name="type">Type of value.</param>
+            <param name="value">Value to serialize.</param>
+        </member>
+        <member name="M:System.Runtime.Serialization.ALEXFWSerializer.DeserializeValue(System.IO.Stream,System.Type)">
+            <summary>
+            Deserialize value.
+            </summary>
+            <param name="stream">Data stream.</param>
+            <param name="type">Type of value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Runtime.Serialization.ALEXFWSerializer.GetTypeIndex(System.Type)">
+            <summary>
+            Get type index.
+            </summary>
+            <param name="type">Type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Runtime.Serialization.ALEXFWSerializer.GetType(System.Int32)">
+            <summary>
+            Get type from index.
+            </summary>
+            <param name="index">Index of type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Runtime.Serialization.ALEXFWSerializer.GetType(System.Byte)">
+            <summary>
+            Get type from index.
+            </summary>
+            <param name="index">Index of type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Runtime.Serialization.ALEXFWSerializer.ConvertTypeToType(System.Type)">
+            <summary>
+            Convert type to type.
+            </summary>
+            <param name="type">Type to convert.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Runtime.Serialization.ALEXFWSerializer.ConvertTypeFromString(System.String)">
+            <summary>
+            Convert string to type.
+            </summary>
+            <param name="typeName">Name of type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Runtime.Serialization.ALEXFWSerializer.ConvertTypeToString(System.Type)">
+            <summary>
+            Convert type to string.
+            </summary>
+            <param name="type">Type.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Runtime.Serialization.EntitySerializer">
+            <summary>
+            ALEXFW entity serializer.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.Serialization.EntitySerializer.SerializeValue(System.IO.Stream,System.Type,System.Object)">
+            <summary>
+            Serialize value.
+            </summary>
+            <param name="stream">Data stream.</param>
+            <param name="type">Type of value.</param>
+            <param name="value">Value to serialize.</param>
+        </member>
+    </members>
+</doc>

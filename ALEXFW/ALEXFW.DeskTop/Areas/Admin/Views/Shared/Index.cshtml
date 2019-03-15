@@ -1,0 +1,273 @@
+﻿@using System.ComponentModel.DataAnnotations
+@using System.Data.Entity
+@using System.Reflection
+@using ALEXFW.DataAccess
+@using ALEXFW.Entity.CommonDictionary
+
+@model IEntityViewModel
+@{
+    ViewBag.Title = Model.Metadata.Name + "列表";
+    var area = ViewContext.RouteData.DataTokens["Area"];
+    if (area == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Areas/" + area + "/Views/Shared/_AdminLayout.cshtml";
+    }
+    var provider = this.GetServiceProvider();
+}
+@*地址导航*@
+<ol class="breadcrumb"  style ="background-color:white">
+    <li>
+        <a href="@Html.Raw(Url.Action("Overview", "Home"))">首页</a>
+    </li>
+    <li class="active">@Model.Metadata.Name</li>
+</ol>
+
+@*查询信息框*@
+@if (Model.SearchItem.Length > 0)
+{
+    <div class="col-md-11">
+        <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <p>
+                <h4>查询条件</h4>
+            </p>
+            @for (var i = 0; i < Model.SearchItem.Length; i++)
+            {
+                @Html.Partial("SearchItem", Model.SearchItem[i])
+            }
+        </div>
+    </div>
+}
+
+<div class="row" style="padding: 0 10px 0 10px;">
+    @if (Model.Parent != null)
+         {
+             <link href="~/Content/jstree.min.css" rel="stylesheet"/>
+             <script src="~/Scripts/jstree.min.js"></script>
+             <div class="col-md-3">
+                 <div class="panel panel-default">
+                     <div class="panel-heading">@(Model.Metadata.Name)导航</div>
+                     <div class="panel-body" id="parentview">
+                         <ul>
+                             <li class="jstree-open">
+                                 <a data-nav="true" href="@Html.Raw(Url.Action("Index"))">All</a>
+                                 <ul>
+                                     @Html.Partial("ParentView", Model.Parent)
+                                 </ul>
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+             <script type="text/javascript">
+                 $('#parentview')
+                     .bind('select_node.jstree',
+                         function(node, selected) {
+                             window.location.href = selected.node.a_attr.href;
+                         });
+                 $('#parentview').jstree();
+             </script>
+         }
+    <div class="@(Model.Parent == null ? "col-md-12" : "col-md-9")">
+        <div class="panel panel-default">
+
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                @(Model.Metadata.Name)列表
+                @if (Model.Metadata.AddRoles.All(t => User.IsInRole(t)))
+                {
+                    <a href="@Html.Raw(Url.Action("Create"))" class="btn btn-default pull-right" style="margin-top: -7px;">新建</a>
+                }
+                @if (Model.Metadata.SearchProperties.Count() > 0)
+                {
+                    <a href="@Html.Raw(Url.Action("Search"))" class="btn btn-default pull-right" style="margin-top: -7px;">查询</a>
+                }
+            </div>
+            <!-- Table -->
+            <div class="panel-body">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        @foreach (var header in Model.Headers)
+                        {
+                            <td title="@header.Description">@header.Name</td>
+                        }
+                        <td>操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr>
+                            @foreach (var header in Model.Headers)
+                            {
+                                var entityType = ((EntitySelectAttribute) header.TryGetPropertyInfo().GetCustomAttribute(typeof(EntitySelectAttribute), false))?.EntityType;
+
+                                if (header.GetValue(item) == null)
+                                {
+                                    <td>@EntityValueConverter.GetConverter(header).ConvertToString(header.GetValue(item))</td>
+                                }
+                                else if (header.GetValue(item).ToString() == "False")
+                                {
+                                    <td>否</td>
+                                }
+                                else if (header.GetValue(item).ToString() == "True")
+                                {
+                                    <td>是</td>
+                                }
+                                else if (entityType != null)
+                                {
+                                    var dataContext = new DBContext();
+                                    var eValue = header.GetValue(item).ToString();
+                                    var gid = Guid.Parse(eValue) == Guid.Empty ? Guid.NewGuid() : Guid.Parse(eValue);
+                                    dynamic entity = dataContext.Set(entityType).Find(gid);
+                                    var display = entityType.GetCustomAttribute(typeof(DisplayColumnAttribute), false) as DisplayColumnAttribute;
+                                    if (display != null && entity != null)
+                                    {
+                                        var propertyInfo = entityType.GetProperty(display.DisplayColumn);
+                                        var propertyEntity = propertyInfo.GetValue(entity) as IEntity;
+                                        if (propertyEntity == null)
+                                        {
+                                            eValue = propertyInfo.GetValue(entity);
+                                        }
+                                        else
+                                        {
+                                            eValue = EntityValueConverter.GetConverter(header).ConvertToString(header.GetValue(item));
+                                        }
+                                    }
+                                    <td>@eValue</td>
+                                }
+                                else
+                                {
+                                    <td>@EntityValueConverter.GetConverter(header).ConvertToString(header.GetValue(item))</td>
+                                }
+                            }
+
+                            <td class="text-center" style="width: 64px;">
+                                <div class="btn-group btn-group-xs">
+                                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li>
+                                            <a class="btn" href="@Html.Raw(Url.Action("Detail", new {id = item.Index}))"><i class="glyphicon glyphicon-list-alt"></i>明细</a>
+                                        </li>
+                                        @if (Model.Metadata.EditRoles.All(t => User.IsInRole(t)))
+                                        {
+                                            <li>
+                                                <a class="btn" href="@Html.Raw(Url.Action("Edit", new {id = item.Index}))"><i class="glyphicon glyphicon-edit"></i>编辑</a>
+                                            </li>
+                                        }
+                                        @if (Model.Metadata.RemoveRoles.All(t => User.IsInRole(t)))
+                                        {
+                                            <li>
+                                                <a class="btn" href="javascript:remove('@item.Index')"><i class="glyphicon glyphicon-remove"></i>删除</a>
+                                            </li>
+                                        }
+                                        @foreach (var button in Model.ItemButtons)
+                                        {
+                                            button.SetTarget(provider, item);
+                                            <li>
+                                                <a href="@Html.Raw(button.Target)" title="@button.Tooltip">@button.Icon@button.Name</a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="col-md-4">
+                        @Html.PaginationButton(Model)
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="btn-group">
+
+                            @foreach (var button in Model.ViewButtons)
+                            {
+                                //Model.ViewButtons[i].SetTarget()
+                                <a href="@Html.Raw(button.Target)" class="btn btn-default" title="@button.Tooltip">@button.Icon@button.Name</a>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        @Html.Pagination(Model)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Result</h4>
+            </div>
+            <div class="modal-body">
+                <p>This item is reference by other item, can not delete.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="RemoveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">删除</h4>
+            </div>
+            <div class="modal-body">
+                <p>是否删除该项？？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+                <button onclick="pos()" type="button" class="btn btn-primary">
+                    确认
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var index;
+
+    function remove(id) {
+        index = id;
+        $('#RemoveModal').modal('show');
+    }
+
+    $('#RemoveModal').on('hide.bs.modal', function() {
+        index = null;
+    });
+
+    function pos() {
+        $.ajax({
+            url: '@Html.Raw(Url.Action("Remove"))/' + index,
+            cache: false,
+            type: 'POST',
+            success: function() {
+                location.reload();
+            },
+            error: function() {
+                $('#RemoveModal').modal('hide');
+                $('#myModal').modal('show');
+            }
+        });
+    }
+</script>

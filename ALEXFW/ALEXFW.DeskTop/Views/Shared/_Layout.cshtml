@@ -1,0 +1,112 @@
+﻿@using ALEXFW.DataAccess
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/js")
+</head>
+<body>
+    
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      <a class="navbar-brand" href="#">ALEXFW网站</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+              @if (User.Identity.IsAuthenticated)
+              {
+                  var context= new DBContext();
+                  var member = context.Members.Find(Guid.Parse(User.Identity.Name));
+                  <li><p class="navbar-text">您好，@member.Username</p></li>
+                  <li><a href="@Url.Action("My", "Account")">设置</a></li>
+                  <li><a href="@Url.Action("SignOut", "Account", new { returnUrl = Context.Request.Path })">注销</a></li>
+              }
+              else
+              {
+                  <li><a href="@Url.Action("SignIn", "Account", new { returnUrl = Context.Request.Path })">登录</a></li>
+                  <li><a href="@Url.Action("SignUp", "Account", new { returnUrl = Context.Request.Path })">注册</a></li>
+              }
+          </ul>
+          <form class="navbar-form navbar-right" action="#" method="post">
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="站内查询">
+              </div>
+              <button type="submit" class="btn btn-default">查询</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="#">菜单1 <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">菜单2</a></li>
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">下拉菜单 <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#">下拉菜单1</a></li>
+                      <li><a href="#">下拉菜单2</a></li>
+                      <li><a href="#">下拉菜单3</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">下拉菜单4</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">下拉菜单5</a></li>
+                  </ul>
+              </li>
+          </ul>
+          
+
+      </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+@*<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand">ALEXFW网站</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a asp-controller="Home" asp-action="Index">主页</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><p class="navbar-text">您好，@User.Identity.Name</p></li>
+                        <li><a href="@Url.Action("SignOut", "Account", new { returnUrl = Context.Request.Path })">登出</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="@Url.Action("SignIn", "Account", new { returnUrl = Context.Request.Path })">登录</a></li>
+                        <li><a href="@Url.Action("SignUp", "Account", new { returnUrl = Context.Request.Path })">注册</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>*@
+<div class="container body-content">
+    @RenderBody()
+    <hr/>
+    <footer>
+        <p>&copy; 2008 - @DateTime.Now.Year ALEX工作室</p>
+    </footer>
+</div>
+@RenderSection("scripts", required: false)
+</body>
+</html>

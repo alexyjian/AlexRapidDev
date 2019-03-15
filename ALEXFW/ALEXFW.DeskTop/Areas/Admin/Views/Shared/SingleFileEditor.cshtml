@@ -1,0 +1,48 @@
+﻿@model MvcEditorModel
+@{
+    string[] fileUrls = null;
+    var value = (string) Model.Value;
+    if (!string.IsNullOrEmpty(value))
+    {
+        fileUrls = value.Split(',');
+    }
+    var fileUrl = "";
+    if (fileUrls != null && !string.IsNullOrEmpty(fileUrls[0]))
+    {
+        fileUrl = fileUrls[0];
+    }
+}
+
+@if (!string.IsNullOrEmpty(fileUrl))
+{
+    <span>@Model.Value<a target="_blank" href="@fileUrl">  下载</a></span>
+    <br/>
+}
+<input class="form-control" id="@Model.Metadata.ClrName" name="@Model.Metadata.ClrName" type="file" value="@Model.Value"/>
+
+<script>
+    var newFileContainer = $('#@(Model.Metadata.ClrName)');
+    newFileContainer.change(selectComplete);
+
+    function selectComplete() {
+        var file = $(this);
+        var fileResult = file[0].files[0];
+
+        if (fileResult) {
+            var reader = new FileReader();
+            //var fileExt = (/[.]/.exec(fileResult)) ? /[^.]+$/.exec(fileResult.toLowerCase()) : ''; //获取后缀名1
+            //var array = new Array('off', 'pdf'); //可以上传的文件类型
+            //var b = true;
+            //for (var i in array) {
+            //    if (fileExt.toLowerCase() == array[i].toLowerCase()) {
+            //        b = false;
+            //    }
+            //}
+            //if (b) {
+            //    alert("上传扫描件类型只能为OFF和PDF!");
+            //    return false;
+            //}
+            reader.readAsDataURL(fileResult);
+        }
+    }
+</script>

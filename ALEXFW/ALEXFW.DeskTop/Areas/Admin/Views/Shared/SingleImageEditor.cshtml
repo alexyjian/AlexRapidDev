@@ -1,0 +1,54 @@
+﻿@model MvcEditorModel
+@{
+    string[] imgUrls = null;
+    var value = (string) Model.Value;
+    if (!string.IsNullOrEmpty(value))
+    {
+        imgUrls = value.Split(',');
+    }
+    //var imgUrls = ((string)Model.Value).Split(',');
+    var imgUrl = "/images/logo.jpg";
+    if (imgUrls != null && !string.IsNullOrEmpty(imgUrls[0]))
+    {
+        imgUrl = imgUrls[0];
+    }
+}
+<img width="200px" height="200px" id="@(Model.Metadata.ClrName)_ImgView" src="@imgUrl" alt="组图" class="img-thumbnail">
+<input class="form-control" id="@Model.Metadata.ClrName" name="@Model.Metadata.ClrName" type="file" value="@Model.Value" accept="image/*"/>
+
+<script>
+    var newImgContainer = $('#@(Model.Metadata.ClrName)');
+    newImgContainer.change(selectComplete);
+
+    function selectComplete() {
+        var file = $(this);
+        var imageResult = file[0].files[0];
+        if (imageResult) {
+            var reader = new FileReader();
+            var imgInput = document.getElementById('@(Model.Metadata.ClrName)');
+            //if (imageResult.type.indexOf('image') == -1) {
+            //    alert('图片格式不正确。');
+            //    if (imgInput.outerHTML) {
+            //        imgInput.outerHTML = imgInput.outerHTML;
+            //    } else { // FF(包括3.5)
+            //        imgInput.value = "";
+            //    }
+            //    return true;
+            //}
+            //if ((imageResult.size - 0) > 1024 * 1024 * 2) {
+            //    alert('图片不允许大于2MB。');
+            //    if (imgInput.outerHTML) {
+            //        imgInput.outerHTML = imgInput.outerHTML;
+            //    } else { // FF(包括3.5)
+            //        imgInput.value = "";
+            //    }
+            //    return true;
+            //}
+            reader.onload = function(event) {
+                var txt = event.target.result;
+                $('#@(Model.Metadata.ClrName)_ImgView').attr('src', txt);
+            };
+            reader.readAsDataURL(imageResult);
+        }
+    }
+</script>

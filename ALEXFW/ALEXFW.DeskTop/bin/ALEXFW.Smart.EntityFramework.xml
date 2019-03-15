@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ALEXFW.Smart.EntityFramework</name>
+    </assembly>
+    <members>
+        <member name="T:System.Data.Entity.EntityContext`1">
+            <summary>
+            Entity context.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+        </member>
+        <member name="P:System.Data.Entity.EntityContext`1.DbContext">
+            <summary>
+            Get the database context of entity framework.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.EntityContext`1.DbSet">
+            <summary>
+            Get the DbSet of entity.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.EntityContext`1.Metadata">
+            <summary>
+            Get the metadata of entity.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.#ctor(System.Data.Entity.DbContext)">
+            <summary>
+            Initialize entity context.
+            </summary>
+            <param name="dbContext">Database context of entity framework.</param>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.Add(`0)">
+            <summary>
+            Add an entity to database.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns>Return false if detect any error.</returns>
+            <exception cref="T:System.ArgumentException">Id of entity is already exists in database.</exception>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.AddAsync(`0)">
+            <summary>
+            Add an entity to database.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns>Return false if detect any error.</returns>
+            <exception cref="T:System.ArgumentException">Id of entity is already exists in database.</exception>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Add a lot of entity to database.
+            </summary>
+            <param name="entities">IEnumerable of entity.</param>
+            <returns>Return true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.AddRangeAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Add a lot of entity to database.
+            </summary>
+            <param name="entities">IEnumerable of entity.</param>
+            <returns>Return true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.Remove(System.Guid)">
+            <summary>
+            Remove an entity from database.
+            </summary>
+            <param name="entityID">Entity id.</param>
+            <returns>Return true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.RemoveAsync(System.Guid)">
+            <summary>
+            Remove an entity from database.
+            </summary>
+            <param name="entityID">Entity id.</param>
+            <returns>Return true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.RemoveRange(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Remove a lot of entities from database.
+            </summary>
+            <param name="ids">IEnumerable of Guid of entities.</param>
+            <returns>Always return true.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.RemoveRangeAsync(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Remove a lot of entities from database.
+            </summary>
+            <param name="ids">IEnumerable of Guid of entities.</param>
+            <returns>Always return true.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.Edit(`0)">
+            <summary>
+            Edit an entity.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns>Return true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.EditAsync(`0)">
+            <summary>
+            Edit an entity.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns>Return true if success.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.Reload(`0)">
+            <summary>
+            Reload entity from database.
+            </summary>
+            <param name="entity">Entity.</param>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.ReloadAsync(`0)">
+            <summary>
+            Reload entity from database.
+            </summary>
+            <param name="entity">Entity.</param>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.GetEntity(System.Guid)">
+            <summary>
+            Get an entity by id.
+            </summary>
+            <param name="entityID">Entity id.</param>
+            <returns>Return entity. Return null if entity doesn't exists.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.GetEntityAsync(System.Guid)">
+            <summary>
+            Get an entity by id.
+            </summary>
+            <param name="entityID">Entity id.</param>
+            <returns>Return entity. Return null if entity doesn't exists.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.Query">
+            <summary>
+            Get entity queryable interface.
+            </summary>
+            <returns>Return queryable interface of entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.Editable">
+            <summary>
+            Get is the entity edit able.
+            </summary>
+            <returns>Return true if enabled.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.Addable">
+            <summary>
+            Get is the entity add able.
+            </summary>
+            <returns>Return true if enabled.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.Removeable">
+            <summary>
+            Get is the entity remove able.
+            </summary>
+            <returns>Return true if enabled.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.InParent(System.Linq.IQueryable{`0},System.Guid[])">
+            <summary>
+            Get entitiy queryable in some parents.
+            </summary>
+            <param name="queryable">Queryable of entity.</param>
+            <param name="parents">Parents id.</param>
+            <returns>Return queryalble interface of entity.</returns>
+            <exception cref="T:System.ArgumentNullException">queryable or parents is null.</exception>
+            <exception cref="T:System.NotSupportedException">Entity doesn't contains parent property.</exception>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.InParent(System.Linq.IQueryable{`0},System.String,System.Guid)">
+            <summary>
+            Get entitiy queryable in a parent.
+            </summary>
+            <param name="queryable">Queryable of entity.</param>
+            <param name="path">Path that parent to entity. (Like User.Group, User is property of this entity. Group is property of type that User property.)</param>
+            <param name="id">Parent id.</param>
+            <returns>Return queryalble interface of entity.</returns>
+            <exception cref="T:System.ArgumentNullException">queryable or path is null.</exception>
+            <exception cref="T:System.NotSupportedException">Entity doesn't contains parent property.</exception>
+            <exception cref="T:System.ArgumentException">Parent path invalid.</exception>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.Count">
+            <summary>
+            Get total entity count from database.
+            </summary>
+            <returns>Return total entity count number.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.CountAsync">
+            <summary>
+            Get total entity count from database.
+            </summary>
+            <returns>Return total entity count number.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.Contains(`0)">
+            <summary>
+            Get an entity is added to database.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns>Return true if database contains this entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.ContainsAsync(`0)">
+            <summary>
+            Get an entity is added to database.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns>Return true if database contains this entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.Contains(System.Guid)">
+            <summary>
+            Get an entity is added to database.
+            </summary>
+            <param name="id">Entity.</param>
+            <returns>Return true if database contains this entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.ContainsAsync(System.Guid)">
+            <summary>
+            Get an entity is added to database.
+            </summary>
+            <param name="id">Entity.</param>
+            <returns>Return true if database contains this entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.Create">
+            <summary>
+            Create an entity. Not added to database.
+            </summary>
+            <returns>Return created entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.OrderBy(System.Linq.IQueryable{`0})">
+            <summary>
+            Sort entity queryable.
+            </summary>
+            <param name="queryable">Entity queryable interface.</param>
+            <returns>Return entity queryable interface.</returns>
+            <exception cref="T:System.ArgumentNullException">queryable is null.</exception>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.OrderBy">
+            <summary>
+            Sort entity queryable.
+            </summary>
+            <returns>Return entity queryable interface.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.Query(System.String,System.Object[])">
+            <summary>
+            Get data by sql query string.
+            </summary>
+            <param name="sql">Sql query string.</param>
+            <param name="parameters">Query parameters.</param>
+            <returns>A System.Data.Entity.Infrastructure.DbRawSqlQuery object that will execute the query when it is enumerated.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.ToArrayAsync(System.Linq.IQueryable{`0})">
+            <summary>
+            Get array from a queryable.
+            </summary>
+            <param name="queryable">Entity queryable interface.</param>
+            <returns>Return array of entity.</returns>
+        </member>
+        <member name="M:System.Data.Entity.EntityContext`1.ToListAsync(System.Linq.IQueryable{`0})">
+            <summary>
+            Get list from a queryable.
+            </summary>
+            <param name="queryable">Entity queryable interface.</param>
+            <returns>Return list of entity.</returns>
+        </member>
+        <member name="T:System.Data.Entity.EntityContextBuilder">
+            <summary>
+            Entity context builder.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.EntityContextBuilder.#ctor(System.Data.Entity.DbContext)">
+            <summary>
+            Initialize entity context builder.
+            </summary>
+            <param name="context">Entity framework database context.</param>
+        </member>
+        <member name="P:System.Data.Entity.EntityContextBuilder.DbContext">
+            <summary>
+            Get entity framework database context.
+            </summary>
+        </member>
+        <member name="P:System.Data.Entity.EntityContextBuilder.DescriptorContext">
+            <summary>
+            Get the descriptor context of builder.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.EntityContextBuilder.GetContext``1">
+            <summary>
+            Get entity context.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+            <returns>Return entity context.</returns>
+            <exception cref="T:System.ArgumentException">Type of entity doesn't support.</exception>
+        </member>
+        <member name="P:System.Data.Entity.EntityContextBuilder.EntityTypes">
+            <summary>
+            Get support entity types array.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.EntityContextBuilder.GetContext(System.Type)">
+            <summary>
+            Get entity context.
+            </summary>
+            <param name="entityType">Type of entity.</param>
+            <returns>Return entity context.</returns>
+            <exception cref="T:System.ArgumentException">Type of entity doesn't support.</exception>
+        </member>
+        <member name="M:System.Data.Entity.EntityContextBuilder.Dispose">
+            <summary>
+            Dispose entity context builder.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.EntityContextBuilder.Query``1(System.String,System.Object[])">
+            <summary>
+            Get data by sql query string.
+            </summary>
+            <typeparam name="T">Type of result.</typeparam>
+            <param name="sql">Sql query string.</param>
+            <param name="parameters">Query parameters.</param>
+            <returns>A System.Data.Entity.Infrastructure.DbRawSqlQuery object that will execute the query when it is enumerated.</returns>
+        </member>
+        <member name="T:System.Data.Entity.EntityExtensions">
+            <summary>
+            Extensions of entity.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.EntityExtensions.GetContext(System.Data.Entity.IEntityContextBuilder)">
+            <summary>
+            Get database context from a context builder.
+            </summary>
+            <param name="builder">Entity context builder.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.Entity.EntityQueryable`1">
+            <summary>
+            Entity queryable context.
+            </summary>
+            <typeparam name="TEntity">Type of entity.</typeparam>
+        </member>
+        <member name="M:System.Data.Entity.EntityQueryable`1.#ctor(System.Data.Entity.DbContext)">
+            <summary>
+            Initialize entity queryable context.
+            </summary>
+            <param name="dbContext">Database context of entity framework.</param>
+        </member>
+    </members>
+</doc>

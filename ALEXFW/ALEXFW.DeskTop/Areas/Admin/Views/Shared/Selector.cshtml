@@ -1,0 +1,104 @@
+﻿@model IEntityViewModel
+@{
+    var area = ViewContext.RouteData.DataTokens["Area"];
+    if (area == null)
+    {
+        Layout = null;
+    }
+    else
+    {
+        Layout = "~/Areas/" + area + "/Views/Shared/_DialogLayout.cshtml";
+    }
+    ViewBag.Title = Model.Metadata.Name + " Selector";
+}
+<div class="row">
+    @if (Model.Parent != null)
+    {
+        <link href="~/Content/jstree.css" rel="stylesheet" />
+        <script src="~/Scripts/jstree.js"></script>
+            <div class="col-md-3">
+                @*<div class="panel-heading">@(Model.Metadata.Name)导航</div>*@
+                <div class="panel-body" id="parentview" style="overflow: scroll; height: 720px;">
+                    <ul>
+                        <li class="jstree-open">
+                            <a data-nav="true" href="@Html.Raw(Url.ClearQueryPath("page"))">All</a>
+                            <ul>
+                                @Html.Partial("ParentView", Model.Parent)
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            
+        </div>
+        <script type="text/javascript">
+            $('#parentview').bind('select_node.jstree', function (node, selected) {
+        window.location.href = selected.node.a_attr.href;
+    });
+            $('#parentview').jstree();
+        </script>
+    }
+    <div class="@(Model.Parent == null ? "col-md-12" : "col-md-9")">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th width="36"></th>
+                @foreach (var header in Model.Headers)
+                {
+                    <th title="@header.Description">@(header.ShortName ?? header.Name)</th>
+                }
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td class="text-center">
+                        <input type="radio" data-name="@item" name="value" value="@item.Index"/>
+                    </td>
+                    @foreach (var header in Model.Headers)
+                    {
+                        <td id="@item.Index">@EntityValueConverter.GetConverter(header).ConvertTo(header.GetValue(item), typeof (string))</td>
+                    }
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        @Html.PaginationButton(Model)
+    </div>
+    <div class="col-md-4 text-center">
+        <div class="btn-group">
+            @if (Model.Metadata.SearchProperties.Count() > 0)
+            {
+                <a class="btn btn-default" href="@Html.Raw(Url.Action("Search", new {actionName = "Selector", window = "yes"}))">查询</a>
+            }
+            <button class="btn btn-default" onclick="ok()">确认</button>
+        </div>
+    </div>
+    <div class="col-md-4 text-right">
+        @Html.Pagination(Model)
+    </div>
+</div>
+<script type="text/javascript">
+    function ok() {
+        var items = $(':checked[value]');
+        if (items.length == 0) {
+            alert('请选择一个选项。');
+            return;
+        }
+        var itemname = $('#' + items.val()).html();
+        window.returnValue = {
+            name: itemname,
+            value: items.val()
+        };
+        if (window.opener) {
+            window.opener.returnValue = window.returnValue;
+            if (window.opener.selectCompleted != undefined)
+                window.opener.selectCompleted(window.returnValue);
+        }
+        window.close();
+    }
+</script>
