@@ -265,6 +265,7 @@
     <Content Include="Areas\Admin\Scripts\jquery-2.2.4.js" />
     <Content Include="Areas\Admin\Scripts\jquery-2.2.4.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\Avadar\avadar.jpg" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
     <Content Include="Scripts\jquery.tinymce.min.js" />

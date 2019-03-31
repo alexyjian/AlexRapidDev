@@ -5,10 +5,10 @@ using System.Data.Entity;
 
 namespace ALEXFW.Entity.UserAndRole
 {
-    //[EntityAuthentication(AllowAnonymous = false,
-    //    AddRolesRequired = new object[] { AdminGroup.超级管理员 },
-    //    EditRolesRequired = new object[] { AdminGroup.超级管理员 },
-    //    RemoveRolesRequired = new object[] { AdminGroup.超级管理员 })]
+    [EntityAuthentication(AllowAnonymous = false,
+        AddRolesRequired = new object[] { AdminGroup.管理员 },
+        EditRolesRequired = new object[] { AdminGroup.管理员 },
+        RemoveRolesRequired = new object[] { AdminGroup.管理员 })]
     [DisplayName("管理员")]
     [DisplayColumn("Username", "CreateDate", true)]
     [Parent(typeof(Department), "Department")]
@@ -29,16 +29,12 @@ namespace ALEXFW.Entity.UserAndRole
             get { return base.Password; }
             set { base.Password = value; }
         }
-
-        [Searchable]
-        [Display(Name = "分组", Order = 4)]
-        public virtual Department Department { get; set; }
-
+        
         [Display(Name = "是否锁定", Order = 20)]
         public virtual bool IsLocked { get; set; } = false;//是否锁定，不能登录
 
         [Display(Name = "是否删除", Order = 30)]
-        public virtual bool IsDeleted { get; set; } = false;//是否锁定，不能登录
+        public virtual bool IsDeleted { get; set; } = false;//是否删除，不能登录，通常管理者用户不能删除，因为要保留工作日志
 
         [Hide(IsHiddenOnCreate = true, IsHiddenOnEdit = true)]
         public virtual DateTime LastLoginDateTime { get; set; } = DateTime.Now; //上一次登录时间
@@ -48,6 +44,11 @@ namespace ALEXFW.Entity.UserAndRole
         [Searchable]
         public virtual AdminGroup Group { get; set; }
 
+        [Display(Name = "店铺", Order = 40)]
+        [Hide]
+        public virtual  Department Department { get; set; }
+        
+        //此方法用于判断用户角色
         public override bool IsInRole(object role)
         {
             if (role is string)

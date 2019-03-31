@@ -7,27 +7,24 @@ using System.Data.Entity;
 namespace ALEXFW.Entity.UserAndRole
 {
     /// <summary>
-    ///     部门
+    ///   店铺
     /// </summary>
-    [DisplayName("员工部门")]
+    [DisplayName("店铺")]
     [DisplayColumn("DepartmentName", "CreateDate", true)]
     [Parent(typeof(Department), "ParentDepartment")]
     public class Department : EntityBase
     {
         [Required]
-        [Display(Name = "部门编号")]
+        [Display(Name = "店铺编号")]
         public virtual string SortCode { get; set; }
 
         [Required]
-        [Display(Name = "部门名称")]
+        [Display(Name = "店铺名称")]
         public virtual string DepartmentName { get; set; } //部门名称
 
         [Hide]
-        [Display(Name = "员工")]
-        public virtual ICollection<Admin> Admins { get; set; } //部门员工
-
-        [Display(Name = "上级部门")]
-        public virtual Department ParentDepartment { get; set; } //上级部门
+        [Display(Name = "店铺人员")]
+        public virtual ICollection<Admin> Admins { get; set; } //店铺人员
 
         public override void OnCreateCompleted()
         {

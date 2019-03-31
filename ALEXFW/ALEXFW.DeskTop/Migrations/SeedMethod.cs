@@ -12,6 +12,22 @@ namespace ALEXFW.DeskTop.Migrations
 {
     public class SeedMethod
     {
+        /// <summary>
+        /// 店铺
+        /// </summary>
+        /// <param name="context"></param>
+        public static void Department(DBContext context)
+        {
+            var d1 = new Department() {Index = Guid.NewGuid(),SortCode = "0001",DepartmentName = "柳北店" };
+            var d2 = new Department() {Index = Guid.NewGuid(),SortCode = "0002", DepartmentName = "柳南店" };
+            var d3 = new Department() {Index = Guid.NewGuid(),SortCode = "0003", DepartmentName = "柳东店" };
+            var d4 = new Department() {Index = Guid.NewGuid(), SortCode = "0004",DepartmentName = "河西店" };
+            context.Departments.Add(d1);
+            context.Departments.Add(d2);
+            context.Departments.Add(d3);
+            context.Departments.Add(d4);
+            context.SaveChanges();
+        }
         public static void Admin(DBContext context)
         {
             Admin admin = new Admin();
@@ -19,33 +35,60 @@ namespace ALEXFW.DeskTop.Migrations
             admin.CreateDate = DateTime.Now;
             admin.Username = "admin";
             admin.SetPassword("admin");
-            admin.Group = AdminGroup.管理员 | AdminGroup.总经理 | AdminGroup.经理 | AdminGroup.主管 | AdminGroup.员工;
+            admin.Group = AdminGroup.管理员 | AdminGroup.店长 | AdminGroup.业务员;
             admin.EmployeeCode = "0001";
             admin.IsDeleted = false;
             admin.IsLocked = false;
+            admin.Department = context.Departments.SingleOrDefault(x => x.DepartmentName == "柳北店");
             context.Admins.Add(admin);
             context.SaveChanges();
         }
 
         /// <summary>
-        /// 添加一名管理员用户，权限是总经理
+        /// 添加一名店长用户，权限是店长
         /// </summary>
         /// <param name="context"></param>
-        public static void Mangager(DBContext context)
+        public static void Mangage(DBContext context)
         {
             Admin admin = new Admin();
             admin.Index = Guid.NewGuid();
             admin.CreateDate = DateTime.Now;
-            admin.Username = "ceo";
+            admin.Username = "manager";
             admin.SetPassword("123.abc");
-            admin.Group = AdminGroup.总经理 | AdminGroup.经理 | AdminGroup.主管 | AdminGroup.员工;
+            admin.Group =  AdminGroup.店长 | AdminGroup.业务员;
             admin.EmployeeCode = "1001";
             admin.IsDeleted = false;
             admin.IsLocked = false;
+            admin.Department = context.Departments.SingleOrDefault(x => x.DepartmentName == "柳北店");
             context.Admins.Add(admin);
             context.SaveChanges();
         }
 
+        /// <summary>
+        /// 添加一名业务员用户，权限是业务员
+        /// </summary>
+        /// <param name="context"></param>
+        public static void Clerk(DBContext context)
+        {
+            Admin admin = new Admin();
+            admin.Index = Guid.NewGuid();
+            admin.CreateDate = DateTime.Now;
+            admin.Username = "Tom";
+            admin.SetPassword("123.abc");
+            admin.Group = AdminGroup.业务员;
+            admin.EmployeeCode = "2001";
+            admin.IsDeleted = false;
+            admin.IsLocked = false;
+            admin.Department = context.Departments.SingleOrDefault(x => x.DepartmentName == "柳北店");
+            context.Admins.Add(admin);
+            context.SaveChanges();
+        }
+
+
+        /// <summary>
+        /// 会员用户
+        /// </summary>
+        /// <param name="context"></param>
         public static void Member(DBContext context)
         {
             Member member = new Member();
@@ -55,7 +98,8 @@ namespace ALEXFW.DeskTop.Migrations
             member.LastLoginDateTime = DateTime.Now;
             member.PersonName = "余剑";
             member.SetPassword("123456");
-            member.Avatar = "";
+            member.Avatar = "/images/avadar/avadar.jpg";
+            member.Department = context.Departments.SingleOrDefault(x => x.DepartmentName == "柳北店");
             context.Members.Add(member);
             context.SaveChanges();
 
@@ -66,7 +110,8 @@ namespace ALEXFW.DeskTop.Migrations
             member1.LastLoginDateTime = DateTime.Now;
             member1.PersonName = "梅西";
             member1.SetPassword("123456");
-            member1.Avatar = "";
+            member.Department = context.Departments.SingleOrDefault(x => x.DepartmentName == "柳北店");
+            member1.Avatar = "/images/avadar/avadar.jpg";
             context.Members.Add(member1);
             context.SaveChanges();
         }

@@ -8,10 +8,8 @@ namespace ALEXFW.Entity.UserAndRole
     [Flags]
     public enum AdminGroup
     {
-        员工 = 1,
-        主管 = 2,
-        经理 = 4,
-        总经理 = 8,
-        管理员= 16
+        业务员 = 1,
+        店长 = 2,
+        管理员 = 4
     }
 }

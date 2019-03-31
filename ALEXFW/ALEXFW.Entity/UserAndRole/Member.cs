@@ -33,7 +33,7 @@ namespace ALEXFW.Entity.UserAndRole
         }
         
         [Searchable]
-        [Display(Name = "分组", Order = 4)]
+        [Display(Name = "店铺", Order = 4)]
         public virtual Department Department { get; set; }
 
         [Display(Name = "头像", Order = 105)]
