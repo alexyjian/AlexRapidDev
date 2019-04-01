@@ -7,9 +7,9 @@ using System.Data.Entity;
 namespace ALEXFW.Entity.UserAndRole
 {
     [EntityAuthentication(AllowAnonymous = false,
-        AddRolesRequired = new object[] { AdminGroup.管理员 },
+        AddRolesRequired = new object[] { AdminGroup.业务员 },
         RemoveRolesRequired = new object[] { "NotAllowed" },
-        EditRolesRequired = new object[] { AdminGroup.管理员 })]
+        EditRolesRequired = new object[] { AdminGroup.业务员 })]
     [DisplayName("会员")]
     [DisplayColumn("PersonName", "CreateDate", true)]
     [Parent(typeof(Department), "Department")]

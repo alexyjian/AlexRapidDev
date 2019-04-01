@@ -8,7 +8,8 @@ namespace ALEXFW.Entity.UserAndRole
     [EntityAuthentication(AllowAnonymous = false,
         AddRolesRequired = new object[] { AdminGroup.管理员 },
         EditRolesRequired = new object[] { AdminGroup.管理员 },
-        RemoveRolesRequired = new object[] { AdminGroup.管理员 })]
+        RemoveRolesRequired = new object[] { AdminGroup.管理员 },
+        ViewRolesRequired = new object[] { AdminGroup.管理员 })]
     [DisplayName("管理员")]
     [DisplayColumn("Username", "CreateDate", true)]
     [Parent(typeof(Department), "Department")]

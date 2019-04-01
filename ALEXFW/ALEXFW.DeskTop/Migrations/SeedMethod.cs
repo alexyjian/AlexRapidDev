@@ -18,10 +18,10 @@ namespace ALEXFW.DeskTop.Migrations
         /// <param name="context"></param>
         public static void Department(DBContext context)
         {
-            var d1 = new Department() {Index = Guid.NewGuid(),SortCode = "0001",DepartmentName = "柳北店" };
-            var d2 = new Department() {Index = Guid.NewGuid(),SortCode = "0002", DepartmentName = "柳南店" };
-            var d3 = new Department() {Index = Guid.NewGuid(),SortCode = "0003", DepartmentName = "柳东店" };
-            var d4 = new Department() {Index = Guid.NewGuid(), SortCode = "0004",DepartmentName = "河西店" };
+            var d1 = new Department() {Index = Guid.NewGuid(),SortCode = "0001",DepartmentName = "柳北店",CreateDate = DateTime.Now};
+            var d2 = new Department() {Index = Guid.NewGuid(),SortCode = "0002", DepartmentName = "柳南店" ,CreateDate = DateTime.Now};
+            var d3 = new Department() {Index = Guid.NewGuid(),SortCode = "0003", DepartmentName = "柳东店",CreateDate = DateTime.Now};
+            var d4 = new Department() {Index = Guid.NewGuid(), SortCode = "0004",DepartmentName = "河西店" ,CreateDate = DateTime.Now};
             context.Departments.Add(d1);
             context.Departments.Add(d2);
             context.Departments.Add(d3);
@@ -31,6 +31,7 @@ namespace ALEXFW.DeskTop.Migrations
         public static void Admin(DBContext context)
         {
             Admin admin = new Admin();
+            admin.CreateDate = DateTime.Now;
             admin.Index = Guid.NewGuid();
             admin.CreateDate = DateTime.Now;
             admin.Username = "admin";
@@ -51,9 +52,10 @@ namespace ALEXFW.DeskTop.Migrations
         public static void Mangage(DBContext context)
         {
             Admin admin = new Admin();
+            admin.CreateDate = DateTime.Now;
             admin.Index = Guid.NewGuid();
             admin.CreateDate = DateTime.Now;
-            admin.Username = "manager";
+            admin.Username = "manage";
             admin.SetPassword("123.abc");
             admin.Group =  AdminGroup.店长 | AdminGroup.业务员;
             admin.EmployeeCode = "1001";
@@ -71,6 +73,7 @@ namespace ALEXFW.DeskTop.Migrations
         public static void Clerk(DBContext context)
         {
             Admin admin = new Admin();
+            admin.CreateDate = DateTime.Now;
             admin.Index = Guid.NewGuid();
             admin.CreateDate = DateTime.Now;
             admin.Username = "Tom";

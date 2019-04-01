@@ -9,17 +9,23 @@ namespace ALEXFW.Entity.UserAndRole
     /// <summary>
     ///   店铺
     /// </summary>
+    [EntityAuthentication(AllowAnonymous = false,
+        AddRolesRequired = new object[] { AdminGroup.管理员 },
+        EditRolesRequired = new object[] { AdminGroup.管理员 },
+        RemoveRolesRequired = new object[] { AdminGroup.管理员 },
+        ViewRolesRequired = new object[]{AdminGroup.管理员})]
     [DisplayName("店铺")]
     [DisplayColumn("DepartmentName", "CreateDate", true)]
-    [Parent(typeof(Department), "ParentDepartment")]
     public class Department : EntityBase
     {
         [Required]
         [Display(Name = "店铺编号")]
+        [Searchable]
         public virtual string SortCode { get; set; }
 
         [Required]
         [Display(Name = "店铺名称")]
+        [Searchable]
         public virtual string DepartmentName { get; set; } //部门名称
 
         [Hide]
