@@ -43,7 +43,7 @@ namespace ALEXFW.Entity.UserAndRole
 
         [Display(Name = "是否禁用", Order = 5)]
         [CustomDataType(CustomDataType.Boolean)]
-        public virtual bool IsEnabled { get; set; }
+        public virtual bool IsEnabled { get; set; } = true;
 
         [Display(Name = "上次登录时间", Order = 111)]
         [Column(TypeName = "datetime2")]

@@ -66,6 +66,16 @@ namespace ALEXFW.DeskTop.Controllers
                 return Content("密码错误！");
             }
 
+            if (!member.IsEnabled)
+            {
+                Response.StatusCode = 400;
+                Response.TrySkipIisCustomErrors = true;
+                return Content("用户被禁用！");
+            }
+            //更新最近登录时间
+            member.LastLoginDateTime = DateTime.Now;
+            await context.EditAsync(member);
+
             //登录操作
             ALEXFWAuthentication.SignIn(member.Index.ToString(), rememberMe);
             return new HttpStatusCodeResult(200);

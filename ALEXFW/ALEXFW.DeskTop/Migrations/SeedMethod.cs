@@ -38,7 +38,6 @@ namespace ALEXFW.DeskTop.Migrations
             admin.SetPassword("admin");
             admin.Group = AdminGroup.管理员 | AdminGroup.店长 | AdminGroup.业务员;
             admin.EmployeeCode = "0001";
-            admin.IsDeleted = false;
             admin.IsLocked = false;
             admin.Department = context.Departments.SingleOrDefault(x => x.DepartmentName == "柳北店");
             context.Admins.Add(admin);
@@ -59,7 +58,6 @@ namespace ALEXFW.DeskTop.Migrations
             admin.SetPassword("123.abc");
             admin.Group =  AdminGroup.店长 | AdminGroup.业务员;
             admin.EmployeeCode = "1001";
-            admin.IsDeleted = false;
             admin.IsLocked = false;
             admin.Department = context.Departments.SingleOrDefault(x => x.DepartmentName == "柳北店");
             context.Admins.Add(admin);
@@ -80,7 +78,6 @@ namespace ALEXFW.DeskTop.Migrations
             admin.SetPassword("123.abc");
             admin.Group = AdminGroup.业务员;
             admin.EmployeeCode = "2001";
-            admin.IsDeleted = false;
             admin.IsLocked = false;
             admin.Department = context.Departments.SingleOrDefault(x => x.DepartmentName == "柳北店");
             context.Admins.Add(admin);

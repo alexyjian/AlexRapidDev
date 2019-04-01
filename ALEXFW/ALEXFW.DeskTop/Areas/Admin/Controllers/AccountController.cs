@@ -37,7 +37,19 @@ namespace ALEXFW.DeskTop.Areas.Admin.Controllers
                 ViewBag.ErrorMessage = "密码错误";
                 return View();
             }
+            if (admin.IsLocked)
+            {
+                ViewBag.ErrorMessage = "用户被锁定";
+                return View();
+            }
+
+            //更新登录时间
+            admin.LastLoginDateTime=DateTime.Now;
+            await context.EditAsync(admin);
+
+            //生成登录Token
             ALEXFWAuthentication.SignIn(admin.Index.ToString(), false);
+            
             return RedirectToAction("Index", "Home");
         }
 
