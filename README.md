@@ -1,0 +1,2 @@
+# AlexRapidDev
+ALEXFW是一个Repository模式的实体框架，可以帮助你更快速的建立应用程序。
