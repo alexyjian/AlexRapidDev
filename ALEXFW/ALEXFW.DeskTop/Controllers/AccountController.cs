@@ -92,5 +92,19 @@ namespace ALEXFW.DeskTop.Controllers
             ALEXFWAuthentication.SignOut();
             return RedirectToAction("SignIn");
         }
+
+        /// <summary>
+        /// 个人信息
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult My()
+        {
+            return View();
+        }
+
+        public ActionResult SignUp()
+        {
+            return View();
+        }
     }
 }

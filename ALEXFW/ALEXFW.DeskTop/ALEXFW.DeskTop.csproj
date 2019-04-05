@@ -264,6 +264,11 @@
     <Content Include="Areas\Admin\Scripts\jquery-2.2.4.js" />
     <Content Include="Areas\Admin\Scripts\jquery-2.2.4.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\Avadar\1.png" />
+    <Content Include="Images\Avadar\2.png" />
+    <Content Include="Images\Avadar\3.png" />
+    <Content Include="Images\Avadar\4.png" />
+    <Content Include="Images\Avadar\5.png" />
     <Content Include="Images\Avadar\avadar.jpg" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
@@ -815,6 +820,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\SignIn.cshtml" />
+    <Content Include="Views\Account\My.cshtml" />
+    <Content Include="Views\Account\SignUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Views\Category\" />
