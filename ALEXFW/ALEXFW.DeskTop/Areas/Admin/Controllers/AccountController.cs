@@ -49,6 +49,7 @@ namespace ALEXFW.DeskTop.Areas.Admin.Controllers
 
             //生成登录Token
             ALEXFWAuthentication.SignIn(admin.Index.ToString(), false);
+            Session["AdminLogin"] = admin;
             
             return RedirectToAction("Index", "Home");
         }
