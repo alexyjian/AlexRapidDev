@@ -61,5 +61,92 @@ namespace ALEXFW.DeskTop.Areas.Admin.Controllers
             ALEXFWAuthentication.SignOut();
             return RedirectToAction("SignIn");
         }
+
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <returns></returns>
+        [EntityAuthorize]
+        public ActionResult ChangePassword()
+        {
+            var userid = System.Web.HttpContext.Current.User.Identity.Name;
+            var id = Guid.Parse(userid);
+            var UserContext = EntityBuilder.GetContext<Entity.UserAndRole.Admin>();
+            var CurrentUser = UserContext.Query().SingleAsync(x => x.Index == id);
+            return View();
+        }
+
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="oldPassword">旧密码</param>
+        /// <param name="newPassword">新密码</param>
+        /// <returns></returns>
+        [EntityAuthorize]
+        [HttpPost]
+        public async Task<ActionResult> ChangePassword(string Password, string NewPassword, string ConfirmationPassword)
+        {
+            var result = new ChangePasswordModel();
+            if (string.IsNullOrEmpty(Password))
+            {
+                result.IsSuc = false;
+                result.responseText = "原密码不能为空";
+                return Json(result);
+            }
+
+            if (string.IsNullOrEmpty(NewPassword))
+            {
+                result.IsSuc = false;
+                result.responseText = "新密码不能为空";
+                return Json(result);
+            }
+
+            if (NewPassword != ConfirmationPassword)
+            {
+                result.IsSuc = false;
+                result.responseText = "两次输入的密码不一样";
+                return Json(result);
+            }
+            var strid = System.Web.HttpContext.Current.User.Identity.Name;
+            if (string.IsNullOrEmpty(strid))
+            {
+                result.IsSuc = false;
+                result.responseText = "登录超时请重新登录";
+                return Json(result);
+            }
+            var id = Guid.Parse(strid);
+            var UserContext = EntityBuilder.GetContext<Entity.UserAndRole.Admin>();
+            var CurrentUser = await UserContext.GetEntityAsync(id);
+            if (!CurrentUser.VerifyPassword(Password))
+            {
+                result.IsSuc = false;
+                result.responseText = "原密码输入错误";
+                return Json(result);
+            }
+            //设置新密码
+            CurrentUser.SetPassword(ConfirmationPassword);
+            //持久化
+            UserContext.Edit(CurrentUser);
+
+            //跳转到重新登录
+            if (!User.Identity.IsAuthenticated)
+                return RedirectToAction("SignIn");
+
+            //旧凭据注销
+            ALEXFWAuthentication.SignOut();
+
+            result.IsSuc = true;
+            result.responseText = "修改成功请重新登录";
+            return Json(result);
+        }
     }
+}
+
+/// <summary>
+/// 修改密码状态实体
+/// </summary>
+public class ChangePasswordModel
+{
+    public bool IsSuc { get; set; }
+    public string responseText { get; set; }
 }
