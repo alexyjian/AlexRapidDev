@@ -69,10 +69,6 @@ namespace ALEXFW.DeskTop.Areas.Admin.Controllers
         [EntityAuthorize]
         public ActionResult ChangePassword()
         {
-            var userid = System.Web.HttpContext.Current.User.Identity.Name;
-            var id = Guid.Parse(userid);
-            var UserContext = EntityBuilder.GetContext<Entity.UserAndRole.Admin>();
-            var CurrentUser = UserContext.Query().SingleAsync(x => x.Index == id);
             return View();
         }
 
