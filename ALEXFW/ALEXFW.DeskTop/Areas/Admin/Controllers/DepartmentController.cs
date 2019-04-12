@@ -13,5 +13,7 @@ namespace ALEXFW.DeskTop.Areas.Admin.Controllers
         public DepartmentController(IEntityContextBuilder builder) : base(builder)
         {
         }
+
+
     }
 }
