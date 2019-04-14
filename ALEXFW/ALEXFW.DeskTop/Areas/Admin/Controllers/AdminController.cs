@@ -21,21 +21,37 @@ namespace ALEXFW.DeskTop.Areas.Admin.Controllers
             var deptContext = EntityBuilder.GetContext<Department>();
             var adminContext = EntityBuilder.GetContext<Entity.UserAndRole.Admin>();
             var departmentId = Request.Form["Department"].Trim().ToLower();
-            var department =await deptContext.GetEntityAsync(Guid.Parse(departmentId));
-            var group =(AdminGroup)Enum.Parse(typeof(AdminGroup), Request.Form["Group"]);
-            
 
-            ViewBag.ObjectID = id;
-            ViewBag.ObjectType = department.DepartmentName;
-
-            if (group.HasFlag(AdminGroup.店长)&&adminContext.Query().Any(x=>x.Department.Index==department.Index&&x.Group.HasFlag(AdminGroup.店长)))
-            //判断只能有唯一店长
+            if (!string.IsNullOrEmpty(departmentId))
             {
-                Response.StatusCode = 400;
-                return new ContentResult
+                var department = await deptContext.GetEntityAsync(Guid.Parse(departmentId));
+                var group = (AdminGroup) Enum.Parse(typeof(AdminGroup), Request.Form["Group"]);
+
+                ViewBag.ObjectID = id;
+                ViewBag.ObjectType = department.DepartmentName;
+
+                if (group.HasFlag(AdminGroup.店长) && adminContext.Query().Any(x =>
+                        x.Department.Index == department.Index && x.Group.HasFlag(AdminGroup.店长)))
+                    //判断只能有唯一店长
                 {
-                    Content = "该店铺已经有一名店长"
-                };
+                    Response.StatusCode = 400;
+                    return new ContentResult
+                    {
+                        Content = "该店铺已经有一名店长"
+                    };
+                }
+            }
+            else
+            {
+                var group = (AdminGroup)Enum.Parse(typeof(AdminGroup), Request.Form["Group"]);
+                if (!group.HasFlag(AdminGroup.管理员))
+                {
+                    Response.StatusCode = 400;
+                    return new ContentResult
+                    {
+                        Content = "除了管理员角色，用户必须属于一个店铺"
+                    };
+                }
             }
 
             return await Untils.GetUpdateAction(async (p, entity) =>
