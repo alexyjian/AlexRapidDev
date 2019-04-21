@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
@@ -40,6 +41,14 @@ namespace ALEXFW.Entity.Demos
         [Required(ErrorMessage = "分类编号不能为空")]
         [Display(Name = "分类编号",Order = 0)]
         public virtual  string SortCode { get; set; }
+
+        [Display(Name = "分类图片", Order = 105)]
+        [CustomDataType("SingleImage")]
+        [Hide(IsHiddenOnCreate = false, IsHiddenOnEdit = false)]
+        public virtual string Logo { get; set; } //分类图片，单张
+
+        [Hide]
+        public virtual  ICollection<Product> Products { get; set; }
 
         //希望能自动记录每一条数据添加的时间
         public override void OnCreateCompleted()

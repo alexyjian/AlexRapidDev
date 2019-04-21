@@ -42,6 +42,11 @@ namespace ALEXFW.Entity.Demos
         [Required(ErrorMessage = "分类不能为空")]
         public virtual Category Category { get; set; }
 
+        [Display(Name = "商品图片", Order = 105)]
+        [CustomDataType("SingleImage")]
+        [Hide(IsHiddenOnCreate = false, IsHiddenOnEdit = false)]
+        public virtual string Image { get; set; } //商品图片，单张
+
         public override void OnCreateCompleted()
         {
             base.OnCreateCompleted();
