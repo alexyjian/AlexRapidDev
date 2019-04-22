@@ -1,0 +1,26 @@
+﻿@model EntityViewModel<ALEXFW.Entity.UserAndRole.Admin>
+
+<div class="panel-body">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <td title="登录名">登录名</td>
+                <td title="店铺">店铺</td>
+                <td title="角色">角色</td>
+                <td title="操作">操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    
+    <div class="row">
+        <div class="col-md-4">
+            @Html.PaginationButton(Model)
+        </div>
+        <div class="col-md-8 text-right">
+            @Html.Pagination(Model)
+        </div>
+    </div>
+</div>

@@ -6,11 +6,11 @@ using System.Data.Entity;
 namespace ALEXFW.Entity.UserAndRole
 {
     [EntityAuthentication(AllowAnonymous = false,
-        AddRolesRequired = new object[] { AdminGroup.管理员 },
-        EditRolesRequired = new object[] { AdminGroup.管理员 },
-        RemoveRolesRequired = new object[] { AdminGroup.管理员 },
-        ViewRolesRequired = new object[] { AdminGroup.管理员 })]
-    [DisplayName("管理员")]
+        AddRolesRequired = new object[] { AdminGroup.店长 },
+        EditRolesRequired = new object[] { AdminGroup.店长 },
+        RemoveRolesRequired = new object[] { AdminGroup.店长 },
+        ViewRolesRequired = new object[] { AdminGroup.店长 })]
+    [DisplayName("管理人员")]
     [DisplayColumn("Username", "CreateDate", true)]
     [Parent(typeof(Department), "Department")]
     public class Admin : UserBase

@@ -16,50 +16,58 @@ namespace ALEXFW.DeskTop.Areas.Admin.Controllers
         public AdminController(IEntityContextBuilder builder) : base(builder)
         {
         }
+
+        
+        /// <summary>
+        /// 更新实体，需求：在更新前检测一个店铺只能有一名店长
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public override async Task<ActionResult> Update(Guid id)
         {
+            //条件约束
+            //查询用户提交的表单中的店铺是否存在店长
+            var deptId = Request.Form["Department"].Trim();
+            //创建上下文
             var deptContext = EntityBuilder.GetContext<Department>();
             var adminContext = EntityBuilder.GetContext<Entity.UserAndRole.Admin>();
-            var departmentId = Request.Form["Department"].Trim().ToLower();
 
-            if (!string.IsNullOrEmpty(departmentId))
+            if (!string.IsNullOrEmpty(deptId))
             {
-                var department = await deptContext.GetEntityAsync(Guid.Parse(departmentId));
-                var group = (AdminGroup) Enum.Parse(typeof(AdminGroup), Request.Form["Group"]);
+                //从表单中获得用户输入的店铺
+                var department = await deptContext.GetEntityAsync(Guid.Parse(deptId));
 
-                ViewBag.ObjectID = id;
-                ViewBag.ObjectType = department.DepartmentName;
+                //从用户提交的表单中，获取用户当前输入的用户是否为店长
+                var group = (AdminGroup)Enum.Parse(typeof(AdminGroup), Request.Form["Group"]);
 
-                if (group.HasFlag(AdminGroup.店长) && adminContext.Query().Any(x =>
-                        x.Department.Index == department.Index && x.Group.HasFlag(AdminGroup.店长)))
-                    //判断只能有唯一店长
+                //判断当前店铺是否已经有店长
+                if (group.HasFlag(AdminGroup.店长) && adminContext.Query()
+                        .Any(x => x.Department.Index == department.Index && x.Group.HasFlag(AdminGroup.店长)))
                 {
                     Response.StatusCode = 400;
                     return new ContentResult
                     {
-                        Content = "该店铺已经有一名店长"
+                        Content = department.DepartmentName + "已经有一名店长"
                     };
                 }
             }
             else
             {
+                //只有管理员可以不关联店铺，店长和业务员必须选择关联一个店铺
+                //从用户提交的表单中，获取用户当前输入的角色
                 var group = (AdminGroup)Enum.Parse(typeof(AdminGroup), Request.Form["Group"]);
                 if (!group.HasFlag(AdminGroup.管理员))
                 {
                     Response.StatusCode = 400;
                     return new ContentResult
                     {
-                        Content = "除了管理员角色，用户必须属于一个店铺"
+                        Content = "除了管理员角色，店长或业务员必须关联一个店铺"
                     };
                 }
             }
 
-            return await Untils.GetUpdateAction(async (p, entity) =>
-            {
-                var result = await UpdateCore(entity);
-
-                return result;
-            }, UpdateProperty, id);
+            //更新实体的父类的方法 ，不要修改
+            return await Untils.GetUpdateAction((p, entity) => { return UpdateCore(entity); }, UpdateProperty, id);
         }
     }
 }

@@ -62,8 +62,6 @@ D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.CommonUtility\bin\Debug\zh-Hans
 D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.CommonUtility\obj\Debug\ALEXFW.CommonUtility.csproj.CopyComplete
 D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.CommonUtility\obj\Debug\ALEXFW.CommonUtility.dll
 D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.CommonUtility\obj\Debug\ALEXFW.CommonUtility.pdb
-D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\obj\Debug\ALEXFW.CommonUtility.csprojAssemblyReference.cache
-D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\obj\Debug\ALEXFW.CommonUtility.csproj.CoreCompileInputs.cache
 D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\bin\Debug\ALEXFW.CommonUtility.dll.config
 D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\bin\Debug\ALEXFW.CommonUtility.dll
 D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\bin\Debug\ALEXFW.CommonUtility.pdb
@@ -123,6 +121,8 @@ D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\bin\Debug\zh-Hans\System.Web.Razor.r
 D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
 D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
+D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\obj\Debug\ALEXFW.CommonUtility.csprojAssemblyReference.cache
+D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\obj\Debug\ALEXFW.CommonUtility.csproj.CoreCompileInputs.cache
 D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\obj\Debug\ALEXFW.CommonUtility.csproj.CopyComplete
 D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\obj\Debug\ALEXFW.CommonUtility.dll
 D:\AlexRapidDev\ALEXFW\ALEXFW.CommonUtility\obj\Debug\ALEXFW.CommonUtility.pdb

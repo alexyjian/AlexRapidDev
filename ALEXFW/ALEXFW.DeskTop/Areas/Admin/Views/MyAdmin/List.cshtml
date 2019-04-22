@@ -1,0 +1,50 @@
+﻿@model EntityViewModel<ALEXFW.Entity.UserAndRole.Admin>
+@{
+    ViewBag.Title = "店铺管理人员列表";
+
+    var area = ViewContext.RouteData.DataTokens["Area"];
+    if (area == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Areas/" + area + "/Views/Shared/_adminLayout.cshtml";
+    }
+
+    var nameOrCode = ViewBag.NameOrCode;
+    var group = ViewBag.Group;
+    string partialViewPath = ViewBag.PartialViewPath;
+}
+
+<ol class="breadcrumb">
+    <li>
+        <a href="@Html.Raw(Url.Action("Index", "Home"))">工作桌面</a>
+    </li>
+    <li class="active">店铺管理人员列表</li>
+</ol>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                &nbsp;
+                <a onclick="javascript: outport();" class="btn btn-primary pull-right" style="margin-left: 10px; margin-top: -7px;">导出表格</a>
+                <a onclick="javascript: query();" class="btn btn-success pull-right" style="margin-left: 10px; margin-top: -7px;">查询</a>
+                <input class="pull-right form-control" type="text" id="nameOrPhone" placeholder="工号或登录名" value="@nameOrCode" style="margin-left: 10px; margin-top: -7px; width: 20%;" />
+                <select id="isdelete" class="form-control pull-right" style="margin-left: 10px; margin-top: -7px; width: 12%;">
+                    <option @Html.Raw(group == "全部" ? "selected" : "") value="0">全部</option>
+                    <option @Html.Raw(group == "店长" ? "selected" : "") value="1">店长</option>
+                    <option @Html.Raw(group == "业务员" ? "selected" : "") value="2">业务员</option>
+                </select>
+                
+            </div>
+            <!-- Table -->
+            @Html.Partial(partialViewPath, Model)
+        </div>
+
+    </div>
+</div>
+

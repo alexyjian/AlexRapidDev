@@ -50,8 +50,8 @@
     <Compile Include="CommonDictionary\EntitySelectAttribute.cs" />
     <Compile Include="CommonDictionary\ListColumnHeader.cs" />
     <Compile Include="CommonDictionary\ListItemSpecification.cs" />
-    <Compile Include="Demos\Category.cs" />
-    <Compile Include="Demos\Product.cs" />
+    <Compile Include="Gifts\Category.cs" />
+    <Compile Include="Gifts\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserAndRole\Admin.cs" />
     <Compile Include="UserAndRole\Department.cs" />

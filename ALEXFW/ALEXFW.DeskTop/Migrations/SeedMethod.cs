@@ -48,7 +48,7 @@ namespace ALEXFW.DeskTop.Migrations
         /// 添加一名店长用户，权限是店长
         /// </summary>
         /// <param name="context"></param>
-        public static void Mangage(DBContext context)
+        public static void Manage(DBContext context)
         {
             Admin admin = new Admin();
             admin.CreateDate = DateTime.Now;

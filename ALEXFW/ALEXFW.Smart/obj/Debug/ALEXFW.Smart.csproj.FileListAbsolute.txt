@@ -10,4 +10,3 @@ D:\AlexRapidDev\ALEXFW\ALEXFW.Smart\bin\Debug\ALEXFW.Smart.pdb
 D:\AlexRapidDev\ALEXFW\ALEXFW.Smart\obj\Debug\ALEXFW.Smart.csproj.CoreCompileInputs.cache
 D:\AlexRapidDev\ALEXFW\ALEXFW.Smart\obj\Debug\ALEXFW.Smart.dll
 D:\AlexRapidDev\ALEXFW\ALEXFW.Smart\obj\Debug\ALEXFW.Smart.pdb
-D:\AlexRapidDev\ALEXFW\ALEXFW.Smart\obj\Debug\ALEXFW.Smart.csprojAssemblyReference.cache

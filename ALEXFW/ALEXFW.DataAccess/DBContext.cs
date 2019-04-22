@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ALEXFW.Entity.UserAndRole;
 using ALEXFW.Entity;
-using ALEXFW.Entity.Demos;
+using ALEXFW.Entity.Gifts;
 
 namespace ALEXFW.DataAccess
 {
