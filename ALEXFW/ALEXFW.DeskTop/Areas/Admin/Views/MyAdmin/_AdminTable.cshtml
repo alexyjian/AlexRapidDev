@@ -3,15 +3,26 @@
 <div class="panel-body">
     <table class="table table-bordered table-hover">
         <thead>
-            <tr>
-                <td title="登录名">登录名</td>
-                <td title="店铺">店铺</td>
-                <td title="角色">角色</td>
-                <td title="操作">操作</td>
-            </tr>
+        <tr>
+            <td title="工号">工号</td>
+            <td title="登录名">登录名</td>
+            <td title="店铺">店铺</td>
+            <td title="角色">角色</td>
+            <td title="操作">操作</td>
+        </tr>
         </thead>
         <tbody>
-            
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.EmployeeCode</td>
+                    <td>@item.Username</td>
+                    <td>@item.Department.DepartmentName</td>
+                    <td>@item.Group.ToString()</td>
+                    <td>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
     

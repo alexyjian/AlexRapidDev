@@ -79,7 +79,7 @@ namespace ALEXFW.DeskTop.Areas.Admin.Controllers
 
             ViewBag.PartialViewPath = "_adminTable";
 
-            return View("../../Views/MyAdmin/List", null);
+            return View("../../Views/MyAdmin/List", model);
         }
     }
 }
