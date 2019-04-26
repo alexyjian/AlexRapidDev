@@ -43,9 +43,13 @@ namespace ALEXFW.Entity.UserAndRole
         [Required]
         [Display(Name = "用户权限", Order = 5)]
         [Searchable]
+        [PropertyAuthentication(EditRolesRequired = new object[] { AdminGroup.管理员 },
+            ViewRolesRequired = new object[] { AdminGroup.管理员 })]
         public virtual AdminGroup Group { get; set; }
 
         [Display(Name = "店铺", Order = 4)]
+        [PropertyAuthentication(EditRolesRequired = new object[] { AdminGroup.管理员 },
+            ViewRolesRequired = new object[] { AdminGroup.管理员 })]
         public virtual  Department Department { get; set; }
         
         //此方法用于判断用户角色

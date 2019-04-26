@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Entity;
+using System.Data.Entity.Metadata;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using ALEXFW.CommonUtility;
 using ALEXFW.Entity.UserAndRole;
 
 namespace ALEXFW.DeskTop.Areas.Admin.Controllers
@@ -80,6 +82,23 @@ namespace ALEXFW.DeskTop.Areas.Admin.Controllers
             ViewBag.PartialViewPath = "_adminTable";
 
             return View("../../Views/MyAdmin/List", model);
+        }
+
+        //处理店铺和权限
+        protected override async Task UpdateProperty(Entity.UserAndRole.Admin entity, IPropertyMetadata propertyMetadata)
+        {
+            if (propertyMetadata.ClrName == "Department")
+            {
+                var admin = (Session["AdminLogin"] as Entity.UserAndRole.Admin);
+                var context = EntityBuilder.GetContext<Department>();
+                propertyMetadata.SetValue(entity, context.GetEntity(admin.Department.Index));
+            }
+            else if (propertyMetadata.ClrName == "Group")
+            {
+                propertyMetadata.SetValue(entity, AdminGroup.业务员);
+            }
+            else
+                await base.UpdateProperty(entity, propertyMetadata);
         }
     }
 }

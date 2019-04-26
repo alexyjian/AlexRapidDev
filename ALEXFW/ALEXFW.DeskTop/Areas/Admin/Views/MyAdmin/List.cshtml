@@ -31,7 +31,7 @@
             <!-- Default panel contents -->
             <div class="panel-heading">
                 &nbsp;
-                <a onclick="javascript: outport();" class="btn btn-primary pull-right" style="margin-left: 10px; margin-top: -7px;">导出表格</a>
+                <a href="@Html.Raw(Url.Action("Create"))"  class="btn btn-primary pull-right" style="margin-left: 10px; margin-top: -7px;">新增员工</a>
                 <a onclick="javascript: query();" class="btn btn-success pull-right" style="margin-left: 10px; margin-top: -7px;">查询</a>
                 <input class="pull-right form-control" type="text" id="nameOrPhone" placeholder="工号或登录名" value="@nameOrCode" style="margin-left: 10px; margin-top: -7px; width: 20%;" />
                 <select id="isdelete" class="form-control pull-right" style="margin-left: 10px; margin-top: -7px; width: 12%;">

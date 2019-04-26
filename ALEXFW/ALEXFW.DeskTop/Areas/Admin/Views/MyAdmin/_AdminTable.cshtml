@@ -12,17 +12,33 @@
         </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Items)
-            {
-                <tr>
-                    <td>@item.EmployeeCode</td>
-                    <td>@item.Username</td>
-                    <td>@item.Department.DepartmentName</td>
-                    <td>@item.Group.ToString()</td>
-                    <td>
-                    </td>
-                </tr>
-            }
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@item.EmployeeCode</td>
+                <td>@item.Username</td>
+                <td>@item.Department.DepartmentName</td>
+                <td>@item.Group.ToString()</td>
+                <td class="text-center" style="width: 64px;">
+                    <div class="btn-group btn-group-xs">
+                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a class="btn" href="@Html.Raw(Url.Action("Detail", new {id = item.Index}))"><i class="glyphicon glyphicon-list-alt"></i>明细</a>
+                            </li>
+                            <li>
+                                <a class="btn" href="@Html.Raw(Url.Action("Edit", new {id = item.Index}))"><i class="glyphicon glyphicon-edit"></i>编辑</a>
+                            </li>
+                            <li>
+                                <a class="btn" href="javascript:remove('@item.Index')"><i class="glyphicon glyphicon-remove"></i>删除</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        }
         </tbody>
     </table>
     
@@ -35,3 +51,70 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div class="modal-body">
+                <p>此项关联其它数据，不能删除</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="RemoveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">删除</h4>
+            </div>
+            <div class="modal-body">
+                <p>是否删除该项？？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+                <button onclick="pos()" type="button" class="btn btn-primary">
+                    确认
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var index;
+
+    function remove(id) {
+        index = id;
+        $('#RemoveModal').modal('show');
+    }
+
+    $('#RemoveModal').on('hide.bs.modal', function() {
+        index = null;
+    });
+
+    function pos() {
+        $.ajax({
+            url: '@Html.Raw(Url.Action("Remove"))/' + index,
+            cache: false,
+            type: 'POST',
+            success: function() {
+                location.reload();
+            },
+            error: function() {
+                $('#RemoveModal').modal('hide');
+                $('#myModal').modal('show');
+            }
+        });
+    }
+</script>
