@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ALEXFW.CommonUtility;
 using ALEXFW.DataAccess;
+using ALEXFW.Entity.Members;
 using ALEXFW.Entity.UserAndRole;
 
 namespace ALEXFW.DeskTop.Migrations

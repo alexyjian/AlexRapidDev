@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using ALEXFW.CommonUtility;
+using ALEXFW.Entity.Members;
 using ALEXFW.Entity.UserAndRole;
 
 namespace ALEXFW.DeskTop.Controllers

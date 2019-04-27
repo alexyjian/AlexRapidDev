@@ -52,11 +52,12 @@
     <Compile Include="CommonDictionary\ListItemSpecification.cs" />
     <Compile Include="Gifts\Category.cs" />
     <Compile Include="Gifts\Product.cs" />
+    <Compile Include="Members\MemberGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserAndRole\Admin.cs" />
     <Compile Include="UserAndRole\Department.cs" />
     <Compile Include="UserAndRole\EnumAdminGroup.cs" />
-    <Compile Include="UserAndRole\Member.cs" />
+    <Compile Include="Members\Member.cs" />
     <Compile Include="ValidateCode.cs" />
   </ItemGroup>
   <ItemGroup>

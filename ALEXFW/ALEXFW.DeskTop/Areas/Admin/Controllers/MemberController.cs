@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ALEXFW.CommonUtility;
-using ALEXFW.Entity.UserAndRole;
+using ALEXFW.Entity.Members;
 
 namespace ALEXFW.DeskTop.Areas.Admin.Controllers
 {
