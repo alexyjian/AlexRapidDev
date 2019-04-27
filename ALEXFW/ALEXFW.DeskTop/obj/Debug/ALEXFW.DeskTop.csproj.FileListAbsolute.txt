@@ -153,6 +153,11 @@ D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DeskTop\bin\roslyn\System.Xml.X
 D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DeskTop\bin\roslyn\System.Xml.XPath.XDocument.dll
 D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DeskTop\bin\roslyn\vbc.exe
 D:\2017Soft2\演示项目\2.源码\ALEXFW\ALEXFW.DeskTop\bin\roslyn\VBCSCompiler.exe
+D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\Newtonsoft.Json.xml
+D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\System.Net.Http.Formatting.xml
+D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\System.Web.Http.WebHost.xml
+D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\obj\Debug\ALEXFW.DeskTop.csprojAssemblyReference.cache
+D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\obj\Debug\ALEXFW.DeskTop.pdb
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\ApplicationInsights.config
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\roslyn\csc.exe
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\roslyn\csc.exe.config
@@ -279,7 +284,6 @@ D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\Microsoft.Practices.Unity.xml
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\Microsoft.Practices.Unity.Configuration.xml
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\Microsoft.Practices.Unity.Mvc.xml
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
-D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\Newtonsoft.Json.xml
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\System.Web.Helpers.xml
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\System.Web.Mvc.xml
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\System.Web.Optimization.xml
@@ -287,9 +291,7 @@ D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\System.Web.Razor.xml
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\System.Web.WebPages.xml
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\System.Web.WebPages.Deployment.xml
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\System.Web.WebPages.Razor.xml
-D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\System.Net.Http.Formatting.xml
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\System.Web.Http.xml
-D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\System.Web.Http.WebHost.xml
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\NPOI.xml
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\zxing.pdb
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\zxing.xml
@@ -303,8 +305,6 @@ D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\zh-Hans\System.Web.WebPages.Razor.reso
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\zh-Hans\System.Web.Http.resources.dll
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
-D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\obj\Debug\ALEXFW.DeskTop.csprojAssemblyReference.cache
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\obj\Debug\ALEXFW.DeskTop.csproj.CoreCompileInputs.cache
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\obj\Debug\ALEXFW.DeskTop.csproj.CopyComplete
 D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\obj\Debug\ALEXFW.DeskTop.dll
-D:\AlexRapidDev\ALEXFW\ALEXFW.DeskTop\obj\Debug\ALEXFW.DeskTop.pdb

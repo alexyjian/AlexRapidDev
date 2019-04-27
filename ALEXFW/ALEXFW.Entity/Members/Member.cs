@@ -25,7 +25,6 @@ namespace ALEXFW.Entity.Members
         [Searchable]
         [Display(Name = "姓名", Order = 1)]
         public virtual string PersonName { get; set; }
-<<<<<<< HEAD:ALEXFW/ALEXFW.Entity/UserAndRole/Member.cs
 
         [Display(Name = "性别", Order = 2)]
         [CustomDataType(CustomDataType.Sex)]
@@ -45,10 +44,6 @@ namespace ALEXFW.Entity.Members
         public virtual string Phone { get; set; }
 
         [Display(Name = "密码", Order = 10)]
-=======
-        
-        [Display(Name = "密码", Order = 2)]
->>>>>>> 71b4c6a131a8ee6a13bb9d0b3b46ed02f72fecb0:ALEXFW/ALEXFW.Entity/Members/Member.cs
         [Hide(IsHiddenOnCreate = false, IsHiddenOnEdit = false)]
         public override byte[] Password
         {
@@ -61,20 +56,14 @@ namespace ALEXFW.Entity.Members
             ViewRolesRequired = new object[] { AdminGroup.店长 })]
         public virtual Department Department { get; set; }
 
-<<<<<<< HEAD:ALEXFW/ALEXFW.Entity/UserAndRole/Member.cs
-
         [Display(Name = "是否禁用", Order = 30)]
         [CustomDataType(CustomDataType.Boolean)]
         public virtual bool IsEnabled { get; set; } = true;
 
-        [Display(Name = "头像", Order = 90)]
-=======
-        [Searchable]
         [Display(Name = "分组", Order = 5)]
         public virtual MemberGroup Group { get; set; }
 
         [Display(Name = "头像", Order = 105)]
->>>>>>> 71b4c6a131a8ee6a13bb9d0b3b46ed02f72fecb0:ALEXFW/ALEXFW.Entity/Members/Member.cs
         [CustomDataType("SingleImage")]
         [Hide(IsHiddenOnCreate = false, IsHiddenOnEdit = false)]
         public virtual string Avatar { get; set; }
