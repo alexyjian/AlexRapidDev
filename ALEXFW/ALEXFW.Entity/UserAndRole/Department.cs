@@ -19,14 +19,22 @@ namespace ALEXFW.Entity.UserAndRole
     public class Department : EntityBase
     {
         [Required]
-        [Display(Name = "店铺编号")]
+        [Display(Name = "店铺编号", Order = 1)]
         [Searchable]
         public virtual string SortCode { get; set; }
 
         [Required]
-        [Display(Name = "店铺名称")]
+        [Display(Name = "店铺名称", Order = 2)]
         [Searchable]
         public virtual string DepartmentName { get; set; } //部门名称
+
+        [Display(Name = "店铺简介", Order = 3)]
+        [Hide]
+        public virtual string DSCN { get; set; }
+
+        [Display(Name = "Logo", Order =4)]
+        [Hide]
+        public virtual string Logo { get; set; }
 
         [Hide]
         [Display(Name = "店铺人员")]

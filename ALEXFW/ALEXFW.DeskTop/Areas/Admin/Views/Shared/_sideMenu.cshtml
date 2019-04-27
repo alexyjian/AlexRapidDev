@@ -35,15 +35,15 @@ else if (role==(AdminGroup.业务员|AdminGroup.店长))
         <div class="panel-heading" role="tab" id="headingAdmin">
             <h4 class="panel-title" style="color: #333">
                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAdmin" aria-expanded="false" aria-controls="collapseAdmin">
-                    <i class="glyphicon glyphicon-lock"></i> 业务员管理
+                    <i class="glyphicon glyphicon-lock"></i> 店铺管理
                 </a>
             </h4>
         </div>
         <div id="collapseAdmin" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAdmin">
             <div class="panel-body" style="color: #333">
+                <a href="@Url.Action("Index", "MyDepartment")" title="" target="layout">店铺管理</a>
                 <a href="@Url.Action("Index", "MyAdmin")" title="" target="layout">业务员管理</a>
-                <a href="@Url.Action("Search", "MyAdmin")" title="" target="layout">业务员搜索</a>
-                <a href="@Url.Action("Create", "MyAdmin")" title="" target="layout">业务员创建</a>
+                <a href="@Url.Action("Index", "MyMember")" title="" target="layout">会员管理</a>
             </div>
         </div>
     </div>

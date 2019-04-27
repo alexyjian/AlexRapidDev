@@ -187,6 +187,7 @@
     <Compile Include="Areas\Admin\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MyDepartmentController.cs" />
     <Compile Include="Areas\Admin\Controllers\MemberController.cs" />
     <Compile Include="Areas\Admin\Controllers\MyAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
@@ -265,6 +266,7 @@
     <Content Include="Areas\Admin\Views\Account\ChangePassword.cshtml" />
     <Content Include="Areas\Admin\Views\MyAdmin\List.cshtml" />
     <Content Include="Areas\Admin\Views\MyAdmin\_AdminTable.cshtml" />
+    <Content Include="Areas\Admin\Views\MyDepartment\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <None Include="Areas\Admin\Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Areas\Admin\Scripts\jquery-2.2.4.js" />
@@ -837,7 +839,7 @@
     <Folder Include="Areas\Admin\Views\Product\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Verify\" />
-    <Folder Include="WebUploadFile\" />
+    <Folder Include="WebUploadFile\Department\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

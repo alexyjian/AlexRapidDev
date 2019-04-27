@@ -1,0 +1,125 @@
+﻿@model ALEXFW.Entity.UserAndRole.Department
+@{
+    ViewBag.Title = "编辑店铺";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<br/>
+
+<ol class="breadcrumb" style ="background-color:white">
+    <li>
+        <a href="@Url.Action("index","admin")">首页</a>
+    </li>
+    <li class="active">编辑店铺</li>
+</ol>
+
+<div class="panel panel-default margin-10">
+    <div class="panel-body">
+        <form id="form" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+            <input type="hidden" id="Index" name="Index" value="@Model.Index"/>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">店铺名称</label>
+                <div class="col-sm-8">
+                    <input type="text" name="DepartmentName" value="@Model.DepartmentName" placeholder="请输入店铺名称"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">店铺Logo</label>
+                <div class="col-sm-8">
+                    <div class="edit-avatar-priview" id="avatarImg">
+                        @if (Model.Logo == null)
+                        {
+                            <i class="glyphicon glyphicon-user"></i>
+                        }
+                        else
+                        {
+                            <img width="100" src="@Model.Logo"/>
+                        }
+                    </div>
+                    <div class=" edit-avatar-btn ">
+                        选择头像
+                        <input type="file" name="Logo" id="Logo">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">店铺简介</label>
+                <div class="col-sm-8">
+                    <textarea id="DSCN" name="DSCN">@Model.DSCN</textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn v-btn-primary">保存</button>
+        </form>
+    </div>
+</div>
+
+
+<div class="modal fade" id="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="dialogTitle">提交结果</h4>
+            </div>
+            <div class="modal-body" id="dialogContent">
+            </div>
+            <div class="modal-footer">
+                <button id="dialogOK" type="button" class="btn btn-primary">确定</button>
+                <button id="dialogCancel" type="button" class="btn btn-default">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    CKEDITOR.replace('DSCN', { customConfig: 'config.js' });
+</script>
+
+<script src="~/Scripts/jquery.form.js"></script>
+
+<script type="text/javascript">
+    function dialog(title, content, ok) {
+        $('#dialogTitle').html(title);
+        $('#dialogContent').html(content);
+        $('#dialog').modal('show');
+        $('#dialogOK').unbind('click');
+        if (ok == undefined)
+            $('#dialogOK').click(function () {
+                $('#dialog').modal('hide');
+            });
+        else
+            $('#dialogOK').click(ok);
+    }
+    $('#dialogCancel').click(function () {
+        $('#dialog').modal('hide');
+    });
+    $('#dialog').modal({ show: false });
+    $('#form').ajaxForm({    
+        error: function (result) {
+            dialog('保存结果', '<p>保存失败. 原因:' + result.responseText + '。</p>', function () { $('#dialog').modal('hide'); });
+        },
+        success: function (result) {
+            dialog('保存结果', '<p>保存成功.</p>', function () { window.location = '@Url.Action("Index","MyDepartment")'; });
+        }
+    });
+
+
+    $("#Logo").change(function () {
+        var file = $(this);
+        var imageResult = file[0].files[0];
+
+        if ((imageResult.size / 1024).toFixed(2) > 4096) {
+            alert("上传图片过大，请上传小于4M的照片");
+            return;
+        }
+        if (imageResult) {
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                var txt = event.target.result;
+                var img = $('<img  width=100 src="' + txt + '" alt="" >');
+                $("#avatarImg").html(img);
+            };
+
+            reader.readAsDataURL(imageResult);
+        }
+    });
+</script>

@@ -24,28 +24,49 @@ namespace ALEXFW.Entity.UserAndRole
         [Searchable]
         [Display(Name = "姓名", Order = 1)]
         public virtual string PersonName { get; set; }
-        
-        [Display(Name = "密码", Order = 2)]
+
+        [Display(Name = "性别", Order = 2)]
+        [CustomDataType(CustomDataType.Sex)]
+        [Hide(IsHiddenOnCreate = false, IsHiddenOnEdit = false)]
+
+        public virtual bool? Sex { get; set; }
+
+        [Display(Name = "生日", Order = 3)]
+        [Hide(IsHiddenOnCreate = false, IsHiddenOnEdit = false)]
+        [Column(TypeName = "datetime2")]
+        public virtual DateTime? Birthday { get; set; }
+
+        [Display(Name = "手机", Order = 4)]
+        [Hide(IsHiddenOnCreate = false, IsHiddenOnEdit = false)]
+        [CustomDataType(CustomDataType.PhoneNumber)]
+        [Searchable]
+        public virtual string Phone { get; set; }
+
+        [Display(Name = "密码", Order = 10)]
+        [Hide(IsHiddenOnCreate = false, IsHiddenOnEdit = false)]
         public override byte[] Password
         {
             get { return base.Password; }
             set { base.Password = value; }
         }
-        
-        [Searchable]
-        [Display(Name = "店铺", Order = 4)]
+       
+        [Display(Name = "店铺", Order = 20)]
+        [PropertyAuthentication(EditRolesRequired = new object[] { AdminGroup.管理员 },
+            ViewRolesRequired = new object[] { AdminGroup.店长 })]
         public virtual Department Department { get; set; }
 
-        [Display(Name = "头像", Order = 105)]
+
+        [Display(Name = "是否禁用", Order = 30)]
+        [CustomDataType(CustomDataType.Boolean)]
+        public virtual bool IsEnabled { get; set; } = true;
+
+        [Display(Name = "头像", Order = 90)]
         [CustomDataType("SingleImage")]
         [Hide(IsHiddenOnCreate = false, IsHiddenOnEdit = false)]
         public virtual string Avatar { get; set; }
 
-        [Display(Name = "是否禁用", Order = 5)]
-        [CustomDataType(CustomDataType.Boolean)]
-        public virtual bool IsEnabled { get; set; } = true;
 
-        [Display(Name = "上次登录时间", Order = 111)]
+        [Display(Name = "上次登录时间", Order = 100)]
         [Column(TypeName = "datetime2")]
         [Hide]
         public virtual DateTime LastLoginDateTime { get; set; }
